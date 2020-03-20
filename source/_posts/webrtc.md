@@ -8,3 +8,15 @@ tags:
 categories:
 - imporve
 ---
+
+
+
+
+
+
+{% plantuml %}
+    Bob->Alice : hello
+    A -> B: do something
+    B -> A: do something
+{% endplantuml %}
+
