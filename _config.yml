@@ -101,3 +101,7 @@ deploy:
   type: 'git'
   repo: 'git@github.com:hjybdrs/hjybdrs.github.io.git'
   branch: 'master'
+
+# add by dengyu
+tag_plantuml:
+	type: static
