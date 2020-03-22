@@ -1,0 +1,51 @@
+@startuml
+
+package "video" {
+
+    class VideoReceiveStream
+    {
+    }
+
+    class RtpVideoStreamReceiver
+    {
+    }
+
+}
+
+package "call" {
+
+    class VideoReceiveControl
+    {
+        void CreateReceiver()
+    }
+
+}
+
+package "modules.video_coding" {
+
+    class FrameBuffer
+    {
+    }
+
+    class PacketBuffer
+    {
+    }
+
+    class ReferenceFinder
+    {
+    }
+
+    class Packet
+    {
+
+    }
+
+    VideoReceiveControl --* RtpVideoStreamReceiver
+    RtpVideoStreamReceiver --* VideoReceiveStream
+    FrameBuffer --* VideoReceiveStream
+    PacketBuffer --* RtpVideoStreamReceiver
+    ReferenceFinder --* RtpVideoStreamReceiver
+    Packet --o PacketBuffer
+}
+
+@enduml
