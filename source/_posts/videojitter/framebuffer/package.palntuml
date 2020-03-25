@@ -1,0 +1,75 @@
+@startuml
+
+start
+if (operation) then (insertFrame)
+:completeFrame;
+note left
+update fps
+end note
+if (last_continuous_frame_it_ == end) then (yes)
+:last_continuous_picture_id = -1;
+else (no)
+:last_continuous_picture_id = first.picture_id;
+endif
+if (ValidReferences) then (false)
+:last_continuous_picture_id;
+end
+endif
+note left
+check reference status
+end note
+if (size > maxSize) then (true)
+:last_continuous_picture_id;
+end
+endif
+note left
+check max buffer frame size
+end note
+if (last_decoded_frame_it_ != end && key <= last_decoded_frame_it_->first) then (true)
+note left
+encoder reconfig
+end note
+if(keyframe && frame.time aheadof last_decoded_frame_it_.time) then (true)
+:clear buffer;
+else (false)
+:last_continuous_picture_id;
+end
+endif
+endif
+
+if (!frame.empty() && key.picture_id < min && kye.picture_id > man) then (yes)
+note left
+picture_id larger than mid
+end note
+:clear buffer;
+endif
+:insert key;
+if (key exist) then (yes)
+:last_continuous_picture_id;
+end
+endif
+else if (operation) then (nextFrame)
+:nextFrame;
+else if (operation) then (stop)
+:stop;
+:nextFrame;
+note right
+weak thread 
+blocked 
+in nextFrame
+end note
+end
+else if (operation) then (start)
+end
+else if (operation) then (updateRtt)
+:jitterEstimator update;
+end
+else if (operation) then (SetProtectionMode)
+:SetProtectionMode;
+end
+endif
+
+
+stop
+
+@enduml
