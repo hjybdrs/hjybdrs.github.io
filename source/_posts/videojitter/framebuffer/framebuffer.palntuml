@@ -88,6 +88,27 @@ else if (operation) then (UpdateFrameInfoWithIncomingFrame)
     repeat while (frame's reference?)
     end
 else if (operation) then (PropagateContinuity)
+    if (last_continuous_frame_it_ == end) then (true)
+        :last_continuous_frame_it_ = start;
+    endif
+
+    repeat
+        :frame = continuous_frame.front();
+        :continuous_frame.pop();
+        if (last_continuous_frame_it_.picture_id < frame.picture_id) then (true)
+            :last_continuous_frame_it_ = frmae;
+        endif
+        repeat
+            :frame_ref = frames_.find(dependentframes.picture_id);
+            if (frame_ref!=end) then (yes)
+                :--frame_ref.num_missing_continus;
+                if(frame_ref.num_missing_continus == 0) then (yes)
+                    :frame_ref.continuous= true;
+                    :continuous_frame.push(frame_ref);
+                endif
+            endif
+        repeat while(frame.num_dependent_frames)
+    repeat while(!continuous_frame.empty)
     :PropagateContinuity;
     end
 else if (operation) then (nextFrame)
