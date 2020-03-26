@@ -21,6 +21,15 @@ package "call" {
 
 }
 
+package "common_video"
+{
+    class EncodedImage
+    {
+
+    }
+
+}
+
 package "modules.video_coding" {
 
     class FrameBuffer
@@ -29,6 +38,7 @@ package "modules.video_coding" {
 
     class PacketBuffer
     {
+        void insertPacket(VCMPacket )
     }
 
     class ReferenceFinder
@@ -40,12 +50,36 @@ package "modules.video_coding" {
 
     }
 
+    class VCMPacket
+    {
+
+    }
+
+    class RtpFrameObject
+    {
+
+    }
+
+    class FrameObject
+    {
+
+    }
+
+    class VCMEncodedFrame
+    {
+        
+    }
+
     VideoReceiveControl --* RtpVideoStreamReceiver
     RtpVideoStreamReceiver --* VideoReceiveStream
     FrameBuffer --* VideoReceiveStream
     PacketBuffer --* RtpVideoStreamReceiver
     ReferenceFinder --* RtpVideoStreamReceiver
     Packet --o PacketBuffer
+    VCMPacket --* PacketBuffer
+    EncodedImage <|-- VCMEncodedFrame
+    VCMEncodedFrame <|-- FrameObject
+    FrameObject <|-- RtpFrameObject
 }
 
 @enduml
