@@ -2,73 +2,115 @@
 
 start
 if (operation) then (insertFrame)
-:completeFrame;
-note left
-update fps
-end note
-if (last_continuous_frame_it_ == end) then (yes)
-:last_continuous_picture_id = -1;
-else (no)
-:last_continuous_picture_id = first.picture_id;
-endif
-if (ValidReferences) then (false)
-:last_continuous_picture_id;
-end
-endif
-note left
-check reference status
-end note
-if (size > maxSize) then (true)
-:last_continuous_picture_id;
-end
-endif
-note left
-check max buffer frame size
-end note
-if (last_decoded_frame_it_ != end && key <= last_decoded_frame_it_->first) then (true)
-note left
-encoder reconfig
-end note
-if(keyframe && frame.time aheadof last_decoded_frame_it_.time) then (true)
-:clear buffer;
-else (false)
-:last_continuous_picture_id;
-end
-endif
-endif
+    :completeFrame;
+    note left
+    update fps
+    end note
+    if (last_continuous_frame_it_ == end) then (yes)
+        :last_continuous_picture_id = -1;
+    else (no)
+        :last_continuous_picture_id = first.picture_id;
+    endif
+    if (ValidReferences) then (false)
+        note left
+        check reference status
+        end note
+        :last_continuous_picture_id;
+        end
+    endif
+    if (size > maxSize) then (true)
+        note left
+        check max buffer frame size
+        end note
+        :last_continuous_picture_id;
+        end
+    endif
+    if (last_decoded_frame_it_ != end && key <= last_decoded_frame_it_->first) then (true)
+        note left
+        encoder reconfig
+        end note
+        if(keyframe && frame.time aheadof last_decoded_frame_it_.time) then (true)
+            :clear buffer;
+        else (false)
+            :last_continuous_picture_id;
+            end
+        endif
+    endif
 
-if (!frame.empty() && key.picture_id < min && kye.picture_id > man) then (yes)
-note left
-picture_id larger than mid
-end note
-:clear buffer;
-endif
-:insert key;
-if (key exist) then (yes)
-:last_continuous_picture_id;
-end
-endif
+    if (!frame.empty() && key.picture_id < min && kye.picture_id > man) then (yes)
+        note left
+        picture_id larger than mid
+        end note
+        :clear buffer;
+    endif
+
+    :insert key;
+    if (key exist) then (yes)
+        :last_continuous_picture_id;
+        end
+    endif
+
+    if (UpdateFrameInfoWithIncomingFrame) then (yes)
+        :UpdatePlayDelay;
+        if (if->second.num_missing_continus==0) then (true)
+            :info->continuous as true;
+            :PropagateContinuity();
+            :update last_continus_id;
+            :eventSet;
+            note left
+            might a better frame exist
+            end note
+        endif
+    else (false)
+        :last last_continuous_picture_id;
+        end
+    endif
+
+else if (operation) then (UpdateFrameInfoWithIncomingFrame)
+    repeat
+        if(last_decoded_frame_it_!= end && ref_key<last_decoded_frame_it_.picture_id) then (true)
+            if(ref_key == end) then (yes)
+                :false;
+                end
+            endif
+            :ref exist;
+            :--info->continus;
+            :--info->decode;
+        else (false)
+            if(ref_info == end) then (true)
+                :insert ref_info;
+            endif
+            if(ref_info->continuous) then (true)
+                :--info->continus;
+            endif
+            :update ref_info's dependentframes;
+        endif
+    repeat while (frame's reference?)
+    end
+else if (operation) then (PropagateContinuity)
+    :PropagateContinuity;
+    end
 else if (operation) then (nextFrame)
-:nextFrame;
+    :nextFrame;
+    end
 else if (operation) then (stop)
-:stop;
-:nextFrame;
-note right
-weak thread 
-blocked 
-in nextFrame
-end note
-end
+    :stop;
+    :nextFrame;
+    note right
+    weak thread 
+    blocked 
+    in nextFrame
+    end note
+    end
 else if (operation) then (start)
-end
+    end
 else if (operation) then (updateRtt)
-:jitterEstimator update;
-end
+    :jitterEstimator update;
+    end
 else if (operation) then (SetProtectionMode)
-:SetProtectionMode;
-end
+    :SetProtectionMode;
+    end
 endif
-
 
 stop
 
