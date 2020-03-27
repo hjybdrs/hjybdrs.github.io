@@ -4,10 +4,17 @@ package "video" {
 
     class VideoReceiveStream
     {
+        void OnCompleteFrame(FrameObject);
+        void Decode();
     }
 
     class RtpVideoStreamReceiver
     {
+        PacketBuffer packet_buffer;
+        void OnReceivePayloadData();
+        void OnReceivedFrame(vector<RtpFrameObject>);
+        void OnCompleteFrame(FrameObject);
+        
     }
 
 }
@@ -34,15 +41,19 @@ package "modules.video_coding" {
 
     class FrameBuffer
     {
+        int insertFrame(FrameObject);
+        bool nextFrame(waittime, FrameObject);
     }
 
     class PacketBuffer
     {
         void insertPacket(VCMPacket )
+        vector<RtpFrameObject> FindFrames();
     }
 
     class ReferenceFinder
     {
+        void ManageFrame(RtpFrameObject);
     }
 
     class Packet
@@ -80,6 +91,8 @@ package "modules.video_coding" {
     EncodedImage <|-- VCMEncodedFrame
     VCMEncodedFrame <|-- FrameObject
     FrameObject <|-- RtpFrameObject
+    PacketBuffer *-- RtpFrameObject
+
 }
 
 @enduml
