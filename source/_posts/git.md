@@ -21,6 +21,9 @@ git clone gitxxxxURL.git myGitDir
 # clone 远端仓库的指定分支
 git clone -b branchName gitxxxxURL.git
 
+## clone 远端仓库失败情况处理   for the fxxk war
+git config --global http.proxy http://127.0.0.1:9666
+
 ```
 
 ### 分支推送
