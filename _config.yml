@@ -105,3 +105,9 @@ deploy:
 # add by dengyu
 tag_plantuml:
 	type: static
+
+symbols_count_time:
+  symbols: true         # 统计单篇文章字数
+  time: true            # 估算单篇文章阅读时间
+  total_symbols: false  # 统计站点总字数
+  total_time: false     # 估算站点总阅读时间
