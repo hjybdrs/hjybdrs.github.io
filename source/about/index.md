@@ -5,7 +5,7 @@ date: 2020-03-15 20:53:44
 
 ```c++
 
-class Man
+class WaterMelon
 {
     string name = "old deng";
     string address = "guangzhou/sichuan";
