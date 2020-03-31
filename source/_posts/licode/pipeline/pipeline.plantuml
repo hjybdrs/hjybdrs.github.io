@@ -1,0 +1,54 @@
+@startuml
+
+package "erizo"
+{
+
+    class ServiceContextImpl<<Service>>
+    {
+
+    }
+
+    class ServiceContext
+    {
+
+    }
+
+    class ServiceContextImplBase<<Service,ServiceContext>>
+    {
+
+    }
+
+    ServiceContext <|-- ServiceContextImpl
+    ServiceContextImplBase <|-- ServiceContextImpl
+
+    class PipelineServiceContext
+    {
+
+    }
+
+    PipelineServiceContext <|-- ServiceContextImplBase
+
+    class PipelineBase
+    {
+        void addService()
+        void addFront()
+        vector<PipelineServiceContext> service_ctxs_
+    }
+    note left
+    addService 
+    add ServiceContextImpl 
+    to service_ctxs    
+    end note 
+
+    ServiceContextImpl --o PipelineBase
+
+
+    class Pipeline
+    {
+    }
+
+    PipelineBase <|-- Pipeline 
+
+}
+
+@enduml
