@@ -2,6 +2,31 @@
 
 package "webrtc"
 {
+
+    package "call"
+    {
+        class Call
+        {
+            Map<VideoReceiveStream> _video_receive_streams
+            RtpStreamReceiverController _video_receiver_controller;
+            VideoReceiveStream* CreateVideoReceiveStream()
+            VideoSendStream*    CreateVideoSendStream()
+        }
+    }
+
+    package "video"
+    {
+        class VideoReceiveStream
+        {
+
+        }
+
+        class VideoSendStream
+        {
+
+        }
+    }
+
     package "media.engine"
     {
         class VideoMediaChannel
@@ -9,34 +34,57 @@ package "webrtc"
             void getStats()
         }
 
-        class WebVideoMediaChannel
+        class WebRtcVideoMediaChannel
         {
+            Map<WebRtcVideoSendStream>          _sendStreams
+            Map<WebRtcVideoReceiveStream>       _recvStreams
+            Call                                _call
             void getStats()
+            void AddRecvStream()
+            void AddSendStream()
+        }
+
+        class WebRtcVideoReceiveStream
+        {
+            VideoReceiveStream                  _stream
+            Call                                _call
+        }
+
+        class WebRtcVideoSendStream
+        {
+            VideoSendStream                     _stream
+            Call                                _call
         }
 
         class VoiceMediaChannel
         {
             void getStats()
         }
+
+        class WebRtcVoiceMediaChannel
+        {
+            void getStats()
+        }
+
         class MediaChannel
         {
             
         }
 
+
         MediaChannel <|-- VoiceMediaChannel
         MediaChannel <|-- VideoMediaChannel
-        VideoMediaChannel <|-- WebVideoMediaChannel
+        VideoMediaChannel <|-- WebRtcVideoMediaChannel
+        VoiceMediaChannel <|-- WebRtcVoiceMediaChannel
+
+        WebRtcVideoMediaChannel o-- WebRtcVideoReceiveStream
+        WebRtcVideoMediaChannel o-- WebRtcVideoSendStream
+        WebRtcVideoReceiveStream *-- VideoReceiveStream
+        WebRtcVideoSendStream *-- VideoSendStream
+        WebRtcVideoMediaChannel *-- Call
+        WebRtcVideoReceiveStream *-- Call
     }
 
-    package "call"
-    {
-        class call
-        {
-
-        }
-    }
-
-    
 }
 
 package "SDK"
@@ -62,6 +110,8 @@ package "SDK"
             void getShareInfo()
             void getAudioInfo()
             void createMediaChannels()
+            void createVideoReceiveStream()
+            void createShareReceiveStream()
         }
 
     }
@@ -112,8 +162,8 @@ package "SDK"
 
 
 
-WebVideoMediaChannel --o MediaEngineWrapper
-VoiceMediaChannel --o MediaEngineWrapper
+WebRtcVideoMediaChannel --o MediaEngineWrapper
+WebRtcVoiceMediaChannel --o MediaEngineWrapper
 
 MediaEngineWrapper --o MediaStream
 
