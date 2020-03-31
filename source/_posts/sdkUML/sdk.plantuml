@@ -1,0 +1,131 @@
+@startuml
+
+package "webrtc"
+{
+    package "media.engine"
+    {
+        class VideoMediaChannel
+        {
+            void getStats()
+        }
+
+        class WebVideoMediaChannel
+        {
+            void getStats()
+        }
+
+        class VoiceMediaChannel
+        {
+            void getStats()
+        }
+        class MediaChannel
+        {
+            
+        }
+
+        MediaChannel <|-- VoiceMediaChannel
+        MediaChannel <|-- VideoMediaChannel
+        VideoMediaChannel <|-- WebVideoMediaChannel
+    }
+
+    package "call"
+    {
+        class call
+        {
+
+        }
+    }
+
+    
+}
+
+package "SDK"
+{
+    package "MediaStream"
+    {
+        class MediaStream
+        {
+            MediaEngineWrapper _engine
+            void getVideoInfo()
+            void getShareInfo()
+            void getAudioInfo()
+        }
+        
+        class MediaEngineWrapper
+        {
+            WebVideoMediaChannel            _video
+            WebVideoMediaChannel            _share
+            VoiceMediaChannel               _audio
+            MediaEngineInterface            _engine
+            Call                            _call
+            void getVideoInfo()
+            void getShareInfo()
+            void getAudioInfo()
+            void createMediaChannels()
+        }
+
+    }
+
+    package "MediaEngine"
+    {
+
+        class VideoManager
+        {
+            MediaStream  _mediaStream
+            void onStatistics()
+        }
+
+        class ShareManager
+        {
+            MediaStream  _mediaStream
+            void onStatistics()
+        }
+
+        class AudioManager
+        {
+            MediaStream  _mediaStream
+            void onStatistics()
+        }
+
+        class MaxMetrics
+        {
+            HTTP _http
+        }
+        
+        package ELK <<Cloud>>
+        {
+            class HTTP
+        }
+        
+        class ConfManager
+        { 
+            MediaStream  _mediaStream
+            VidoeManager _videoM
+            AudioManager _videoM
+            ShareManager _videoM
+            MaxMetrics _metrics
+            void onTimer()
+        }
+    }
+
+}
+
+
+
+WebVideoMediaChannel --o MediaEngineWrapper
+VoiceMediaChannel --o MediaEngineWrapper
+
+MediaEngineWrapper --o MediaStream
+
+VideoManager --o ConfManager
+ShareManager --o ConfManager
+AudioManager --o ConfManager
+
+MediaStream --o VideoManager
+MediaStream --o ShareManager
+MediaStream --o AudioManager
+MediaStream --o ConfManager
+HTTP  --* MaxMetrics
+MaxMetrics -left-* ConfManager
+
+@enduml
