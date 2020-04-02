@@ -2,11 +2,256 @@
 
 package "erizo"
 {
+    enum HandlerDir
+    {
+        IN,
+        OUT,
+        BOTH
+    }
+
+    class ContextImpl<<H>>
+    {
+        HandlerDir dir = HandlerDir::BOTH
+    }
+
+    class HandlerContext
+    {
+
+    }
+
+    class InboundLink
+    {
+
+    }
+
+    class OutboundLink
+    {
+
+    }
+
+    class ContextImplBase<<H,HandlerContext>>
+    {
+
+    }
+
+    class PipelineContext
+    {
+
+    }
+
+    class InboundContextImpl
+    {
+        HandlerDir dir = HandlerDir::IN;
+    }
+
+    class InboundHandlerContext
+    {
+
+    }
+
+    class OutboundContextImpl
+    {
+        HandlerDir dir = HandlerDir::OUT;
+    }
+    
+    class OutboundHandlerContext
+    {
+
+    }
+
+    PipelineContext <|-- ContextImplBase
+    InboundLink <|-- ContextImpl
+    OutboundLink <|-- ContextImpl
+    ContextImplBase <|-- ContextImpl
+    HandlerContext <|-- ContextImpl
+
+    InboundLink <|-- InboundContextImpl
+    InboundHandlerContext <|-- InboundContextImpl
+    ContextImplBase <|-- InboundContextImpl
+
+    OutboundLink <|-- OutboundContextImpl
+    OutboundHandlerContext <|-- OutboundContextImpl
+    ContextImplBase <|-- OutboundContextImpl
+
+    HandlerDir --o ContextImpl
+    HandlerDir --o InboundContextImpl
+    HandlerDir --o OutboundContextImpl
+
+    class InboundHandler
+    {
+        HandlerDir dir = HandlerDir::IN
+    }
+
+    class PacketReader
+    {
+
+    }
+
+    InboundHandler <|-- PacketReader
+
+    class Handler
+    {
+        HandlerDir dir = HandlerDir::BOTH
+    }
+
+    class RtcpProcessorHandler
+    {
+
+    }
+
+    Handler <|-- RtcpProcessorHandler
+
+    class OutboundHandler
+    {
+        HandlerDir dir = HandlerDir::OUT
+    }
+
+    class FecReceiverHandler
+    {
+
+    }
+
+    OutboundHandler <|-- FecReceiverHandler
+
+    class LayerBitrateCalculationHandler
+    {
+
+    }
+
+    OutboundHandler <|-- LayerBitrateCalculationHandler
+
+
+    class QualityFilterHandler
+    {
+
+    }
+
+    Handler <|-- QualityFilterHandler
+
+    class IncomingStatsHandler
+    {
+
+    }
+
+    InboundHandler <|-- IncomingStatsHandler
+
+    class FakeKeyframeGeneratorHandler
+    {
+
+    }
+
+    Handler <|-- FakeKeyframeGeneratorHandler
+
+    class RtpTrackMuteHandler
+    {
+
+    }
+
+    Handler <|-- RtpTrackMuteHandler
+
+    class RtpSlideShowHandler
+    {
+
+    }
+
+    Handler <|-- RtpSlideShowHandler
+
+    class RtpPaddingGeneratorHandler
+    {
+
+    }
+    Handler <|-- RtpPaddingGeneratorHandler
+
+    class PeriodicPliHandler
+    {
+
+    }
+
+    Handler <|-- PeriodicPliHandler
+
+    class PliPriorityHandler
+    {
+
+    }
+
+    Handler <|-- PliPriorityHandler
+
+    class PliPacerHandler
+    {
+
+    }
+
+    Handler <|-- PliPacerHandler
+
+    class RtpPaddingRemovalHandler
+    {
+
+    }
+
+    Handler <|-- RtpPaddingRemovalHandler
+
+    class BandwidthEstimationHandler
+    {
+
+    }
+
+    Handler <|-- BandwidthEstimationHandler
+
+    class RtcpFeedbackGenerationHandler
+    {
+
+    }
+
+    Handler <|-- RtcpFeedbackGenerationHandler
+
+    class RtpRetransmissionHandler
+    {
+
+    }
+
+    Handler <|-- RtpRetransmissionHandler
+    
+    class SRPacketHandler
+    {
+
+    }
+
+    Handler <|-- SRPacketHandler
+
+    class LayerDetectorHandler
+    {
+
+    }
+
+    InboundHandler <|-- LayerDetectorHandler
+
+    class OutgoingStatsHandler
+    {
+
+    }
+
+    OutboundHandler <|-- OutgoingStatsHandler
+
+    class PacketCodecParser
+    {
+
+    }
+
+    InboundHandler <|-- PacketCodecParser
+
+    class PacketWriter
+    {
+
+    }
+
+    OutboundHandler <|-- PacketWriter
 
     class ServiceContextImpl<<Service>>
     {
 
     }
+
+
 
     class ServiceContext
     {
@@ -32,7 +277,11 @@ package "erizo"
     {
         void addService()
         void addFront()
+        void finalize()
         vector<PipelineServiceContext> service_ctxs_
+        vector<std::shared_ptr<PipelineContext>> ctxs_
+        vector<PipelineContext*> inCtxs_
+        vector<PipelineContext*> outCtxs_
     }
     note left
     addService 
@@ -40,14 +289,29 @@ package "erizo"
     to service_ctxs    
     end note 
 
+    note right
+    addFront 
+    add ContextImpl
+    to inCtxs_ or outCtxs_ depend on HandlerDir
+    end note 
+
     ServiceContextImpl --o PipelineBase
 
 
     class Pipeline
     {
+        void finalize()
     }
 
     PipelineBase <|-- Pipeline 
+
+
+    class MediaStream
+    {
+        Pipeline _pipeline
+    }
+
+    Pipeline --* MediaStream
 
 }
 
