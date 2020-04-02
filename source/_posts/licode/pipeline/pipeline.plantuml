@@ -84,7 +84,7 @@ package "erizo"
 
     class PacketReader
     {
-
+        HandlerDir dir = HandlerDir::IN
     }
 
     InboundHandler <|-- PacketReader
@@ -96,7 +96,7 @@ package "erizo"
 
     class RtcpProcessorHandler
     {
-
+        HandlerDir dir = HandlerDir::BOTH
     }
 
     Handler <|-- RtcpProcessorHandler
@@ -108,14 +108,14 @@ package "erizo"
 
     class FecReceiverHandler
     {
-
+        HandlerDir dir = HandlerDir::OUT
     }
 
     OutboundHandler <|-- FecReceiverHandler
 
     class LayerBitrateCalculationHandler
     {
-
+        HandlerDir dir = HandlerDir::OUT
     }
 
     OutboundHandler <|-- LayerBitrateCalculationHandler
@@ -123,128 +123,171 @@ package "erizo"
 
     class QualityFilterHandler
     {
-
+        HandlerDir dir = HandlerDir::BOTH
     }
 
     Handler <|-- QualityFilterHandler
 
     class IncomingStatsHandler
     {
-
+        HandlerDir dir = HandlerDir::IN
     }
 
     InboundHandler <|-- IncomingStatsHandler
 
     class FakeKeyframeGeneratorHandler
     {
-
+        HandlerDir dir = HandlerDir::BOTH
     }
 
     Handler <|-- FakeKeyframeGeneratorHandler
 
     class RtpTrackMuteHandler
     {
-
+        HandlerDir dir = HandlerDir::BOTH
     }
 
     Handler <|-- RtpTrackMuteHandler
 
     class RtpSlideShowHandler
     {
-
+        HandlerDir dir = HandlerDir::BOTH
     }
 
     Handler <|-- RtpSlideShowHandler
 
     class RtpPaddingGeneratorHandler
     {
-
+        HandlerDir dir = HandlerDir::BOTH
     }
+
     Handler <|-- RtpPaddingGeneratorHandler
 
     class PeriodicPliHandler
     {
-
+        HandlerDir dir = HandlerDir::BOTH
     }
 
     Handler <|-- PeriodicPliHandler
 
     class PliPriorityHandler
     {
-
+        HandlerDir dir = HandlerDir::BOTH
     }
 
     Handler <|-- PliPriorityHandler
 
     class PliPacerHandler
     {
-
+        HandlerDir dir = HandlerDir::BOTH
     }
 
     Handler <|-- PliPacerHandler
 
     class RtpPaddingRemovalHandler
     {
-
+        HandlerDir dir = HandlerDir::BOTH
     }
 
     Handler <|-- RtpPaddingRemovalHandler
 
     class BandwidthEstimationHandler
     {
-
+        HandlerDir dir = HandlerDir::BOTH
     }
 
     Handler <|-- BandwidthEstimationHandler
 
     class RtcpFeedbackGenerationHandler
     {
-
+        HandlerDir dir = HandlerDir::BOTH
     }
 
     Handler <|-- RtcpFeedbackGenerationHandler
 
     class RtpRetransmissionHandler
     {
-
+        HandlerDir dir = HandlerDir::BOTH
     }
 
     Handler <|-- RtpRetransmissionHandler
     
     class SRPacketHandler
     {
-
+        HandlerDir dir = HandlerDir::BOTH
     }
 
     Handler <|-- SRPacketHandler
 
     class LayerDetectorHandler
     {
-
+        HandlerDir dir = HandlerDir::IN
     }
 
     InboundHandler <|-- LayerDetectorHandler
 
     class OutgoingStatsHandler
     {
-
+        HandlerDir dir = HandlerDir::OUT
     }
 
     OutboundHandler <|-- OutgoingStatsHandler
 
     class PacketCodecParser
     {
-
+        HandlerDir dir = HandlerDir::IN
     }
 
     InboundHandler <|-- PacketCodecParser
 
     class PacketWriter
     {
-
+        HandlerDir dir = HandlerDir::OUT
     }
 
     OutboundHandler <|-- PacketWriter
+
+    RtcpProcessorHandler --> PacketReader : in >
+    LayerBitrateCalculationHandler --> RtcpProcessorHandler : in >
+    QualityFilterHandler --> LayerBitrateCalculationHandler : in >
+    IncomingStatsHandler --> QualityFilterHandler : in >
+    FakeKeyframeGeneratorHandler --> IncomingStatsHandler : in >
+    RtpTrackMuteHandler --> FakeKeyframeGeneratorHandler : in >
+    RtpSlideShowHandler --> RtpTrackMuteHandler : in >
+    RtpPaddingGeneratorHandler --> RtpSlideShowHandler : in >
+    PeriodicPliHandler --> RtpPaddingGeneratorHandler : in >
+    PliPriorityHandler --> PeriodicPliHandler : in >
+    PliPacerHandler --> PliPriorityHandler : in >
+    RtpPaddingRemovalHandler --> PliPacerHandler : in >
+    BandwidthEstimationHandler --> RtpPaddingRemovalHandler : in >
+    RtcpFeedbackGenerationHandler --> BandwidthEstimationHandler : in >
+    RtpRetransmissionHandler --> RtcpFeedbackGenerationHandler : in >
+    SRPacketHandler --> RtpRetransmissionHandler : in >
+    LayerDetectorHandler --> SRPacketHandler : in >
+    PacketCodecParser --> LayerDetectorHandler : in start >
+
+
+
+    FecReceiverHandler --> RtcpProcessorHandler : out >
+    LayerBitrateCalculationHandler --> FecReceiverHandler : out >
+    QualityFilterHandler --> LayerBitrateCalculationHandler : out >
+    FakeKeyframeGeneratorHandler --> QualityFilterHandler : out >
+    RtpTrackMuteHandler --> FakeKeyframeGeneratorHandler : out >
+    RtpSlideShowHandler --> RtpTrackMuteHandler : out >
+    RtpPaddingGeneratorHandler --> RtpSlideShowHandler : out >
+    PeriodicPliHandler --> RtpPaddingGeneratorHandler : out >
+    PliPriorityHandler --> PeriodicPliHandler : out >
+    PliPacerHandler --> PliPriorityHandler : out >
+    RtpPaddingRemovalHandler --> PliPacerHandler : out >
+    BandwidthEstimationHandler --> RtpPaddingRemovalHandler : out >
+    RtcpFeedbackGenerationHandler --> BandwidthEstimationHandler : out >
+    RtpRetransmissionHandler --> RtcpFeedbackGenerationHandler : out >
+    SRPacketHandler --> RtpRetransmissionHandler : out >
+    OutgoingStatsHandler --> SRPacketHandler : out >
+    PacketWriter --> OutgoingStatsHandler : out start >
+
+
+
 
     class ServiceContextImpl<<Service>>
     {
