@@ -249,20 +249,20 @@ package "erizo"
 
     RtcpProcessorHandler --> PacketReader : in >
     LayerBitrateCalculationHandler --> RtcpProcessorHandler : in >
-    QualityFilterHandler --> LayerBitrateCalculationHandler : in >
+    QualityFilterHandler --> LayerBitrateCalculationHandler : in/out >
     IncomingStatsHandler --> QualityFilterHandler : in >
     FakeKeyframeGeneratorHandler --> IncomingStatsHandler : in >
-    RtpTrackMuteHandler --> FakeKeyframeGeneratorHandler : in >
-    RtpSlideShowHandler --> RtpTrackMuteHandler : in >
-    RtpPaddingGeneratorHandler --> RtpSlideShowHandler : in >
-    PeriodicPliHandler --> RtpPaddingGeneratorHandler : in >
-    PliPriorityHandler --> PeriodicPliHandler : in >
-    PliPacerHandler --> PliPriorityHandler : in >
-    RtpPaddingRemovalHandler --> PliPacerHandler : in >
-    BandwidthEstimationHandler --> RtpPaddingRemovalHandler : in >
-    RtcpFeedbackGenerationHandler --> BandwidthEstimationHandler : in >
-    RtpRetransmissionHandler --> RtcpFeedbackGenerationHandler : in >
-    SRPacketHandler --> RtpRetransmissionHandler : in >
+    RtpTrackMuteHandler --> FakeKeyframeGeneratorHandler : in/out >
+    RtpSlideShowHandler --> RtpTrackMuteHandler : in/out >
+    RtpPaddingGeneratorHandler --> RtpSlideShowHandler : in/out >
+    PeriodicPliHandler --> RtpPaddingGeneratorHandler : in/out >
+    PliPriorityHandler --> PeriodicPliHandler : in/out >
+    PliPacerHandler --> PliPriorityHandler : in/out >
+    RtpPaddingRemovalHandler --> PliPacerHandler : in/out >
+    BandwidthEstimationHandler --> RtpPaddingRemovalHandler : in/out >
+    RtcpFeedbackGenerationHandler --> BandwidthEstimationHandler : in/out >
+    RtpRetransmissionHandler --> RtcpFeedbackGenerationHandler : in/out >
+    SRPacketHandler --> RtpRetransmissionHandler : in/out >
     LayerDetectorHandler --> SRPacketHandler : in >
     PacketCodecParser --> LayerDetectorHandler : in start >
 
@@ -270,19 +270,7 @@ package "erizo"
 
     FecReceiverHandler --> RtcpProcessorHandler : out >
     LayerBitrateCalculationHandler --> FecReceiverHandler : out >
-    QualityFilterHandler --> LayerBitrateCalculationHandler : out >
     FakeKeyframeGeneratorHandler --> QualityFilterHandler : out >
-    RtpTrackMuteHandler --> FakeKeyframeGeneratorHandler : out >
-    RtpSlideShowHandler --> RtpTrackMuteHandler : out >
-    RtpPaddingGeneratorHandler --> RtpSlideShowHandler : out >
-    PeriodicPliHandler --> RtpPaddingGeneratorHandler : out >
-    PliPriorityHandler --> PeriodicPliHandler : out >
-    PliPacerHandler --> PliPriorityHandler : out >
-    RtpPaddingRemovalHandler --> PliPacerHandler : out >
-    BandwidthEstimationHandler --> RtpPaddingRemovalHandler : out >
-    RtcpFeedbackGenerationHandler --> BandwidthEstimationHandler : out >
-    RtpRetransmissionHandler --> RtcpFeedbackGenerationHandler : out >
-    SRPacketHandler --> RtpRetransmissionHandler : out >
     OutgoingStatsHandler --> SRPacketHandler : out >
     PacketWriter --> OutgoingStatsHandler : out start >
 
