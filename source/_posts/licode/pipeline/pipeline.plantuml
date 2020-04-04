@@ -19,22 +19,32 @@ package "erizo"
 
     }
 
-    class InboundLink
+    abstract class InboundLink
+    {
+        virtual void read(std::shared_ptr<DataPacket> packet) = 0;
+        virtual void readEOF() = 0;
+        virtual void transportActive() = 0;
+        virtual void transportInactive() = 0;
+    }
+
+    abstract class OutboundLink
     {
 
     }
 
-    class OutboundLink
+    class ContextImplBase<<Handler,HandlerContext>>
     {
-
+        Context* impl_;
+        std::weak_ptr<PipelineBase> pipelineWeak_;
+        PipelineBase* pipelineRaw_;
+        std::shared_ptr<H> handler_;
+        InboundLink* nextIn_;
+        OutboundLink* nextOut_;
+        bool attached_;
+        void initialize()
     }
 
-    class ContextImplBase<<H,HandlerContext>>
-    {
-
-    }
-
-    class PipelineContext
+    abstract class PipelineContext
     {
 
     }
@@ -42,14 +52,20 @@ package "erizo"
     class InboundContextImpl
     {
         HandlerDir dir = HandlerDir::IN;
+        void read(std::shared_ptr<DataPacket> packet) override
     }
 
-    class InboundHandlerContext
+    abstract class InboundHandlerContext
     {
-
+        virtual void fireRead(std::shared_ptr<DataPacket> packet) = 0;
+        virtual void fireReadEOF() = 0;
+        virtual void fireTransportActive() = 0;
+        virtual void fireTransportInactive() = 0;
+        virtual PipelineBase* getPipeline() = 0;
+        virtual std::shared_ptr<PipelineBase> getPipelineShared() = 0;
     }
 
-    class OutboundContextImpl
+    abstract class OutboundContextImpl
     {
         HandlerDir dir = HandlerDir::OUT;
     }
@@ -77,10 +93,18 @@ package "erizo"
     HandlerDir --o InboundContextImpl
     HandlerDir --o OutboundContextImpl
 
+    class HandlerBase<<InboundHandlerContext>>
+    {
+
+    }
+
     class InboundHandler
     {
         HandlerDir dir = HandlerDir::IN
     }
+
+    HandlerBase <|-- InboundHandler
+    HandlerBase --o InboundHandlerContext
 
     class PacketReader
     {
