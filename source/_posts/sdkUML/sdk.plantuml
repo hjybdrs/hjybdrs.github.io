@@ -18,7 +18,7 @@ package "webrtc"
     {
         class VideoReceiveStream
         {
-
+            Render *render = WebRtcVideoReceiveStream
         }
 
         class VideoSendStream
