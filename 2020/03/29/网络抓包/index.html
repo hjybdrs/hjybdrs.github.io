@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="tcpdump,wireshark,fiddler,https," />
 
 
 
@@ -79,19 +79,21 @@
 
 
 
-<meta name="description" content="12345678910class WaterMelon&amp;#123;    string name &#x3D; &quot;old deng&quot;;    string address &#x3D; &quot;guangzhou&#x2F;sichuan&quot;;    string work_skills &#x3D; &quot;rtc c++&quot;;    string lover &#x3D; &quot;dota&quot;;    WorkExp cvter &amp;#123;&quot;cvte&#x2F;guangz">
-<meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="http://yoursite.com/about/index.html">
+<meta name="description" content="介绍“源码面前，了无秘密”，同理在抓包工具面前，网络的各种情况也原型毕露。 本文主要给大家介绍三个主流的抓包工具以及如何对https 协议进行抓包，更多的是介绍工具的使用以及实操。 主要工具介绍工具主要包括：  tcpdump wireshark fiddler  实操tcpdump 实例1234567891011121314# tcpdump -i 指定对应的网卡 将抓包数据写入指定文件tcpd">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络抓包">
+<meta property="og:url" content="http://yoursite.com/2020/03/29/%E7%BD%91%E7%BB%9C%E6%8A%93%E5%8C%85/index.html">
 <meta property="og:site_name" content="豆三呈祥">
-<meta property="og:description" content="12345678910class WaterMelon&amp;#123;    string name &#x3D; &quot;old deng&quot;;    string address &#x3D; &quot;guangzhou&#x2F;sichuan&quot;;    string work_skills &#x3D; &quot;rtc c++&quot;;    string lover &#x3D; &quot;dota&quot;;    WorkExp cvter &amp;#123;&quot;cvte&#x2F;guangz">
+<meta property="og:description" content="介绍“源码面前，了无秘密”，同理在抓包工具面前，网络的各种情况也原型毕露。 本文主要给大家介绍三个主流的抓包工具以及如何对https 协议进行抓包，更多的是介绍工具的使用以及实操。 主要工具介绍工具主要包括：  tcpdump wireshark fiddler  实操tcpdump 实例1234567891011121314# tcpdump -i 指定对应的网卡 将抓包数据写入指定文件tcpd">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://yoursite.com/about/pic/watemelon.jpg">
-<meta property="article:published_time" content="2020-03-15T12:53:44.000Z">
-<meta property="article:modified_time" content="2020-05-02T15:52:48.783Z">
+<meta property="article:published_time" content="2020-03-29T14:01:30.000Z">
+<meta property="article:modified_time" content="2020-05-02T15:52:24.248Z">
 <meta property="article:author" content="hjybdrs">
+<meta property="article:tag" content="tcpdump">
+<meta property="article:tag" content="wireshark">
+<meta property="article:tag" content="fiddler">
+<meta property="article:tag" content="https">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/about/pic/watemelon.jpg">
 
 
 
@@ -121,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/about/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/03/29/网络抓包/"/>
 
 
 
 
 
-  <title>about | 豆三呈祥</title>
+  <title>网络抓包 | 豆三呈祥</title>
   
 
 
@@ -242,35 +244,171 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/29/%E7%BD%91%E7%BB%9C%E6%8A%93%E5%8C%85/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="hjybdrs">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="豆三呈祥">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">about</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">WaterMelon</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="built_in">string</span> name = <span class="string">"old deng"</span>;</span><br><span class="line">    <span class="built_in">string</span> address = <span class="string">"guangzhou/sichuan"</span>;</span><br><span class="line">    <span class="built_in">string</span> work_skills = <span class="string">"rtc c++"</span>;</span><br><span class="line">    <span class="built_in">string</span> lover = <span class="string">"dota"</span>;</span><br><span class="line">    WorkExp cvter &#123;<span class="string">"cvte/guangzhou/china"</span>,<span class="string">"2017-07-01---2020-04-24"</span>&#125;;</span><br><span class="line">    WorkExp newGoose &#123;<span class="string">"tencent/shenzhen/china"</span>,<span class="string">"2020-04-27---now"</span>&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<img src=".\pic\watemelon.jpg" style="zoom:50%;" />
+          <h1 class="post-title" itemprop="name headline">网络抓包</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-29T22:01:30+08:00">
+                2020-03-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/03/29/%E7%BD%91%E7%BB%9C%E6%8A%93%E5%8C%85/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2020/03/29/%E7%BD%91%E7%BB%9C%E6%8A%93%E5%8C%85/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>“源码面前，了无秘密”，同理在抓包工具面前，网络的各种情况也原型毕露。</p>
+<p>本文主要给大家介绍三个主流的抓包工具以及如何对https 协议进行抓包，更多的是介绍工具的使用以及实操。</p>
+<h1 id="主要工具介绍"><a href="#主要工具介绍" class="headerlink" title="主要工具介绍"></a>主要工具介绍</h1><p>工具主要包括：</p>
+<ul>
+<li>tcpdump</li>
+<li>wireshark</li>
+<li>fiddler</li>
+</ul>
+<h1 id="实操"><a href="#实操" class="headerlink" title="实操"></a>实操</h1><h2 id="tcpdump-实例"><a href="#tcpdump-实例" class="headerlink" title="tcpdump 实例"></a>tcpdump 实例</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> tcpdump -i 指定对应的网卡 将抓包数据写入指定文件</span></span><br><span class="line">tcpdump -w fxxkWall.pcap </span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 抓取经过任意网卡 8888 上的任意数据包(包括tcp 和udp)</span></span><br><span class="line">tcpdump -i any 'port 8888'</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 抓取经过任意网卡 协议是tcp 端口是8888 的数据包</span></span><br><span class="line">tcpdump -i any 'tcp port 8888'</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 抓取经过任意网卡 从源端口 协议是tcp 端口是8888 的数据包</span></span><br><span class="line">tcpdump -i any 'tcp src port 8888'</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 抓取经过任意网卡 从源端口 协议是tcp 端口是8888 的数据包 或者 从目的端口 协议是udp 端口是9999 的数据包</span></span><br><span class="line">tcpdump -i any 'tcp src port 8888 or udp dst port 9999'</span><br></pre></td></tr></table></figure>
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/tcpdump/" rel="tag"># tcpdump</a>
+          
+            <a href="/tags/wireshark/" rel="tag"># wireshark</a>
+          
+            <a href="/tags/fiddler/" rel="tag"># fiddler</a>
+          
+            <a href="/tags/https/" rel="tag"># https</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/03/29/2020plan/" rel="next" title="2020plan">
+                <i class="fa fa-chevron-left"></i> 2020plan
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/03/30/h264%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F/" rel="prev" title="h264数据格式">
+                h264数据格式 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -310,8 +448,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -362,6 +509,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#介绍"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#主要工具介绍"><span class="nav-number">2.</span> <span class="nav-text">主要工具介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实操"><span class="nav-number">3.</span> <span class="nav-text">实操</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#tcpdump-实例"><span class="nav-number">3.1.</span> <span class="nav-text">tcpdump 实例</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
