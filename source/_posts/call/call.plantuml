@@ -1,0 +1,218 @@
+@startuml
+
+package webrtc
+{
+    package module
+    {
+        class Module
+        {
+            Process();
+        }
+
+        class CallStatsObserver
+        {
+            OnRttUpdate();
+        }
+    }
+
+    package module.remote_bitrate_estimate
+    {
+        class RemoteBitrateObserver
+        {
+            OnReceiveBitrateChanged();
+        }
+
+        class TransportFeedbackSenderInterface
+        {
+            SendTransportFeedback();
+        }
+    }
+
+    package module.rtp_rtcp
+    {
+        class RtpPacketSender 
+        {
+            void InsertPacket();
+        }
+
+        class TransportSequenceNumberAllocator
+        {
+            AllocateSequenceNumber();
+        }
+
+        class TransportFeedbackObserver
+        {
+            AddPacket();
+            OnTransportFeedback();
+            GetTransportFeedbackVector();
+
+        }
+    }
+
+    package module.pacing
+    {
+        class PacketSender
+        {
+            void TimeToSendPacket();
+            void TimeToSendPadding();
+        }
+
+        class PacketRouter
+        {
+
+        }
+
+        
+        PacketSender <|-- PacketRouter
+        TransportSequenceNumberAllocator <|-- PacketRouter
+        RemoteBitrateObserver <|-- PacketRouter
+        TransportFeedbackSenderInterface <|-- PacketRouter
+
+        class Pacer
+        {
+            
+        }
+
+        class PacedSender
+        {
+            void InsertPacket();
+            PacketSender* packet_sender_;
+        }
+        
+        PacketSender --* PacedSender
+        Module <|-- Pacer
+        RtpPacketSender <|-- Pacer
+        Pacer <|-- PacedSender
+    }
+
+    package module.congestion_controll
+    {
+        class Observer 
+        {
+            OnNetworkChanged();
+        }
+
+        class SendSideCongestionController
+        {
+            PacedSender* pacer_;
+            Observer*    observer_; 
+        }
+
+        class RemoteEstimatorProxy
+        {
+
+        }
+
+        class ReceiveSideCongestionController
+        {
+            PacketRouter* packet_router;
+            RemoteEstimatorProxy remote_estimator_proxy_;
+        }
+
+        RemoteEstimatorProxy --* ReceiveSideCongestionController
+        PacketRouter --* ReceiveSideCongestionController
+        Module <|-- ReceiveSideCongestionController
+        Observer --* SendSideCongestionController
+        PacedSender --* SendSideCongestionController
+        TransportFeedbackObserver <|-- SendSideCongestionController
+        Module <|-- SendSideCongestionController
+        CallStatsObserver <|-- SendSideCongestionController
+        CallStatsObserver <|-- ReceiveSideCongestionController
+    }
+
+    package video
+    {
+        class SendDelayStats
+        {
+
+        }
+    }
+
+    package call
+    {
+        class RtpTransportControllerSendInterface
+        {
+            virtual PacketRouter* packet_router() = 0;
+            virtual PacedSender* pacer() = 0;
+            virtual SendSideCongestionController* send_side_cc() = 0;
+            virtual TransportFeedbackObserver* transport_feedback_observer() = 0;
+            virtual RtpPacketSender* packet_sender() = 0;
+            virtual const RtpKeepAliveConfig& keepalive_config() const = 0;
+            virtual void SetAllocatedSendBitrateLimits() = 0;
+        }
+
+        class RtpTransportControllerSend
+        {
+            PacketRouter packet_router_;
+            PacedSender pacer_;
+            SendSideCongestionController send_side_cc_;
+            RtpKeepAliveConfig keepalive_;
+        }
+        
+        PacketRouter --* RtpTransportControllerSend
+        PacedSender --* RtpTransportControllerSend
+        SendSideCongestionController --* RtpTransportControllerSend
+
+        RtpTransportControllerSendInterface <|-- RtpTransportControllerSend
+        
+        class LimitObserver
+        {
+
+        }
+
+        class BitrateAllocator
+        {
+            LimitObserver* observer;
+        }
+
+        LimitObserver --* BitrateAllocator
+
+        class Call
+        {
+            Map<VideoReceiveStream>                         _video_receive_streams;
+            ProcessThread                                   module_process;
+            ProcessThread                                   pacer_process;
+            CallStats                                       call_stats;
+            RtpTransportControllerSendInterface             transport_send_; 
+            BitrateAllocator                                bitrateAllocator;
+            SendDelayStats                                  video_send_Delay_stats;
+            ReceiveSideCongestionController                 recv_side_cc;
+            VideoReceiveStream* CreateVideoReceiveStream()
+            VideoSendStream*    CreateVideoSendStream()
+        }
+
+        ReceiveSideCongestionController --* Call
+        LimitObserver <|-- Call
+        Observer <|-- Call
+        RtpTransportControllerSendInterface --* Call
+        BitrateAllocator --* Call
+        SendDelayStats --* Call
+
+    }
+
+    
+
+    package video
+    {
+        class VideoReceiveStream
+        {
+        }
+
+        class VideoSendStream
+        {
+
+        }
+        
+        class CallStats 
+        {
+            CallStatsObserver observerlist;
+        }
+        CallStatsObserver --* CallStats
+
+        Module <|-- CallStats
+    }
+
+}
+
+
+@enduml
