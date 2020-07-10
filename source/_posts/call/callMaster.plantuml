@@ -1,0 +1,156 @@
+@startuml
+
+package webrtc
+{
+    class EncodedImageCallback
+    {
+        void OnEncodedImage();
+    }
+
+    class RtpVideoSenderInterface 
+    {
+
+    }
+
+    EncodedImageCallback <|-- RtpVideoSenderInterface
+
+    class RTPSenderVideo
+    {
+        SendEncodedImage();
+        SendVideo();
+        LogAndSendToNetwork();
+    }
+
+    class RtpPacketSender
+    {
+        EnqueuePackets();
+    }
+
+    class RtpSenderEgress
+    {
+        AddPacketToTransportFeedback();
+    }
+
+    class NonPacedPacketSender
+    {
+        uint16_t transport_sequence_number_;
+        RtpSenderEgress*        sender;
+        EnqueuePackets();
+    }
+
+    RtpSenderEgress --* NonPacedPacketSender
+
+    class PacingController
+    {
+        PacketQueue         packet_queue;
+        EnqueuePacket();
+        ProcessPacket();
+        GetPendingPacket();
+    }
+
+    class PacedSender
+    {
+        PacingController        pacing_controller;
+        EnqueuePackets();
+    }
+
+    PacingController --* PacedSender
+
+    RtpPacketSender <|-- PacedSender
+    RtpPacketSender <|-- NonPacedPacketSender
+
+    class RTPSender
+    {
+        RtpPacketSender*      paced_sender_;  
+        EnqueuePackets();
+    }
+
+    RtpPacketSender --* RTPSender
+
+    class RtpSenderContext
+    {
+        RtpPacketHistory packet_history;
+        RtpSenderEgress packet_sender;
+        RtpSenderEgress::NonPacedPacketSender non_paced_sender;
+        RTPSender packet_generator;
+    }
+
+    RtpSenderEgress --* RtpSenderContext
+
+    RTPSender --* RtpSenderContext
+
+    class ModuleRtpRtcpImpl2
+    {
+        RtpSenderContext*                  rtp_sender;
+    }
+
+    RtpSenderContext --* ModuleRtpRtcpImpl2
+
+    class RtpStreamSender
+    {
+        ModuleRtpRtcpImpl2*         rtp_rtcp;
+        RTPSenderVideo*             sender_video;
+        VideoFecGenerator*          fec_generator;
+    }
+
+    ModuleRtpRtcpImpl2 --* RtpStreamSender
+    RTPSenderVideo --* RtpStreamSender
+
+    class RtpVideoSender
+    {
+        OnEncodedImage();
+        CreateRtpStreamSenders();
+        vector<RtpStreamSender> *rtp_streams;
+    }
+    RtpStreamSender --* RtpVideoSender
+
+    RtpVideoSenderInterface <|-- RtpVideoSender
+
+    class RtpTransportControllerSendInterface
+    {
+
+    }
+
+    class RtpTransportControllerSend
+    {
+        RtpVideoSenderInterface* CreateRtpVideoSender();
+    }
+
+    RtpTransportControllerSendInterface <|-- RtpTransportControllerSend
+
+    package Video 
+    {
+        class EncoderSink
+        {
+
+        }
+
+        EncodedImageCallback <|-- EncoderSink
+
+        class VideoSendStreamImpl
+        {
+            void OnEncodedImage();
+            RtpVideoSenderInterface* rtp_video_sender;
+        }
+
+        EncoderSink <|-- VideoSendStreamImpl
+        RtpVideoSenderInterface --* VideoSendStreamImpl
+
+        class VideoSendStream 
+        {
+            VideoSendStreamImpl* send_stream_;
+        }
+
+        VideoSendStreamImpl --* VideoSendStream
+    }
+
+    class Call 
+    {
+        RtpTransportControllerSendInterface* transport_send_ptr_;
+    }
+
+    RtpTransportControllerSendInterface --* Call
+}
+
+
+@enduml
