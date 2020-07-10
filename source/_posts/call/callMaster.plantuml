@@ -16,6 +16,7 @@ package webrtc
 
     class RTPSenderVideo
     {
+        RTPSender*          rtp_sender_
         SendEncodedImage();
         SendVideo();
         LogAndSendToNetwork();
@@ -26,35 +27,78 @@ package webrtc
         EnqueuePackets();
     }
 
+    class RtpPacketHistory
+    {
+
+    }
+
+    class TransportFeedbackObserver
+    {
+        void OnAddPacket();
+        void OnTransportFeedback();
+    }
+
     class RtpSenderEgress
     {
+        RtpPacketHistory*          rtp_packet_history;
+        TransportFeedbackObserver* feed_back;
         AddPacketToTransportFeedback();
     }
+
+    RtpPacketHistory --* RtpSenderEgress  
 
     class NonPacedPacketSender
     {
         uint16_t transport_sequence_number_;
         RtpSenderEgress*        sender;
         EnqueuePackets();
+        PrepareForSend();
     }
 
     RtpSenderEgress --* NonPacedPacketSender
 
+    class PacketSender
+    {
+        SendPacket();
+    }
+
+    class PacketRouter
+    {
+        ModuleRtpRtcpImpl2  *rtpModule;
+        SendPacket(); 做序列号的递增
+    }
+
+    ModuleRtpRtcpImpl2 --* PacketRouter
+
+    PacketSender <|-- PacketRouter
+
     class PacingController
     {
+        PacketSender*       packet_sender;
         PacketQueue         packet_queue;
         EnqueuePacket();
         ProcessPacket();
         GetPendingPacket();
     }
 
-    class PacedSender
+    class Module
     {
-        PacingController        pacing_controller;
-        EnqueuePackets();
+        process();
     }
 
+    class PacedSender
+    {
+        PacketRouter*           packet_router;
+        PacingController        pacing_controller;
+        EnqueuePackets();
+        process(); 调用controller 的ProcessPacket
+    }
+
+    PacketRouter --* PacedSender
+    Module <|-- PacedSender
+
     PacingController --* PacedSender
+    PacketSender --* PacingController
 
     RtpPacketSender <|-- PacedSender
     RtpPacketSender <|-- NonPacedPacketSender
@@ -72,8 +116,12 @@ package webrtc
         RtpPacketHistory packet_history;
         RtpSenderEgress packet_sender;
         RtpSenderEgress::NonPacedPacketSender non_paced_sender;
-        RTPSender packet_generator;
+        RTPSender packet_generator; 三元组生成
     }
+
+    RtpPacketHistory --* RtpSenderContext  
+
+    RTPSender --* RTPSenderVideo
 
     RtpSenderEgress --* RtpSenderContext
 
@@ -111,12 +159,23 @@ package webrtc
 
     }
 
-    class RtpTransportControllerSend
+    class TransportFeedbackDemuxer
     {
-        RtpVideoSenderInterface* CreateRtpVideoSender();
+        OnAddPacket();handle
+        OnTransportFeedback();handle
     }
 
+    class RtpTransportControllerSend
+    {
+        TransportFeedbackDemuxer feedback_demuxer;
+        RtpVideoSenderInterface* CreateRtpVideoSender();
+        void OnAddPacket();
+        void OnTransportFeedback();
+    }
+
+    TransportFeedbackDemuxer --* RtpTransportControllerSend
     RtpTransportControllerSendInterface <|-- RtpTransportControllerSend
+    TransportFeedbackObserver <|-- RtpTransportControllerSend
 
     package Video 
     {
@@ -131,8 +190,9 @@ package webrtc
         {
             void OnEncodedImage();
             RtpVideoSenderInterface* rtp_video_sender;
+            RtpTransportControllerSendInterface* transport;
         }
-
+        RtpTransportControllerSendInterface --* VideoSendStreamImpl
         EncoderSink <|-- VideoSendStreamImpl
         RtpVideoSenderInterface --* VideoSendStreamImpl
 
