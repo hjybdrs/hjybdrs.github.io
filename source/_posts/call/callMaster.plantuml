@@ -7,9 +7,9 @@ package webrtc
         void OnEncodedImage();
     }
 
-    class RtpVideoSenderInterface 
+    abstract class RtpVideoSenderInterface 
     {
-
+        void OnEncodedImage();
     }
 
     EncodedImageCallback <|-- RtpVideoSenderInterface
@@ -22,7 +22,7 @@ package webrtc
         LogAndSendToNetwork();
     }
 
-    class RtpPacketSender
+    abstract class RtpPacketSender
     {
         EnqueuePackets();
     }
@@ -32,7 +32,7 @@ package webrtc
 
     }
 
-    class TransportFeedbackObserver
+    abstract class TransportFeedbackObserver
     {
         void OnAddPacket();
         void OnTransportFeedback();
@@ -40,8 +40,10 @@ package webrtc
 
     class RtpSenderEgress
     {
-        RtpPacketHistory*          rtp_packet_history;
+        RtpPacketHistory*          rtp_packet_history;虽然没有平滑，但是为了nack还是保存
+        以下两个通过构造函数传入依赖
         TransportFeedbackObserver* feed_back;
+        Transport*                 transport_;真实发送数据接口
         AddPacketToTransportFeedback();
     }
 
@@ -52,7 +54,7 @@ package webrtc
         uint16_t transport_sequence_number_;
         RtpSenderEgress*        sender;
         EnqueuePackets();
-        PrepareForSend();
+        PrepareForSend();自增transport序列号
     }
 
     RtpSenderEgress --* NonPacedPacketSender
@@ -64,8 +66,10 @@ package webrtc
 
     class PacketRouter
     {
-        ModuleRtpRtcpImpl2  *rtpModule;
+        map<uint32_t, RtpRtcpInterface*>  send_modules_map_
+        uint16_t            transport_seq_;
         SendPacket(); 做序列号的递增
+        AddSendRtpModuleToMap();
     }
 
     ModuleRtpRtcpImpl2 --* PacketRouter
@@ -74,7 +78,7 @@ package webrtc
 
     class PacingController
     {
-        PacketSender*       packet_sender;
+        PacketSender*       packet_sender;PaceSender 构造时候传入的packetRouter
         PacketQueue         packet_queue;
         EnqueuePacket();
         ProcessPacket();
@@ -127,10 +131,19 @@ package webrtc
 
     RTPSender --* RtpSenderContext
 
+    abstract class RtpRtcpInterface
+    {
+        void trySendPacket();
+    }
+
     class ModuleRtpRtcpImpl2
     {
         RtpSenderContext*                  rtp_sender;
+        void trySendPacket(); 调用rtp_sender 的rtpSenderEgress 发送
+        OnPacketsAcknowledged(vector<int> sequence_numbers);收到数据包ack 进行清除
     }
+
+    RtpRtcpInterface <|-- ModuleRtpRtcpImpl2
 
     RtpSenderContext --* ModuleRtpRtcpImpl2
 
@@ -144,19 +157,31 @@ package webrtc
     ModuleRtpRtcpImpl2 --* RtpStreamSender
     RTPSenderVideo --* RtpStreamSender
 
+    abstract class StreamFeedbackObserver
+    {
+        void OnPacketFeedbackVector();
+    }
+
     class RtpVideoSender
     {
-        OnEncodedImage();
-        CreateRtpStreamSenders();
+        将生成的rtpmodule 注册在PacketRouter 中
+        将自己注册到TransportFeedbackDemuxer 中，后续feedback 过来处理
+        RtpVideoSender();
+        OnEncodedImage(); RtpStreamSender->sender_video
+        std::vector<RtpStreamSender> CreateRtpStreamSenders(); 全局函数，但是影响该类
         vector<RtpStreamSender> *rtp_streams;
+        OnPacketFeedbackVector();
     }
+    
+    StreamFeedbackObserver <|-- RtpVideoSender
     RtpStreamSender --* RtpVideoSender
-
+    RtpVideoSender -- PacketRouter
     RtpVideoSenderInterface <|-- RtpVideoSender
 
-    class RtpTransportControllerSendInterface
+    abstract class RtpTransportControllerSendInterface
     {
-
+        TransportFeedbackObserver* transport_feedback_observer();
+        RtpVideoSenderInterface* CreateRtpVideoSender();
     }
 
     class TransportFeedbackDemuxer
