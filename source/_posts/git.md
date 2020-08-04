@@ -54,6 +54,35 @@ git checkout -b localBranchName origin/branchName
 git checkout -b localBranchName commit_id
 ```
 
+## 标签操作
+
+### 标签
+
+```shell
+# 轻量级标签
+# 在当前分支的当前commit 上打标签
+git tag v1.0
+# 查看所有标签
+git tag
+# 给指定commit 打标签
+git tag v1.1 commitId
+
+# 注释标签
+# -a 标签名  -m 注释
+git tag -a v1.2 -m "comment" commit
+
+# 推tags
+git push origin tagname
+# 推所有tags
+git push origin --tags
+# 删除本地的tag
+git tag -d tagname
+# 删除远程的tag
+git push origin :refs/tags/tagname
+# 查看tag 内容
+git show tagname
+```
+
 ## 提交处理
 
 ### cherry-pick
