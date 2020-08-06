@@ -54,3 +54,14 @@ a=ice-options:trickle
 ```
 
 https://www.jianshu.com/p/61e3c9e13456
+
+## sdp 中的 音视频描述
+```shell
+m=video 9 UDP/TLS/RTP/SAVPF 96 97 98 99 100 101 102 122 127 121 125 107 108 109 124 120 123 119 114 115 116
+```
+
+AVP     ==> audio video profile 不会启用rtcp 反馈，也不会根据rtcp反馈动态调整码率
+AVPF    ==> audio video profile feedback 
+SAVPF   ==> safe audio video profile feedback
+
+https://segmentfault.com/a/1190000020794391

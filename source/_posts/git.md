@@ -97,7 +97,14 @@ git cherry_pick <start-commit-id>..<end-commit-id>
 git cherry_pick <start-commit-id>^..<end-commit-id> 
 ```
 
+## 子模块
 
+### 修改某个子模块的url
+```shell
+# 修改.gitmodules 文件中，对应模块url 信息
+# 使用git submodule sync 将url 更新到.git/config 中
+# 如果第二步骤没有成功的话，手动更新.git/config 文件
+```
 
 ## 密钥生成
 

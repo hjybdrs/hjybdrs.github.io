@@ -41,3 +41,4 @@ $ perf top
 $ perf stats xxx.exe
 ```
 https://juejin.im/post/6844903950315945992
+http://linux.51yip.com/search/perf
