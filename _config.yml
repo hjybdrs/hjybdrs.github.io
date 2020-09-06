@@ -93,7 +93,9 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: next
+# theme: next
+# theme: hexo-theme-matery
+theme: fluid
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -106,8 +108,8 @@ deploy:
 tag_plantuml:
 	type: static
 
-symbols_count_time:
-  symbols: true         # 统计单篇文章字数
-  time: true            # 估算单篇文章阅读时间
-  total_symbols: false  # 统计站点总字数
-  total_time: false     # 估算站点总阅读时间
+wordCount:
+  enable: true # 将这个值设置为 true 即可.
+  postWordCount: true
+  min2read: true
+  totalCount: true
