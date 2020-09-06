@@ -6,6 +6,20 @@ tags:
 
 # Linux-Debug
 
+
+## gdb
+
+### 调试
+
+```shell
+# 支持三种类型的断点
+# 1 普通断点 break 
+# 2 观察断点 watch 
+# 3 普通断点 ？？ 
+
+
+watch value
+```
 ## coredump
 
 系统默认不会生成core 文件，依赖shell 中的设置。
@@ -29,16 +43,3 @@ $ ulimit -c unlimited
 # /proc/sys/kernal/core_pattern 可以格式化core 文件路径和文件名
 
 ```
-
-## performance
-
-### perf
-
-```shell
-# 可以使用/ 进行某些关键字查询
-$ perf top
-# 单独的监控某一个应用程序
-$ perf stats xxx.exe
-```
-https://juejin.im/post/6844903950315945992
-http://linux.51yip.com/search/perf

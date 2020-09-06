@@ -1,0 +1,92 @@
+@startuml
+
+package "webrtc-core" {
+
+    class RtcpHandler
+    {
+        RtcpObserver *rtcpObserver_;
+    }
+
+    abstract class H264RtpPackObserver 
+    {
+        void OnSendOutRtpData();// 更多是进行rtx 重传准备,拆包组包后调用
+    }
+
+    abstract class RtpSendChannelObserver 
+    {
+        void OnSendOutRtp();//srtp 处理 并真实发送数据
+    }
+
+    class PeerConnection 
+    {
+        PeerConnectionObserver* observer_;
+        RtcpHandler*            rtcpHandler_;
+        DtlsConnnectedObser*    dtlsObserer_;
+        void FeedMediaData();// 发送到对端
+        void FeedMediaDataByMbuf();// 发送到对端
+        void PacketVideoRtp();// 根据track 发送 track 有个h264 pack 
+    }
+
+    PeerConnection --|> RtpSendChannelObserver
+    PeerConnection --|> H264RtpPackObserver
+    RtcpHandler --* PeerConnection
+
+    PeerConnectionObserver --o PeerConnection
+
+    class PeerConnectionInterface
+    {
+    }
+
+    PeerConnectionInterface <|-- PeerConnection
+
+    class RtcpObserver
+    {
+    }
+
+    RtcpObserver <|-- PeerConnection
+
+    class PeerConnectionObserver
+    {
+    }
+
+}
+
+package "cgs" {
+
+    class cgsProtocolExecutor {
+        void onConnection();
+        void onMessageSendComplete();
+        void onMessage();
+    }
+
+    class cgsPeerConnection {
+        PeerConnectionInterface*    _peerconnection
+    }
+
+    PeerConnectionInterface --* cgsPeerConnection
+
+    cgsPeerConnection --|> PeerConnectionObserver
+
+    class cgsUser 
+    {
+        void cgsNaluMbufProcess(MbufMediaData);
+    }
+
+    cgsUser --|> DtlsConnnectedObser
+
+    cgsPeerConnection --* cgsUser
+    cgsProtocolExecutor --* cgsUser
+
+
+    class cgsController {
+        PeerConnectionFactoryInterface              _peerConnectionFactory;
+        map<int,CgsUser>                            _cgsUserList;
+        void processUdpPackst();
+        void sendUdpPacket();
+        void createCgsUser();
+    }
+
+    cgsUser --o cgsController
+}
+
+@enduml

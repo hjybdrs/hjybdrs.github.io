@@ -1,0 +1,207 @@
+@startuml
+
+' package "recv" {
+
+'     class H264RtpUnpackObserver
+'     {
+'     }
+    
+'     class VideoRfc3984
+'     {
+'         H264RtpUnpackObserver* h264_rtp_unpack_observer
+'     }
+
+'     H264RtpUnpackObserver --* VideoRfc3984
+
+'     class RtpRecvChannel
+'     {
+'         VideoRfc3984    *rtp_h264_unpack_;
+'     }
+
+'     H264RtpUnpackObserver <|-- RtpRecvChannel
+
+'     class RtpReceiver
+'     {
+'         void addRtpChannel();
+'         void removeRtpChannel();
+'         map<ssrc, RtpRecvChannel*> rtp_media_channelMap
+'         RtpRecvChannelObserver*    chanObserver_;
+'     }
+' }
+
+package "webrtc-core" {
+
+    class PeerInitializeParamInterface
+    {
+
+    }
+
+    class PeerConnectionInitializeParam
+    {
+
+    }
+
+    PeerInitializeParamInterface <|-- PeerConnectionInitializeParam
+
+    class PeerConnectionFactoryInterface
+    {
+        ' PeerInitializeParamInterface* CreatePeerInitializeParam();
+        ' PeerConnectionInterface *CreatePeerConnection(configFile);
+        ' PeerConnectionInterface *CreatePeerConnection(PeerInitializeParamInterface*);
+    }
+
+    PeerConnectionInitializeParam --o PeerConnectionFactoryInterface
+
+    class Ice
+    {
+        PeerConnection *pc;
+    }
+
+    class Dtls
+    {
+        PeerConnection *pc;
+    }
+
+    class RtcpHandler
+    {
+        RtcpObserver *rtcpObserver_;
+    }
+
+    ' RtpRecvChannelObserver --* RtpReceiver
+    ' RtpRecvChannel --* RtpReceiver
+
+    abstract class DtlsConnnectedObser {
+        void onDtlsConnectedObserver();
+    }
+
+    class PeerConnection 
+    {
+        PeerConnectionObserver* observer_;
+        Ice*                    ice_
+        Dtls*                   dtls_;
+        RtcpHandler*            rtcpHandler_;
+        DtlsConnnectedObser*    dtlsObserer_;
+        ' RtpReceiver*            rtpReceiver_;
+    }
+
+    ' PeerConnection --o RtpReceiver
+    ' RtpReceiver --* PeerConnection
+    DtlsConnnectedObser --* PeerConnection
+    RtcpHandler --* PeerConnection
+
+    PeerConnection --o Dtls
+    Dtls --* PeerConnection
+    PeerConnection --o Ice
+    Ice --* PeerConnection
+
+    PeerConnectionObserver --o PeerConnection
+
+    class PeerConnectionInterface
+    {
+        ' int32_t AddLocalAudioTrack(AudioCodeType audio_codec_type, uint32_t ssrc, string label) = 0;
+        ' int32_t RemoveLocalAudioTrack(uint32_t ssrc) = 0;
+        ' int32_t AddLocalVideoTrack(VideoCodeType video_codec_type, uint32_t ssrc, string label) = 0;
+        ' int32_t RemoveLocalVideoTrack(uint32_t ssrc) = 0;
+        ' int32_t AddDataChannel(const DataChannelInit* config) = 0;
+        ' int32_t RemoveDataChannel(const DataChannelInit* config) = 0;
+        ' int32_t CreateOffer(string& offer_sdp, const RTCOfferAnswerOptions& options) = 0;
+        ' int32_t CreateAnswer(string& answer_sdp, const RTCOfferAnswerOptions& options) = 0;
+        ' int32_t SetRemoteDescription(string& remote_sdp) = 0;
+        ' int32_t FeedMediaData(unique_ptr<MeidaData> media_data) = 0;
+        ' int32_t FeedChannelData(unique_ptr<Packet> data) = 0;
+        ' void RequestIFrame(uint32_t ssrc) = 0;
+        ' int32_t OnTime(uint64_t time_ms) = 0;
+        ' PeerConnectionType GetCurrentState() = 0;
+    }
+
+    PeerConnectionInterface <|-- PeerConnection
+
+    PeerConnectionInterface --o PeerConnectionFactoryInterface
+    ' class RtpRecvChannelObserver
+    ' {
+    '     void OnRequestRemoteIFrame(uint64_t ssrc);
+    '     void OnSendOutRawData(uint64_t ssrc, unique_ptr<PcMeidaData> media_data);
+    '     void OnNackReq(uint64_t chn_no,vector<uint16_t> &seqs);
+    '     uint32_t OnGetRtt();
+    '     void OnSendDumpData(unique_ptr<webrtccore::Packet> data);
+    ' }
+
+    ' RtpRecvChannelObserver <|-- PeerConnection
+
+    class RtcpObserver
+    {
+        ' void OnSendRtcpToRemote(char *rtcp_data, int32_t len, uint32_t local_ssrc, uint32_t remote_ssrc);
+        ' void OnHandleNack(vector<uint16_t> &seqs, uint32_t local_ssrc);
+        ' void OnRequestLocalIFrame(uint32_t local_ssrc);
+        ' uint32_t GetSampleRateKhz(uint32_t ssrc);
+        ' int32_t GetSendStat(RtpSendState& out_para, uint32_t ssrc);
+        ' int32_t GetRecvStat(RtpRecvState& out_para, uint32_t ssrc);
+    }
+
+    RtcpObserver <|-- PeerConnection
+
+    class PeerConnectionObserver
+    {
+        ' void OnIceConnectionChange(IceConnectionState new_state);
+        ' void OnConnectionChange(PeerConnectionState new_state);
+        ' void OnAddAudioTrack();
+        ' void OnRemoveAudioTrack(uint32_t ssrc);
+        ' void OnAddVideoTrack();
+        ' void OnRemoveVideoTrack(uint32_t ssrc);
+        ' void OnRecvMeidaData(unique_ptr<MeidaData> media_data);
+        ' void OnRecvChannelData(unique_ptr<Packet> data);
+        ' void OnSendDataToRemote(unique_ptr<Packet> packet);
+        ' void OnRequestIFrame(uint32_t ssrc);
+        ' void OnGetCandicateAddr(NetAddr addr);
+        ' void OnSendDumpData(char* dump_data, int32_t len);
+    }
+
+}
+
+package "cgs" {
+
+    class cgsProtocolExecutor {
+        void onConnection();
+        void onMessageSendComplete();
+        void onMessage();
+    }
+
+    class cgsPeerConnection {
+        PeerConnectionInterface*    _peerconnection
+    }
+
+    PeerConnectionInterface --* cgsPeerConnection
+
+    cgsPeerConnection --|> PeerConnectionObserver
+
+    class cgsUser {
+
+    }
+
+    cgsUser --|> DtlsConnnectedObser
+
+    cgsPeerConnection --* cgsUser
+    cgsProtocolExecutor --* cgsUser
+
+
+    class cgsController {
+        PeerConnectionFactoryInterface              _peerConnectionFactory;
+        map<int,CgsUser>                            _cgsUserList;
+        void processUdpPackst();
+        void sendUdpPacket();
+        void createCgsUser();
+    }
+
+    cgsUser --o cgsController
+
+    PeerConnectionFactoryInterface --o cgsController
+
+    class Packetizer {
+        PeerConnection*         _peerconnection;
+    }
+
+    PeerConnection --* Packetizer
+    cgsPeerConnection --o Packetizer
+}
+
+@enduml

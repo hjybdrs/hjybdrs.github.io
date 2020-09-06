@@ -14,6 +14,25 @@ useful file:
 * conductor.cc(examples/peerconnection/client)
 * simple_peer_connection.cc(examples/unityplugin)
 
+## 拉取webrtc 代码
+
+拉取分支
+```shell
+git clone https://chromium.googlesource.com/external/webrtc
+
+#设置git config
+#在 .git/config 文件中的  `[remote "origin"]` 节中添加以下内容：
+# fetch = +refs/branch-heads/*:refs/remotes/origin/*
+
+git pull
+
+# 拉取远端tags
+
+git fetch --tags
+```
+
+
+
 {% plantuml %}
 
 package "cricket"

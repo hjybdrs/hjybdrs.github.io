@@ -2,6 +2,7 @@
 title: Sdp
 date: 2020-07-30 19:37:45
 tags:
+    - webrtc
 ---
 
 # sdp
@@ -65,3 +66,65 @@ AVPF    ==> audio video profile feedback
 SAVPF   ==> safe audio video profile feedback
 
 https://segmentfault.com/a/1190000020794391
+
+
+## sdp 的格式
+
+webrtc 中，unified plan、plan B、plan A 是SDP 中多路媒体略的协商方式，在72 版本中，Chrome 默认使用unified plan 替换了Plan B。
+在浏览器端，打开chrome://webrtc-internals 可以查看到PeerConnection 使用的sdp 协商方式。
+```shell
+https://webrtc.github.io/samples/src/content/peerconnection/pc1/, { iceServers: [], iceTransportPolicy: all, bundlePolicy: balanced, rtcpMuxPolicy: require, iceCandidatePoolSize: 0, sdpSemantics: "unified-plan" },
+```
+
+* plan B : sdp 中，一个m 行描述多路media stream 以，msid 作为区分
+```shell
+a=group:BUNDLE audio
+a=msid-semantic: WMS stream-id-2 stream-id-1
+m=audio 9 UDP/TLS/RTP/SAVPF 111 103 104 9 0 8 106 105 13 110 112 113 126
+...
+a=mid:audio
+...
+a=rtpmap:103 ISAC/16000
+...
+a=ssrc:10 cname:cname
+a=ssrc:10 msid:stream-id-1 track-id-1
+a=ssrc:10 mslabel:stream-id-1
+a=ssrc:10 label:track-id-1
+a=ssrc:11 cname:cname
+a=ssrc:11 msid:stream-id-2 track-id-2
+a=ssrc:11 mslabel:stream-id-2
+a=ssrc:11 label:track-id-2
+```
+* unified plan: 一个m 行对弈一个media stream
+```shell
+a=group:BUNDLE 0 1
+a=msid-semantic: WMS
+m=audio 9 UDP/TLS/RTP/SAVPF 111 103 104 9 0 8 106 105 13 110 112 113 126
+...
+a=mid:0
+...
+a=sendrecv
+a=msid:- <track-id-1>
+...
+a=rtpmap:103 ISAC/16000
+...
+a=ssrc:10 cname:cname
+a=ssrc:10 msid: track-id-1
+a=ssrc:10 mslabel:
+a=ssrc:10 label:track-id-1
+m=audio 9 UDP/TLS/RTP/SAVPF 111 103 104 9 0 8 106 105 13 110 112 113 126
+...
+a=mid:1
+...
+a=sendrecv
+a=msid:- track-id-2
+...
+a=rtpmap:103 ISAC/16000
+...
+a=ssrc:11 cname:cname
+a=ssrc:11 msid: track-id-2
+a=ssrc:11 mslabel:
+a=ssrc:11 label:track-id-2
+```
+
+https://juejin.im/post/6844903792001974280

@@ -1,0 +1,51 @@
+@startuml
+
+package common 
+{
+    
+class Timer {
+    int rotation_;
+    int timeSlot_;
+    int delay_;
+    int interval_;
+    std::function callBack_;
+    std::shared_ptr<Timer> prev_;
+    std::shared_ptr<Timer> next_;
+}
+
+abstract class TimerTickStrategy {
+    int tickStep();
+}
+
+class CStyleTimerTick {
+
+}
+
+class ChronoTimerTick {
+
+}
+
+CStyleTimerTick --|> TimerTickStrategy
+ChronoTimerTick --|> TimerTickStrategy
+
+abstract class TWLObserver {
+    void SetTWLPktStats(uint32_t tickCount, uint32_t duration);
+}
+
+class TimerWheel {
+    int                     curSlots_;
+    std::shared_ptr<Timer>  slots_[];
+    TWLObserver             twlObserver_;
+    TimerTickStrategy       tickStrategy_;
+    void addTimer(Timer::Ptr);
+    void deleteTimer(Timer::Ptr);
+    void timerTick();
+}
+
+Timer --o TimerWheel
+TWLObserver --o TimerWheel
+TimerTickStrategy --o TimerWheel
+
+}
+
+@enduml
