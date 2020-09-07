@@ -1,8 +1,14 @@
 ---
 title: 视频jitterbuffer
 date: 2020-03-22 11:40:40
+category: 
+    - webrtc
 tags:
     - webrtc
+    - jitterbuffer
+    - pakcetbuffer
+    - referencefinder
+    - framebuffer
 ---
 
 # JitterBuffer
@@ -15,21 +21,26 @@ tags:
 
 作用： 包缓存，返回数据帧(如何定义帧？)到RtpVideoStreamReceiver
 
-主要流程：
-1、InsertPacket()
-2、UpdateMissingPackets()
-3、FindFrames()
-4、CallBack()
+{% pullquote mindmap mindmap-md %}
+- [PacketBuffer]
+  - size(512-2048个pkt)
+  - buffer
+    - sequence_buffer 保存pkt信息
+    - data_buffer 保存真实pkt
+  - InsertPacket() 插入数据包
+  - UpdateMissingPackets() 更新丢失pkt，用于检测P帧前的gap
+  - FindFrames() 查找可用帧，并回调
+  - PotentialNewFrame() 查找潜在连续帧
+  - PaddingReceived() 更新padding
+{% endpullquote %}
 
 ```c++
 void FindFrames(uint16_t seq) {
     for(最多找一圈，并且序列号是连续) {
         if(currentPacket == frame_end) {
             while(1) {
-
             }
             if(is_264) {
-
             }
             missing.erase();
             found_frames.insert();
@@ -37,6 +48,9 @@ void FindFrames(uint16_t seq) {
     }
 }
 ```
+可以考虑的两个点：
+* nackCount
+* max(min)recvtime
 
 ## ReferenceFinder
 
