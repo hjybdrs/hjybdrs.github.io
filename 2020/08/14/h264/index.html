@@ -1,0 +1,632 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="hjybdrs">
+  <meta name="keywords" content="">
+  <title>h264 - 豆三呈祥</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      
+        
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/prism/1.21.0/themes/prism.min.css" />
+      
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-08-14 09:35" pubdate>
+        August 14, 2020 am
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.4k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      20
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">h264</h1>
+            
+            <div class="markdown-body" id="post-body">
+              <h1 id="H264"><a href="#H264" class="headerlink" title="H264"></a>H264</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>H264 中，句法元素从大到小被组织为序列(GOP)、图像、切片、宏块、子宏块共五个层次。</p>
+<p>一个序列 = n 个图像帧<br>一个帧 = n 个切片<br>一个切片 = n 个宏块<br>一个宏块 = n 个子宏块  </p>
+<h2 id="码流结构"><a href="#码流结构" class="headerlink" title="码流结构"></a>码流结构</h2><p>码流结构从功能上分为两层：</p>
+<ul>
+<li>VCL(视频编码层)<br>  包括核心压缩引擎和快，宏块和片的语法级别定义，设计目标是尽可能独立于网络进行高效的编码。即编码处理的输出，表示被压缩编码后的视频数据序列</li>
+<li>NAL(网络提取层)<br>  负责将VCL 产生的比特字符串适配到各种各样的网络和多元环境中，覆盖所有片级以上的语法级别</li>
+</ul>
+<p><img src="./media_foramt.png" srcset="/img/loading.gif" alt="media_format"></p>
+<h2 id="NALU-HEADER"><a href="#NALU-HEADER" class="headerlink" title="NALU HEADER"></a>NALU HEADER</h2><pre><code class="txt">+---------------+
+|0|1|2|3|4|5|6|7|
++-+-+-+-+-+-+-+-+
+|F|NRI|   Type  |
++---------------+</code></pre>
+<p>NALU HEADER 数据位描述：</p>
+<ul>
+<li>F 在规范中一直为0</li>
+<li>NRI 表明这个NALU 的重要性</li>
+<li>Type 表明NALU 类型：<ul>
+<li>1- 23 单个NAL 数据包</li>
+<li>其他的组包格式</li>
+</ul>
+</li>
+</ul>
+<h2 id="几种常见的NALU-类型"><a href="#几种常见的NALU-类型" class="headerlink" title="几种常见的NALU 类型"></a>几种常见的NALU 类型</h2><p>主要介绍PPS、SPS和SEI:</p>
+<ul>
+<li><p>SPS(Sequence Parameter Sets，序列参数集):是H.264码流序列的第一个NALU。SPS 语法单元存放一个视频序列的共同特征。从SPS 中能获取图像的宽和高数据信息。如果SPS 丢失的话，解码大概率出现失败的情况。</p>
+</li>
+<li><p>PPS(Picture Parameter Sets，图像参数集): 是H.264码流序列的第二个NALU。PPS 语法单元存放一个视频图像的典型特征。</p>
+</li>
+<li><p>SEI(Supplemental Enhancement Information，补充增强信息):提供了向视频码流中加入额外信息的方法。</p>
+</li>
+</ul>
+<h2 id="webrtc-h264-pack"><a href="#webrtc-h264-pack" class="headerlink" title="webrtc h264 pack"></a>webrtc h264 pack</h2><h3 id="STAP-A"><a href="#STAP-A" class="headerlink" title="STAP-A"></a>STAP-A</h3><pre><code class="txt">0                   1                   2                   3
+0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|                          RTP Header                           |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|STAP-A NAL HDR |         NALU 1 Size           | NALU 1 HDR    |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|                         NALU 1 Data                           |
+:                                                               :
++               +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|               | NALU 2 Size                   | NALU 2 HDR    |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|                         NALU 2 Data                           |
+:                                                               :
+|                               +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|                               :...OPTIONAL RTP padding        |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
+STAP-A NAL HDR 格式如下
+
++---------------+
+|0|1|2|3|4|5|6|7|
++-+-+-+-+-+-+-+-+
+|F|NRI|  Type   |
++---------------+
+其中F 和NRI 取NALU 1 的F 和NRI。 TYPE 默认都是24</code></pre>
+<p>eg:<br>原始264 码流(带start-code):<br>sps [0  0  0  1  103  77  64  41  149  144  5  0  91  176  17  0  0  3  3  232  0  1  212  192  132]  pps [0  0  0  1  104  235  143  32] idr [0  0  0  1  101  184  4  11]</p>
+<p>编码出来后的数据:<br>[120  0  21  103  77  64  41  149  144  5  0  91  176  17  0  0  3  3  232  0  1  212  192  132]<br>STAP-A NAL HDR ==&gt;103 ==&gt; 0110 0111 ==&gt; 011(1 1000 = 24) ==&gt; 01111000(120)<br>0 21 =&gt; nalu 1 len 21<br>[0  4  104  235  143  32]<br>0 4  =&gt; nalu 2 len 4</p>
+<h3 id="FU-A"><a href="#FU-A" class="headerlink" title="FU-A"></a>FU-A</h3><pre><code class="txt">0                   1                   2                   3
+0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+| FU indicator  |   FU header   |                               |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+                               |
+|                                                               |
+|                         FU payload                            |
+|                                                               |
+|                               +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|                               :...OPTIONAL RTP padding        |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
+Figure 14.  RTP payload format for FU-A
+
+The FU indicator octet has the following format:
+
++---------------+
+|0|1|2|3|4|5|6|7|
++-+-+-+-+-+-+-+-+
+|F|NRI|  Type   |
++---------------+
+Values equal to 28 and 29 in the type field of the FU indicator octet identify an FU-A and an FU-B, respectively. 
+The use of the F bit is described in [Section 5.3].  
+The value of the NRI field MUST be set  according to the value of the NRI field in the fragmented NAL unit.
+
+
+The FU header has the following format:
++---------------+
+|0|1|2|3|4|5|6|7|
++-+-+-+-+-+-+-+-+
+|S|E|R|  Type   |
++---------------+
+
+S:     1 bit
+          When set to one, the Start bit indicates the start of a
+          fragmented NAL unit.  When the following FU payload is not the
+          start of a fragmented NAL unit payload, the Start bit is set
+          to zero.
+E:     1 bit
+          When set to one, the End bit indicates the end of a fragmented
+          NAL unit, i.e., the last byte of the payload is also the last
+          byte of the fragmented NAL unit.  When the following FU
+          payload is not the last fragment of a fragmented NAL unit, the
+          End bit is set to zero.
+
+R:     1 bit
+          The Reserved bit MUST be equal to 0 and MUST be ignored by the
+          receiver.
+
+Type:  5 bits
+          The NAL unit payload type was the fragmentation nalu type. </code></pre>
+<p>eg: 编码一个I 帧 第一个字节为0x65=101，进行了分组<br>原始数据为<br>0x65 =&gt; 0110-0101<br>[101  184  4  11  255]</p>
+<p>FU-idicator =&gt; 011 + 28(11100) =&gt; 01111100(0x7c)= 124<br>first fu-a FU-header =&gt; 100 + (nalu-type[00101])  =&gt; 10000101(0x85) = 133<br>middle fu-a FU-herader =&gt; 000 + (nalu-type[00101]) =&gt; 00000101(0x05) = 5<br>last fu-a FU-herader =&gt; 010 + (nalu-type[00101]) =&gt; 01000101(0x45) = 69<br><strong>不带naluHeader(101)的内容(0copy 客户端接收异常原因)</strong><br>第一个FU-A<br>[[124  133]  184  4  11  255]<br>中间的FU-A<br>[[124  5]  177  244  72  95]<br>最后一个FU-A<br>[[124  69]  212  53  47  240]</p>
+<h3 id="workflow"><a href="#workflow" class="headerlink" title="workflow"></a>workflow</h3><pre><code class="c++">// 初始化packetizer 的最大包长度、和最后一个包冗余空间
+RtpPacketizer packetizer(maxpayload_len, reduction_len);
+// 输入一帧数据和nalu 分割信息
+int num_packets = packetizer-&gt;setPayload(data, len, frag);
+
+void setPayload(data, len, frag) {
+    // 根据frag 将一帧数据分为多个nalu，并塞入到input_fragments_ 中
+    input_fragments_.push_back(Fragment());
+    // 根据长度、打包类型进行打包
+    GeneratePackets();
+    return num_packet_left;
+}
+
+void GeneratePackets() {
+    for(input_fragments) {
+        case SingleNalUnit: packetSignaleNalu()
+        case NonInterleaved: PacketizeFuA() or PacketizeStapA()
+    }
+}
+
+// 一个nalu 拆为多个packets
+void PacketizeFuA() {
+    // 1: 判断是否最后一个nalu，添加对应的 extenlen(头部扩展长度)
+    // 2: 需要发送的nalu的nalu header 不用保存，在nalu-header 保留nalu header 类型(fragment.length = naluHeadLen)
+    // 3: 每个包的负载大小为最大减去Fu-A 协议长度(indicator + header) 2 Byte
+    // 一个 nalu 14 bytes 包最大负载为5字节 
+    // (14+(5-1))/5 = 3(packets)  
+    // 14 / 3 = 4(bytes per packets) 
+    // 14 % 3 = 2(first packets) 2 3 3 3 3
+    // 4: 计算分为多少个包、计算每个包的长度
+    // 5: 将一个nalu 划分为多个PacketUnit 塞进 packets_
+}
+
+// 多个nalu 合并为一个packets
+void PacketizeStapA() {
+    // 循环(当前空间足够，即使是最后一个nalu 加上extlen 也足够)
+    // 将多个nalu 塞到多个PacketUnit 中，标识第一个包和最后一个包即可。
+}</code></pre>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/08/14/rtprtcp/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">rtprtcp</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/08/13/Linux-Cpu/">
+                        <span class="hidden-mobile">Linux-Cpu</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+    
+      <script  src="https://cdn.staticfile.org/prism/1.21.0/components/prism-core.min.js" ></script>
+      <script  src="https://cdn.staticfile.org/prism/1.21.0/plugins/autoloader/prism-autoloader.min.js" ></script>
+      
+    
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "h264&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

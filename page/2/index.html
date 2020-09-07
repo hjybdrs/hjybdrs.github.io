@@ -1,0 +1,807 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="hjybdrs">
+  <meta name="keywords" content="">
+  <title>豆三呈祥</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<body>
+  <header style="height: 100vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/lao_he.jpeg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-md">
+        <div class="py-5" id="board"
+          style=margin-top:0>
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2020/08/13/Linux-Cpu/">Linux-Cpu</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/08/13/Linux-Cpu/">
+          
+          
+            
+          
+          CPU如何查看CPU 数量一般来说，一颗物理CPU 上可以分出多个逻辑核心，加上intel 的超线程技术，可以在逻辑核心上再分出一倍数量的核心出来。
+# 如果是相同physical id 的cpu，那么是同一个物理核心封装的物理核或者超线程
+# 如果是相同core id 的cpu，那么是同一个逻辑核的超线程
+$ cat /proc/cpuinfo
+
+# 查看有多少个物理核心
+$ cat /proc
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-08-13 09:37" pubdate>
+              2020-08-13
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2020/08/05/C-Tips/">C++Tips</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/08/05/C-Tips/">
+          
+          
+            
+          
+          Tips移位操作// 需要移位的数字 &lt;&lt; 移位的次数n
+// 4*2^2 = 16
+4 &lt;&lt; 2 
+STLlower_bound upper_bound// 返回一个迭代器，指向键值&gt;= key的第一个元素
+// 如果没有找到合适的返回end()
+iterator lower_bound(const key_type&amp; key);
+// 返回一个迭代器，指向
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-08-05 14:45" pubdate>
+              2020-08-05
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2020/08/04/DevelopeKit/">DevelopeKit</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/08/04/DevelopeKit/">
+          
+          
+            
+          
+          DevelopeKitsCommandz.shzsh
+tldrtldr
+zip# 压缩打包一个文件夹
+zip -r dst.zip folder
+# 压缩打包一个文件
+zip dst.zip file
+把数据同时输出到文件和屏幕./happy_day | tee log.txt | cat
+重定向#表明把标准输出重定向到文件 
+./happy_day &gt; file
+
+#把标准错误输出重定向到
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-08-04 14:31" pubdate>
+              2020-08-04
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2020/08/02/PeerConnection/">PeerConnection</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/08/02/PeerConnection/">
+          
+          
+            
+          
+          PeerConnectionbased on commit: d4089cae47334a4228b69d6bb23f2e49ebb7496euseful file: 
+
+conductor.cc(examples/peerconnection/client)
+simple_peer_connection.cc(examples/unityplugin)
+
+拉取webrtc 代码拉取分支
+git 
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-08-02 17:42" pubdate>
+              2020-08-02
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/webrtc/">webrtc</a>
+            
+              <a href="/tags/PeerConnection/">PeerConnection</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2020/08/02/getStats/">getStats</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/08/02/getStats/">
+          
+          
+            
+          
+          getStats()based on commit: d4089cae47334a4228b69d6bb23f2e49ebb7496e
+call-chain
+
+Field
+frameRate: receiveFps、decodeFps、dropFps、renderFps
+bps: rtpBps(ori + fec)、rtxBps、payLoadBps(%)
+transport: rtt、jitte
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-08-02 11:08" pubdate>
+              2020-08-02
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/webrtc/">webrtc</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2020/07/30/Sdp/">Sdp</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/07/30/Sdp/">
+          
+          
+            
+          
+          sdpsdp 中的流媒体videoH264h264 有四种级别的画质，分别是baseline、extended、main 和high。
+
+baseline 基本画质，支持I/P 帧
+extended 进阶画质，支持I/P/B/SP/SI 帧(后两个没听说过) 
+main     主流画质，支持I/P/B 帧
+high     高级画质
+
+webrtc 在sdp 交换中有对视频描述如下：
+a=fmt
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-07-30 19:37" pubdate>
+              2020-07-30
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/webrtc/">webrtc</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2020/07/29/linux-debug/">linux-debug</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/07/29/linux-debug/">
+          
+          
+            
+          
+          Linux-Debuggdb调试# 支持三种类型的断点
+# 1 普通断点 break 
+# 2 观察断点 watch 
+# 3 普通断点 ？？ 
+
+
+watch value
+coredump系统默认不会生成core 文件，依赖shell 中的设置。
+$ ulimit -a
+# -c: core file size (blocks)         0 这一行表示不会有core 文件生成
+-t: c
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-07-29 14:49" pubdate>
+              2020-07-29
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2020/07/27/Security/">Security</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/07/27/Security/">
+          
+          
+            
+          
+          Security加解密对称加密加密和解密使用同一套秘钥，加密强度高，难以被破解。随之而来的问题就是如何安全的保存秘钥，特别是客户端庞大的时候，很难保证秘钥不被泄露。
+非对称加密公钥和私钥
+公钥和私钥都可以加密和解密，公钥加密私钥解密，私钥加密公钥解密。
+中间人攻击中间人在客户端和服务端中间，让客户端误以为是真实的服务端，从而获取相关内容。
+数字签名和数字证书数字签名：对data 进行hash，将h
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-07-27 11:14" pubdate>
+              2020-07-27
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/git/">git</a>
+            
+              <a href="/tags/%E5%8A%A0%E8%A7%A3%E5%AF%86/">加解密</a>
+            
+              <a href="/tags/openssl/">openssl</a>
+            
+              <a href="/tags/ssh/">ssh</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2020/03/29/%E7%BD%91%E7%BB%9C%E6%8A%93%E5%8C%85/">网络抓包</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/03/29/%E7%BD%91%E7%BB%9C%E6%8A%93%E5%8C%85/">
+          
+          
+            
+          
+          介绍“源码面前，了无秘密”，同理在抓包工具面前，网络的各种情况也原型毕露。
+本文主要给大家介绍三个主流的抓包工具以及如何对https 协议进行抓包，更多的是介绍工具的使用以及实操。
+主要工具介绍工具主要包括：
+
+tcpdump
+wireshark
+fiddler
+
+实操tcpdump 实例1234567891011121314# tcpdump -i 指定对应的网卡 将抓包数据写入指定文件tcpd
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-03-29 22:01" pubdate>
+              2020-03-29
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/tcpdump/">tcpdump</a>
+            
+              <a href="/tags/wireshark/">wireshark</a>
+            
+              <a href="/tags/fiddler/">fiddler</a>
+            
+              <a href="/tags/https/">https</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2020/03/29/2020plan/">2020plan</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/03/29/2020plan/">
+          
+          
+            
+          
+          2020 Plan基础内容TCP/IP要求:
+
+tcp
+tcp 握手与挥手
+tcp  option
+tcp 拥塞控制
+
+
+udp
+udp 编程范式
+
+
+抓包分析
+wireshark
+fiddler
+tcpdump
+
+
+
+流媒体getStats要求：
+
+熟悉getStats 调用链路(2020-08-30)
+熟悉getStats 内部相关数据获取原理(2020-09-30)
+
+封装与解封装要求：
+
+
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-03-29 16:56" pubdate>
+              2020-03-29
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <a class="extend prev" rel="prev" href="/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="iconfont icon-arrowright"></i></a>
+    </span>
+  </nav>
+  
+  <script>
+    for (ele of document.getElementById("pagination").getElementsByTagName("a")) {
+      ele.href += '#board';
+    }
+  </script>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+    
+      <script  src="https://cdn.staticfile.org/prism/1.21.0/components/prism-core.min.js" ></script>
+      <script  src="https://cdn.staticfile.org/prism/1.21.0/plugins/autoloader/prism-autoloader.min.js" ></script>
+      
+    
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "知进知退&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
