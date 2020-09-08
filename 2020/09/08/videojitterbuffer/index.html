@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="hjybdrs">
   <meta name="keywords" content="">
-  <title>视频jitterbuffer - 豆三呈祥</title>
+  <title>videojitterbuffer - 豆三呈祥</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
@@ -169,8 +169,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2020-03-22 11:40" pubdate>
-        March 22, 2020 am
+      <time datetime="2020-09-08 22:53" pubdate>
+        September 8, 2020 pm
       </time>
     </span>
   
@@ -181,7 +181,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      125 字
+      162 字
     </span>
   
 
@@ -191,7 +191,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      2
        分钟
     </span>
   
@@ -221,10 +221,12 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto" id="post">
             <!-- SEO header -->
-            <h1 style="display: none">视频jitterbuffer</h1>
+            <h1 style="display: none">videojitterbuffer</h1>
             
             <div class="markdown-body" id="post-body">
-              <h1 id="JitterBuffer"><a href="#JitterBuffer" class="headerlink" title="JitterBuffer"></a>JitterBuffer</h1><h2 id="RtpVideoStreamReceiver"><a href="#RtpVideoStreamReceiver" class="headerlink" title="RtpVideoStreamReceiver"></a>RtpVideoStreamReceiver</h2><h2 id="PacketBuffer"><a href="#PacketBuffer" class="headerlink" title="PacketBuffer"></a>PacketBuffer</h2><p>作用： 包缓存，返回数据帧(如何定义帧？)到RtpVideoStreamReceiver</p>
+              <h1 id="JitterBuffer"><a href="#JitterBuffer" class="headerlink" title="JitterBuffer"></a>JitterBuffer</h1><h2 id="RtpVideoStreamReceiver"><a href="#RtpVideoStreamReceiver" class="headerlink" title="RtpVideoStreamReceiver"></a>RtpVideoStreamReceiver</h2><img  src=http://www.plantuml.com/plantuml/svg/VLJDReCm3BxdAQAUjaEVe5CFwrQfcZGcq7QjGZ0JAWIMk9sghU--9C0QIf9S0EVxiKqSqZ5-O9z05z-GI-GByaEeNYnNA1b7ockc5Fse2cYpIXns0a6MZCE33MqbQs1DUuvPfxOgQ29i_Ev-PUCNufDy5hmjeDWrsdt3wZhNYSo5N5HSxrNpCn05o5iL4pMxSVuBd6tMANmTGQ5VQjWSiN75H6pQfgi1mOB3HKvWSStiB3ZBQz0Y4PInof2XId85yZIl8n4fudjNCBprwmNUT9w0ZyUojDmvO6YLtWR1OLiDpPe3K-pwmuCIM9C2XsgQpyIgSpxsgt-CrwsqZ_qa-udOSja6x4bGDCoXi_8ZxR7yaTdhE2LxTiU_ODOJc3FlHboxylhkT2YGi_I6fprpnKtvdkn8n2948O5ADU5txRbGudZVRH5dNE-3ECuxzt5AOB3Zf75ouwZPv9BB7m00>
+
+<h2 id="VideoReceiver"><a href="#VideoReceiver" class="headerlink" title="VideoReceiver"></a>VideoReceiver</h2><h2 id="VideoStreamDecoder"><a href="#VideoStreamDecoder" class="headerlink" title="VideoStreamDecoder"></a>VideoStreamDecoder</h2><h2 id="VCTiming"><a href="#VCTiming" class="headerlink" title="VCTiming"></a>VCTiming</h2><h2 id="PacketBuffer"><a href="#PacketBuffer" class="headerlink" title="PacketBuffer"></a>PacketBuffer</h2><p>作用： 包缓存，返回数据帧(如何定义帧？)到RtpVideoStreamReceiver</p>
 <blockquote class="pullquote mindmap mindmap-md"><ul>
 <li>[PacketBuffer]<ul>
 <li>size(512-2048个pkt)</li>
@@ -249,6 +251,11 @@
             while(1) {
             }
             if(is_264) {
+                // 如果不是关键帧，当前帧前面有丢失的数据包
+                // 充值data_buffer 相关数据包的状态
+                if(!iskeyframe &amp;&amp; gap()){
+                    reset_databuffer_status();
+                }
             }
             missing.erase();
             found_frames.insert();
@@ -299,18 +306,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2020/03/28/git/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">git 常用指令</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/03/15/webrtc%E7%9A%84Metrics%E9%87%87%E9%9B%86/">
-                        <span class="hidden-mobile">webrtc的Metrics采集</span>
+                      <a href="/2020/09/04/chrome-webrtc/">
+                        <span class="hidden-mobile">chrome-webrtc</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -459,7 +460,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "视频jitterbuffer&nbsp;",
+        "videojitterbuffer&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,

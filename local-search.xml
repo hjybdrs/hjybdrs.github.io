@@ -4,6 +4,39 @@
   
   
   <entry>
+    <title>videojitterbuffer</title>
+    <link href="/2020/09/08/videojitterbuffer/"/>
+    <url>/2020/09/08/videojitterbuffer/</url>
+    
+    <content type="html"><![CDATA[<h1 id="JitterBuffer"><a href="#JitterBuffer" class="headerlink" title="JitterBuffer"></a>JitterBuffer</h1><h2 id="RtpVideoStreamReceiver"><a href="#RtpVideoStreamReceiver" class="headerlink" title="RtpVideoStreamReceiver"></a>RtpVideoStreamReceiver</h2><img  src=http://www.plantuml.com/plantuml/svg/VLJDReCm3BxdAQAUjaEVe5CFwrQfcZGcq7QjGZ0JAWIMk9sghU--9C0QIf9S0EVxiKqSqZ5-O9z05z-GI-GByaEeNYnNA1b7ockc5Fse2cYpIXns0a6MZCE33MqbQs1DUuvPfxOgQ29i_Ev-PUCNufDy5hmjeDWrsdt3wZhNYSo5N5HSxrNpCn05o5iL4pMxSVuBd6tMANmTGQ5VQjWSiN75H6pQfgi1mOB3HKvWSStiB3ZBQz0Y4PInof2XId85yZIl8n4fudjNCBprwmNUT9w0ZyUojDmvO6YLtWR1OLiDpPe3K-pwmuCIM9C2XsgQpyIgSpxsgt-CrwsqZ_qa-udOSja6x4bGDCoXi_8ZxR7yaTdhE2LxTiU_ODOJc3FlHboxylhkT2YGi_I6fprpnKtvdkn8n2948O5ADU5txRbGudZVRH5dNE-3ECuxzt5AOB3Zf75ouwZPv9BB7m00><h2 id="VideoReceiver"><a href="#VideoReceiver" class="headerlink" title="VideoReceiver"></a>VideoReceiver</h2><h2 id="VideoStreamDecoder"><a href="#VideoStreamDecoder" class="headerlink" title="VideoStreamDecoder"></a>VideoStreamDecoder</h2><h2 id="VCTiming"><a href="#VCTiming" class="headerlink" title="VCTiming"></a>VCTiming</h2><h2 id="PacketBuffer"><a href="#PacketBuffer" class="headerlink" title="PacketBuffer"></a>PacketBuffer</h2><p>作用： 包缓存，返回数据帧(如何定义帧？)到RtpVideoStreamReceiver</p><blockquote class="pullquote mindmap mindmap-md"><ul><li>[PacketBuffer]<ul><li>size(512-2048个pkt)</li><li>buffer<ul><li>sequence_buffer 保存pkt信息</li><li>data_buffer 保存真实pkt</li></ul></li><li>InsertPacket() 插入数据包</li><li>UpdateMissingPackets() 更新丢失pkt，用于检测P帧前的gap</li><li>FindFrames() 查找可用帧，并回调</li><li>PotentialNewFrame() 查找潜在连续帧</li><li>PaddingReceived() 更新padding</li></ul></li></ul></blockquote><pre><code class="c++">void FindFrames(uint16_t seq) {    for(最多找一圈，并且序列号是连续) {        if(currentPacket == frame_end) {            while(1) {            }            if(is_264) {                // 如果不是关键帧，当前帧前面有丢失的数据包                // 充值data_buffer 相关数据包的状态                if(!iskeyframe &amp;&amp; gap()){                    reset_databuffer_status();                }            }            missing.erase();            found_frames.insert();        }    }}</code></pre><p>可以考虑的两个点：</p><ul><li>nackCount</li><li>max(min)recvtime</li></ul><h2 id="ReferenceFinder"><a href="#ReferenceFinder" class="headerlink" title="ReferenceFinder"></a>ReferenceFinder</h2><p>作用： 帧排队</p><h2 id="FrameBuffer"><a href="#FrameBuffer" class="headerlink" title="FrameBuffer"></a>FrameBuffer</h2><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
+    
+    
+    <categories>
+      
+      <category>webrtc</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>webrtc</tag>
+      
+      <tag>jitterbuffer</tag>
+      
+      <tag>pakcetbuffer</tag>
+      
+      <tag>referencefinder</tag>
+      
+      <tag>framebuffer</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>chrome-webrtc</title>
     <link href="/2020/09/04/chrome-webrtc/"/>
     <url>/2020/09/04/chrome-webrtc/</url>
@@ -339,39 +372,6 @@
     <tags>
       
       <tag>git</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>视频jitterbuffer</title>
-    <link href="/2020/03/22/videojitterbuffer/"/>
-    <url>/2020/03/22/videojitterbuffer/</url>
-    
-    <content type="html"><![CDATA[<h1 id="JitterBuffer"><a href="#JitterBuffer" class="headerlink" title="JitterBuffer"></a>JitterBuffer</h1><h2 id="RtpVideoStreamReceiver"><a href="#RtpVideoStreamReceiver" class="headerlink" title="RtpVideoStreamReceiver"></a>RtpVideoStreamReceiver</h2><h2 id="PacketBuffer"><a href="#PacketBuffer" class="headerlink" title="PacketBuffer"></a>PacketBuffer</h2><p>作用： 包缓存，返回数据帧(如何定义帧？)到RtpVideoStreamReceiver</p><blockquote class="pullquote mindmap mindmap-md"><ul><li>[PacketBuffer]<ul><li>size(512-2048个pkt)</li><li>buffer<ul><li>sequence_buffer 保存pkt信息</li><li>data_buffer 保存真实pkt</li></ul></li><li>InsertPacket() 插入数据包</li><li>UpdateMissingPackets() 更新丢失pkt，用于检测P帧前的gap</li><li>FindFrames() 查找可用帧，并回调</li><li>PotentialNewFrame() 查找潜在连续帧</li><li>PaddingReceived() 更新padding</li></ul></li></ul></blockquote><pre><code class="c++">void FindFrames(uint16_t seq) {    for(最多找一圈，并且序列号是连续) {        if(currentPacket == frame_end) {            while(1) {            }            if(is_264) {            }            missing.erase();            found_frames.insert();        }    }}</code></pre><p>可以考虑的两个点：</p><ul><li>nackCount</li><li>max(min)recvtime</li></ul><h2 id="ReferenceFinder"><a href="#ReferenceFinder" class="headerlink" title="ReferenceFinder"></a>ReferenceFinder</h2><p>作用： 帧排队</p><h2 id="FrameBuffer"><a href="#FrameBuffer" class="headerlink" title="FrameBuffer"></a>FrameBuffer</h2><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
-    
-    
-    <categories>
-      
-      <category>webrtc</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>webrtc</tag>
-      
-      <tag>jitterbuffer</tag>
-      
-      <tag>pakcetbuffer</tag>
-      
-      <tag>referencefinder</tag>
-      
-      <tag>framebuffer</tag>
       
     </tags>
     

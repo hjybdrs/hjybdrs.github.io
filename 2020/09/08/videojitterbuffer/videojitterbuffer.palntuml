@@ -1,0 +1,44 @@
+@startuml
+
+package "webrtc"
+{
+    abstract class VideoSinkInterface<VideoFrame> {
+        void OnFrame();
+    }
+
+    abstract class EncodedImageCallback {
+        void OnEncodedImage();
+    }
+
+    abstract class NackSender {
+        void SendNack();
+    }
+
+    abstract class KeyFrameRequestSender {
+        void RequestKeyFrame();
+    }
+
+    abstract class OnCompleteFrameCallback {
+        void OnCompleteFrame();
+    }
+
+    abstract class Syncable {
+
+    }
+
+    abstract class CallStatsObserver {
+        void OnRttUpdate();
+    }
+
+    class VideoReceiverStream {
+        void getStats()
+    }
+
+    class VoiceMediaChannel {
+        void getStats()
+    }
+
+}
+
+
+@enduml
