@@ -181,7 +181,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      91 字
+      125 字
     </span>
   
 
@@ -226,36 +226,40 @@
             <div class="markdown-body" id="post-body">
               <h1 id="JitterBuffer"><a href="#JitterBuffer" class="headerlink" title="JitterBuffer"></a>JitterBuffer</h1><h2 id="RtpVideoStreamReceiver"><a href="#RtpVideoStreamReceiver" class="headerlink" title="RtpVideoStreamReceiver"></a>RtpVideoStreamReceiver</h2><h2 id="PacketBuffer"><a href="#PacketBuffer" class="headerlink" title="PacketBuffer"></a>PacketBuffer</h2><p>作用： 包缓存，返回数据帧(如何定义帧？)到RtpVideoStreamReceiver</p>
 <blockquote class="pullquote mindmap mindmap-md"><ul>
-<li><a href="https://hunterx.xyz/hexo-simple-mindmap-plugin-intro.html" target="_blank" rel="noopener">Hexo 的思维导图插件</a><ul>
-<li>前言</li>
-<li>使用方法<ul>
-<li>一</li>
-<li>二</li>
-<li>三</li>
+<li>[PacketBuffer]<ul>
+<li>size(512-2048个pkt)</li>
+<li>buffer<ul>
+<li>sequence_buffer 保存pkt信息</li>
+<li>data_buffer 保存真实pkt</li>
 </ul>
 </li>
-<li>太长不看</li>
-<li>参考资料</li>
+<li>InsertPacket() 插入数据包</li>
+<li>UpdateMissingPackets() 更新丢失pkt，用于检测P帧前的gap</li>
+<li>FindFrames() 查找可用帧，并回调</li>
+<li>PotentialNewFrame() 查找潜在连续帧</li>
+<li>PaddingReceived() 更新padding</li>
 </ul>
 </li>
 </ul>
 </blockquote>
 
-<p>主要流程：<br>1、InsertPacket()<br>2、UpdateMissingPackets()<br>3、FindFrames()<br>4、CallBack()</p>
 <pre><code class="c++">void FindFrames(uint16_t seq) {
     for(最多找一圈，并且序列号是连续) {
         if(currentPacket == frame_end) {
             while(1) {
-
             }
             if(is_264) {
-
             }
             missing.erase();
             found_frames.insert();
         }
     }
 }</code></pre>
+<p>可以考虑的两个点：</p>
+<ul>
+<li>nackCount</li>
+<li>max(min)recvtime</li>
+</ul>
 <h2 id="ReferenceFinder"><a href="#ReferenceFinder" class="headerlink" title="ReferenceFinder"></a>ReferenceFinder</h2><p>作用： 帧排队</p>
 <h2 id="FrameBuffer"><a href="#FrameBuffer" class="headerlink" title="FrameBuffer"></a>FrameBuffer</h2><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">
             </div>
@@ -263,11 +267,26 @@
             <div>
               <div class="post-metas mb-3">
                 
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/webrtc/">webrtc</a>
+                    
+                  </div>
+                
                 
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
                       <a class="hover-with-bg" href="/tags/webrtc/">webrtc</a>
+                    
+                      <a class="hover-with-bg" href="/tags/jitterbuffer/">jitterbuffer</a>
+                    
+                      <a class="hover-with-bg" href="/tags/pakcetbuffer/">pakcetbuffer</a>
+                    
+                      <a class="hover-with-bg" href="/tags/referencefinder/">referencefinder</a>
+                    
+                      <a class="hover-with-bg" href="/tags/framebuffer/">framebuffer</a>
                     
                   </div>
                 

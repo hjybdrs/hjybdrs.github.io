@@ -237,22 +237,15 @@ git
           
           JitterBufferRtpVideoStreamReceiverPacketBuffer作用： 包缓存，返回数据帧(如何定义帧？)到RtpVideoStreamReceiver
 
-Hexo 的思维导图插件
-前言
-使用方法
-一
-二
-三
+[PacketBuffer]
+size(512-2048个pkt)
+buffer
+sequence_buffer 保存pkt信息
+data_buffer 保存真实pkt
 
 
-太长不看
-参考资料
+InsertPacket() 插入数据包
 
-
-
-
-
-主要流程：1、InsertPacket()2、UpdateMissingPackets()3、FindFrames()4、Cal
         </a>
       </p>
 
@@ -266,11 +259,26 @@ Hexo 的思维导图插件
           </div>
         
         
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/webrtc/">webrtc</a>
+            
+          </div>
+        
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
               <a href="/tags/webrtc/">webrtc</a>
+            
+              <a href="/tags/jitterbuffer/">jitterbuffer</a>
+            
+              <a href="/tags/pakcetbuffer/">pakcetbuffer</a>
+            
+              <a href="/tags/referencefinder/">referencefinder</a>
+            
+              <a href="/tags/framebuffer/">framebuffer</a>
             
           </div>
         
