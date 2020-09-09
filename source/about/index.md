@@ -8,14 +8,12 @@ layout: about
 
 class WaterMelon
 {
-    string name = "eric";
+    string name = "leyn";
     string address = "shenzhen/guangzhou/sichuan";
     string work_skills = "rtc c++";
-    list hobby = ["dota", "rope skipping"];
-    WorkExp cvte {"cvte/guangzhou/china","2017-07-01---2020-04-24"};
-    WorkExp tencent {"tencent/shenzhen/china","2020-04-27---now"};
+    list hobby = ["dota", "climb"];
+    WorkExp cvte {"cvte/guangzhou/china","almost 3 years"};
+    WorkExp tencent {"tencent/shenzhen/china","just a moment"};
 }
 
 ```
-
-<img src=".\pic\watemelon.jpg" style="zoom:50%;" />

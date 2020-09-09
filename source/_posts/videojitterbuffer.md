@@ -236,7 +236,43 @@ void FindFrames(uint16_t seq) {
 * nackCount
 * max(min)recvtime
 
-## ReferenceFinder
+## RtpFrameReferenceFinder
 
-作用： 帧排队
+作用：找到每一个帧的参考帧，关键帧是自参考，后续的GOP内的每一帧都参考上一帧。
+
+{% pullquote mindmap mindmap-md %}
+- [RtpFrameReferenceFinder]
+  - ManageFrame()
+    - ManageFrameInternal()
+    - ManageFramePidOrSeqNum()
+  - PaddingReceived()
+  - UpdateLastPictureIdWithPadding()
+  - RetryStashedFrames()
+  - ClearTo()
+{% endpullquote %}
+
+```c++
+void ManageFramePidOrSeqNum() {
+    // 1.插入关键帧 last_seq_num_gop(关键帧最后一个包序列号，作为下一帧的依赖)
+    // 2.关键帧为空，直接缓存
+    // 3.删除较老的关键帧信息，至少保存一个关键帧序列号
+    // 4.如果是P帧的话，判断序列号是否和上一个连续帧的最后一个序列号相等，否则返回缓存
+    // 5.更新关键帧序列的最后一个连续帧序列号，作为下一帧的依赖，和1 相互呼应
+    // 6.更新最后一个序列号考虑padding 场景
+}
+
+void UpdateLastPictureIdWithPadding(seq) {
+    // 1.如果当前序列号比关键帧序列号还老，返回
+    // 2.获取当前seq 所依赖的关键帧信息
+    // 3.如果有因padding 包存在可以使得序列号连续的，更新包的序列号
+    // 4.极端情况下，清楚关键帧信息和状态
+}
+
+void RetryStashedFrames() {
+    // 有两种情况可以尝试从stashed 中查找
+    // a. 缓存帧遍历查找
+    // b. 因padding 包的存在，可以使得序列号连续
+    // 1. 从缓存帧处遍历，查看是否能找到连续的帧
+}
+```
 ## FrameBuffer
