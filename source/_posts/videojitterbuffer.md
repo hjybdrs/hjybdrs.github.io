@@ -14,12 +14,36 @@ tags:
 
 # JitterBuffer
 
+based on:m74(commit cc1b32545db7823b85f5a83a92ed5f85970492c9)
+
 ## RtpVideoStreamReceiver
 
 {% plantuml %}
 
 package "webrtc"
 {
+    abstract class DecodedImageCallback {
+        void Decode(); 解码完成后的回调
+    }
+
+    abstract class VideoDecoder {
+        void Decode();
+        void RegisterDecodeCompleteCallback(DecodedImageCallback* cb);
+    }
+
+    class H264Decoder {
+        void Create();
+    }
+
+    class H264DecoderImpl {
+        void RegisterDecodeCompleteCallback(DecodedImageCallback* cb);
+    }
+
+    DecodedImageCallback --o H264DecoderImpl
+
+    H264Decoder --|> VideoDecoder
+    H264DecoderImpl --|> H264Decoder
+
     abstract class VideoSinkInterface<VideoFrame> {
         void OnFrame();
     }
@@ -73,9 +97,31 @@ package "webrtc"
         VCMTiming* vcmtiming_;
     }
 
+    class VCMGenericDecoder {
+        void Decode();
+        VideoDecoder decoder_;
+    }
+
+    VideoDecoder --o VCMGenericDecoder
+
+    class VCMDecodedFrameCallback {
+
+    }
+
+    VCMDecodedFrameCallback --|> DecodedImageCallback
+
+
     class VCMCodecDataBase {
        VCMGenericDecoder* GetDecoder(Frame, VCMDecodedFrameCallback* cb);
+       void RegisterExternalDecoder();
+       VCMGenericDecoder* CreateAndInitDecoder();创建并初始化解码器
+       VCMGenericDecoder ptr_decoder_;
     }
+
+    VCMGenericDecoder --o VCMCodecDataBase
+    VCMDecodedFrameCallback --o VCMCodecDataBase
+    VCMDecodedFrameCallback --o VideoReceiver
+
 
     class VideoReceiver {
         VCMTiming* vcmtiming_;
@@ -83,7 +129,10 @@ package "webrtc"
         VCMDecodedFrameCallback _decodedFramecb; 
         void RegisterReceiveCallback(VCMReceiveCallback* cb);  cb 就是VideoStreamDecoder 调用设置 _decodedFramecb
         void Decode();
+        void RegisterExternalDecoder(VideoDecoder* decoder);
     }
+
+    VideoDecoder --o VideoReceiver
     VCMCodecDataBase --o VideoReceiver
     VCMTiming --o RtpVideoStreamReceiver
     VCMTiming --o FrameBuffer
@@ -96,7 +145,11 @@ package "webrtc"
 
     class VideoStreamDecoder {
         VideoReceiver videoReceiver_;
+        void FrameToRender();
+        VideoSinkInterface* incoming_video_stream_; 实际上就是VideoReceiveStream
     }
+
+    IncomingVideoStream --o VideoStreamDecoder
 
     VideoStreamDecoder --|> VCMReceiveCallback
 

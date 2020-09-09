@@ -256,7 +256,7 @@ post:  # 部分配置同时控制自定义页面，注意备注
     specific: false  # 开启后，只有在文章 Front-matter 里指定 `mermaid: true` 才会在文章页启动公式转换，以便在页面不包含公式时提高加载速度
     options: { theme: 'default' }  # 接口选项，具体可见：http://mermaid-js.github.io/mermaid/#/mermaidAPI
   comments:  # 评论
-    enable: false  # 开启评论
+    enable: true  # 开启评论
     type: disqus  # 指定使用的评论模块  available: disqus | valine | gitalk | utterances | changyan | livere | remark42
 
 
@@ -279,7 +279,7 @@ utterances:
 
 # Disqus
 disqus:
-  shortname: # your shortname
+  shortname: fluid
   # The following are Disqusjs configurations, please ignore if DisqusJS is not required
   # 以下为 Disqusjs 支持, 国内用户如果想使用 Disqus 建议配合使用
   # https://github.com/SukkaW/DisqusJS

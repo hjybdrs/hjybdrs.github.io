@@ -18,6 +18,9 @@ $ perf top
 $ perf stats xxx.exe
 # task-clock 指的是占用了多少任务时钟周期，越高说明多数时间话费在CPU 计算上
 
+$ perf record -g -e kmem:* -F 99 -p 12413 -- sleep 20
+$ perf record -g -e kmem:* -F 99 command
+$ perf kmem -i perf.data --caller stat
 # perf 生成火焰图
 FlameGraph/stackcollapse-perf.pl result.perf > result.folded
 FlameGraph/flamegraph.pl result.folded > cpu.svg
