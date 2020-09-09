@@ -105,7 +105,7 @@ package "webrtc"
     VideoDecoder --o VCMGenericDecoder
 
     class VCMDecodedFrameCallback {
-
+        void Decode(); h264解码器回调到此处，再到VideoStreamDecoder 执行FrameRender
     }
 
     VCMDecodedFrameCallback --|> DecodedImageCallback
