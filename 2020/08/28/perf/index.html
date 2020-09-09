@@ -181,7 +181,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      398 字
+      424 字
     </span>
   
 
@@ -191,7 +191,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      4
+      5
        分钟
     </span>
   
@@ -238,12 +238,13 @@ $ perf stats xxx.exe
 </code></pre>
 </li>
 </ul>
+<p>$ perf record -g -e kmem:* -F 99 -p 12413 – sleep 20<br>$ perf record -g -e kmem:* -F 99 command<br>$ perf kmem -i perf.data –caller stat</p>
 <h1 id="perf-生成火焰图"><a href="#perf-生成火焰图" class="headerlink" title="perf 生成火焰图"></a>perf 生成火焰图</h1><p>FlameGraph/stackcollapse-perf.pl result.perf &gt; result.folded<br>FlameGraph/flamegraph.pl result.folded &gt; cpu.svg</p>
 <p>diff 火焰图</p>
 <p>除了通常的几种火焰图，我们其实还可以将两个火焰图进行 diff，生成一个 diff 火焰图，</p>
 <p>./FlameGraph/difffolded.pl perf.folded perf.folded1 | ./flamegraph.pl &gt; ../diff.svg</p>
 <p>```<br><a href="https://juejin.im/post/6844903950315945992" target="_blank" rel="noopener">https://juejin.im/post/6844903950315945992</a><br><a href="http://linux.51yip.com/search/perf" target="_blank" rel="noopener">http://linux.51yip.com/search/perf</a><br><a href="https://blog.csdn.net/qq_15437667/article/details/50724330" target="_blank" rel="noopener">https://blog.csdn.net/qq_15437667/article/details/50724330</a><br><a href="https://www.cnblogs.com/sunsky303/p/8328836.html" target="_blank" rel="noopener">https://www.cnblogs.com/sunsky303/p/8328836.html</a><br><a href="http://www.brendangregg.com/perf.html" target="_blank" rel="noopener">http://www.brendangregg.com/perf.html</a></p>
-
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">
             </div>
             <hr>
             <div>
@@ -280,6 +281,36 @@ $ perf stats xxx.exe
               
             </div>
 
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+  <div class="disqus" style="width:100%">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2020/08/28/perf/';
+        this.page.identifier = '/2020/08/28/perf/';
+      };
+      function loadDisqus() {
+        (function () {
+          var d = document,
+            s = d.createElement('script');
+          s.src = '//' + 'fluid' + '.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      }
+      waitElementVisible('disqus_thread', loadDisqus);
+    </script>
+    <noscript>Please enable JavaScript to view the
+      <a href="https://disqus.com/?ref_noscript" target="_blank" rel="nofollow noopener noopener">comments powered by Disqus.</a>
+    </noscript>
+  </div>
+
+
+              </article>
             
           </article>
         </div>
