@@ -1,5 +1,5 @@
 ---
-title: linux-debug
+title: LinuxDebug
 date: 2020-07-29 14:49:57
 tags:
 ---

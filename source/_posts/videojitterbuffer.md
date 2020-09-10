@@ -1,5 +1,5 @@
 ---
-title: videojitterbuffer
+title: Videojitterbuffer
 date: 2020-09-08 22:53:40
 category: 
     - webrtc

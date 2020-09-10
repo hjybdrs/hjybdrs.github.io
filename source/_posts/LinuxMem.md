@@ -1,5 +1,5 @@
 ---
-title: Linux-Mem
+title: LinuxMem
 date: 2020-08-31 14:42:11
 tags:
 ---

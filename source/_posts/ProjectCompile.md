@@ -1,5 +1,5 @@
 ---
-title: project-compile
+title: ProjectCompile
 date: 2020-09-04 14:41:47
 tags:
     - webrtc
@@ -47,4 +47,21 @@ ninja -C out/Default
 
 # 生成的可执行文件在 Chromium.app/Contents/MacOS
 # https://chromium.googlesource.com/chromium/src/+/master/docs/mac_build_instructions.md
+
+# 切换到指定分支编译 
+# 拉取代码 拉取tags
+git fetch && git fetch --tags
+# 根据tag 切换到指定的tag
+git checkout -b localbranch tagname
+# 更新所有submodule 的代码
+gclient sync --with_branch_heads --with_tags
+# chromium 对应分支信息
+# https://chromiumdash.appspot.com/branches
+# http://www.chromium.org/developers/how-tos/get-the-code/working-with-release-branches
+# https://blog.csdn.net/chinabinlang/article/details/100122002
+
+# 开启日志
+
+./chrome --enable-logging --v=1
+# https://blog.csdn.net/foruok/article/details/71080012
 ```

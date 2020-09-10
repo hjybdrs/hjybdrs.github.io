@@ -1,5 +1,5 @@
 ---
-title: git 常用指令
+title: Git 常用指令
 date: 2020-03-28 10:02:29
 tags: 
     - git
@@ -81,6 +81,8 @@ git tag -d tagname
 git push origin :refs/tags/tagname
 # 查看tag 内容
 git show tagname
+# 切换到指定tag 对应的代码
+git checkout -b localbranchname tagname
 ```
 
 ## 提交处理

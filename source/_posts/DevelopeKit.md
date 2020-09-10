@@ -42,3 +42,9 @@ zip dst.zip file
 ./happy_day 2>&1 file
 ./happy_day &> file
 ```
+
+## grep 和find 配合
+
+```shell
+find ./dir -name "*cpp" | xargs grep "xxxx"
+```
