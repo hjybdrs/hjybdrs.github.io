@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="hjybdrs">
   <meta name="keywords" content="">
-  <title>videojitterbuffer - 豆三呈祥</title>
+  <title>Videojitterbuffer - 豆三呈祥</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
@@ -181,7 +181,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      171 字
+      489 字
     </span>
   
 
@@ -191,7 +191,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      2
+      5
        分钟
     </span>
   
@@ -221,7 +221,7 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto" id="post">
             <!-- SEO header -->
-            <h1 style="display: none">videojitterbuffer</h1>
+            <h1 style="display: none">Videojitterbuffer</h1>
             
             <div class="markdown-body" id="post-body">
               <h1 id="JitterBuffer"><a href="#JitterBuffer" class="headerlink" title="JitterBuffer"></a>JitterBuffer</h1><p>based on:m74(commit cc1b32545db7823b85f5a83a92ed5f85970492c9)</p>
@@ -268,16 +268,45 @@
 <li>nackCount</li>
 <li>max(min)recvtime</li>
 </ul>
-<h2 id="ReferenceFinder"><a href="#ReferenceFinder" class="headerlink" title="ReferenceFinder"></a>ReferenceFinder</h2><p>作用： 帧排队</p>
+<h2 id="RtpFrameReferenceFinder"><a href="#RtpFrameReferenceFinder" class="headerlink" title="RtpFrameReferenceFinder"></a>RtpFrameReferenceFinder</h2><p>作用：找到每一个帧的参考帧，关键帧是自参考，后续的GOP内的每一帧都参考上一帧。</p>
 <blockquote class="pullquote mindmap mindmap-md"><ul>
-<li>[FrameReferenceFinder]<ul>
-<li>ManageFrame()</li>
+<li>[RtpFrameReferenceFinder]<ul>
+<li>ManageFrame()<ul>
+<li>ManageFrameInternal()</li>
+<li>ManageFramePidOrSeqNum()</li>
+</ul>
+</li>
 <li>PaddingReceived()</li>
+<li>UpdateLastPictureIdWithPadding()</li>
+<li>RetryStashedFrames()</li>
 <li>ClearTo()</li>
 </ul>
 </li>
 </ul>
 </blockquote>
+
+<pre><code class="c++">void ManageFramePidOrSeqNum() {
+    // 1.插入关键帧 last_seq_num_gop(关键帧最后一个包序列号，作为下一帧的依赖)
+    // 2.关键帧为空，直接缓存
+    // 3.删除较老的关键帧信息，至少保存一个关键帧序列号
+    // 4.如果是P帧的话，判断序列号是否和上一个连续帧的最后一个序列号相等，否则返回缓存
+    // 5.更新关键帧序列的最后一个连续帧序列号，作为下一帧的依赖，和1 相互呼应
+    // 6.更新最后一个序列号考虑padding 场景
+}
+
+void UpdateLastPictureIdWithPadding(seq) {
+    // 1.如果当前序列号比关键帧序列号还老，返回
+    // 2.获取当前seq 所依赖的关键帧信息
+    // 3.如果有因padding 包存在可以使得序列号连续的，更新包的序列号
+    // 4.极端情况下，清楚关键帧信息和状态
+}
+
+void RetryStashedFrames() {
+    // 有两种情况可以尝试从stashed 中查找
+    // a. 缓存帧遍历查找
+    // b. 因padding 包的存在，可以使得序列号连续
+    // 1. 从缓存帧处遍历，查看是否能找到连续的帧
+}</code></pre>
 <h2 id="FrameBuffer"><a href="#FrameBuffer" class="headerlink" title="FrameBuffer"></a>FrameBuffer</h2><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">
             </div>
             <hr>
@@ -316,9 +345,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2020/09/09/WebrtcVideoFlow/">
+                      <a href="/2020/09/10/WebrtcStats/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">WebrtcVideoFlow</span>
+                        <span class="hidden-mobile">WebrtcStats</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -326,8 +355,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/09/04/chrome-webrtc/">
-                        <span class="hidden-mobile">chrome-webrtc</span>
+                      <a href="/2020/09/04/ProjectCompile/">
+                        <span class="hidden-mobile">ProjectCompile</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -506,7 +535,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "videojitterbuffer&nbsp;",
+        "Videojitterbuffer&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,

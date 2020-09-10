@@ -176,32 +176,18 @@
     
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
-        <a href="/2020/08/14/rtprtcp/">rtprtcp</a>
+        <a href="/2020/09/02/gtest/">Gtest</a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2020/08/14/rtprtcp/">
+        <a href="/2020/09/02/gtest/">
           
           
             
           
-          RTP/RTCP协议分类：
-RTP 关乎数据传输
-RTCP 关乎数据传输控制
-RTP 协议和头部扩展首部格式RTP 分组的首部格式：
+          Gtest&amp;Gmockcommand# --gtest_list_tests 不会执行测试案例，而是输出一个案例的列表
+# --gtest_filter 对执行的测试案例进行过滤，只执行匹配的案例
 
-
-包头信息包头各个字段信息如下所示：
-
-
-
-版本号(V):2比特，标识rtp 版本
-
-填充位(P):1比特，如果设置该位置的话，rtp包的尾部就包含附加的填充字节
-
-扩展位(X):1比特，如果设置该位置的话，RTP 固定头部(12字节)后就跟着一个扩展头部
-
-CS
         </a>
       </p>
 
@@ -209,52 +195,8 @@ CS
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2020-08-14 15:41" pubdate>
-              2020-08-14
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/webrtc/">webrtc</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        <a href="/2020/08/14/h264/">h264</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2020/08/14/h264/">
-          
-          
-            
-          
-          H264前言H264 中，句法元素从大到小被组织为序列(GOP)、图像、切片、宏块、子宏块共五个层次。
-一个序列 = n 个图像帧一个帧 = n 个切片一个切片 = n 个宏块一个宏块 = n 个子宏块  
-码流结构码流结构从功能上分为两层：
-
-VCL(视频编码层)  包括核心压缩引擎和快，宏块和片的语法级别定义，设计目标是尽可能独立于网络进行高效的编码。即编码处理的输出，表示被压缩编码后的视频数
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-08-14 09:35" pubdate>
-              2020-08-14
+            <time datetime="2020-09-02 10:45" pubdate>
+              2020-09-02
             </time>
           </div>
         
@@ -269,11 +211,150 @@ VCL(视频编码层)  包括核心压缩引擎和快，宏块和片的语法级�
     
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
-        <a href="/2020/08/13/Linux-Cpu/">Linux-Cpu</a>
+        <a href="/2020/08/31/LinuxMem/">LinuxMem</a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2020/08/13/Linux-Cpu/">
+        <a href="/2020/08/31/LinuxMem/">
+          
+          
+            
+          
+          Linux-Mem什么是buffer/cachebuffer 指的是buffer cache，中文语境下为：缓冲区缓存，历史上主要是对io 设备写的缓存cache  指的是page cache，中文语境下为：页面缓存，历史上主要是对io 设备读的缓存
+但是目前，他们两个的意义已经不一样了，如果内存是以page 进行分配管理的，都可以使用page cache 作为其缓存来管理使用。当然并不是所有的内
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-08-31 14:42" pubdate>
+              2020-08-31
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2020/08/28/Computer/">Computer</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/08/28/Computer/">
+          
+          
+            
+          
+          基础知识计算机组成原理周期三个周期：时钟周期、机器周期、指令周期CPU 最小生命单位就是时钟周期，一个机器周期包含若干个时钟周期，至于指令周期则包含若干机器周期。按照粒度排序：指令周期 &gt; 机器周期 &gt; 时钟周期时钟周期：在一个时钟周期内，cpu 仅完成一个最基本的动作机器周期：指令周期：执行一条指令所需要的时间，一般由若干个机器周期组成。
+
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-08-28 20:07" pubdate>
+              2020-08-28
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2020/08/28/perf/">Perf</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/08/28/perf/">
+          
+          
+            
+          
+          perf 基本原理是在cpu PMU(performance Monitor Unit) 寄存器和软件特性中获取相关信息来进行系统性能输出。可以监控的事件分为三类:
+
+Hardware Event 这块主要是由PMU 寄存机硬件产生的，如如cache miss 等，如果需要了解程序对硬件特性使用情况，需要使用这类事件
+Software Event 内核软件产生的时间，比如进程切换  tick 数
+
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-08-28 16:39" pubdate>
+              2020-08-28
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2020/08/20/keyword/">Keyword</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/08/20/keyword/">
+          
+          
+            
+          
+          KeyWordVscodemac多列选择shift+option 鼠标左键
+
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-08-20 20:45" pubdate>
+              2020-08-20
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2020/08/13/LinuxCpu/">LinuxCpu</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/08/13/LinuxCpu/">
           
           
             
@@ -438,105 +519,11 @@ git
     
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
-        <a href="/2020/08/02/getStats/">getStats</a>
+        <a href="/2020/07/29/LinuxDebug/">LinuxDebug</a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2020/08/02/getStats/">
-          
-          
-            
-          
-          getStats()based on commit: d4089cae47334a4228b69d6bb23f2e49ebb7496e
-call-chain
-
-Field
-frameRate: receiveFps、decodeFps、dropFps、renderFps
-bps: rtpBps(ori + fec)、rtxBps、payLoadBps(%)
-transport: rtt、jitte
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-08-02 11:08" pubdate>
-              2020-08-02
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/webrtc/">webrtc</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        <a href="/2020/07/30/Sdp/">Sdp</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2020/07/30/Sdp/">
-          
-          
-            
-          
-          sdpsdp 中的流媒体videoH264h264 有四种级别的画质，分别是baseline、extended、main 和high。
-
-baseline 基本画质，支持I/P 帧
-extended 进阶画质，支持I/P/B/SP/SI 帧(后两个没听说过) 
-main     主流画质，支持I/P/B 帧
-high     高级画质
-
-webrtc 在sdp 交换中有对视频描述如下：
-a=fmt
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-07-30 19:37" pubdate>
-              2020-07-30
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/webrtc/">webrtc</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        <a href="/2020/07/29/linux-debug/">linux-debug</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2020/07/29/linux-debug/">
+        <a href="/2020/07/29/LinuxDebug/">
           
           
             
@@ -565,56 +552,6 @@ $ ulimit -a
           </div>
         
         
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        <a href="/2020/07/27/Security/">Security</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2020/07/27/Security/">
-          
-          
-            
-          
-          Security加解密对称加密加密和解密使用同一套秘钥，加密强度高，难以被破解。随之而来的问题就是如何安全的保存秘钥，特别是客户端庞大的时候，很难保证秘钥不被泄露。
-非对称加密公钥和私钥
-公钥和私钥都可以加密和解密，公钥加密私钥解密，私钥加密公钥解密。
-中间人攻击中间人在客户端和服务端中间，让客户端误以为是真实的服务端，从而获取相关内容。
-数字签名和数字证书数字签名：对data 进行hash，将h
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-07-27 11:14" pubdate>
-              2020-07-27
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/git/">git</a>
-            
-              <a href="/tags/%E5%8A%A0%E8%A7%A3%E5%AF%86/">加解密</a>
-            
-              <a href="/tags/openssl/">openssl</a>
-            
-              <a href="/tags/ssh/">ssh</a>
-            
-          </div>
         
       </div>
     </article>

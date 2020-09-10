@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="hjybdrs">
   <meta name="keywords" content="">
-  <title>PeerConnection - 豆三呈祥</title>
+  <title>LinuxCpu - 豆三呈祥</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
@@ -169,8 +169,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2020-08-02 17:42" pubdate>
-        August 2, 2020 pm
+      <time datetime="2020-08-13 09:37" pubdate>
+        August 13, 2020 am
       </time>
     </span>
   
@@ -181,7 +181,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      71 字
+      377 字
     </span>
   
 
@@ -191,7 +191,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      4
        分钟
     </span>
   
@@ -221,41 +221,28 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto" id="post">
             <!-- SEO header -->
-            <h1 style="display: none">PeerConnection</h1>
+            <h1 style="display: none">LinuxCpu</h1>
             
             <div class="markdown-body" id="post-body">
-              <h1 id="PeerConnection"><a href="#PeerConnection" class="headerlink" title="PeerConnection"></a>PeerConnection</h1><p>based on commit: d4089cae47334a4228b69d6bb23f2e49ebb7496e<br>useful file: </p>
-<ul>
-<li>conductor.cc(examples/peerconnection/client)</li>
-<li>simple_peer_connection.cc(examples/unityplugin)</li>
-</ul>
-<h2 id="拉取webrtc-代码"><a href="#拉取webrtc-代码" class="headerlink" title="拉取webrtc 代码"></a>拉取webrtc 代码</h2><p>拉取分支</p>
-<pre><code class="shell">git clone https://chromium.googlesource.com/external/webrtc
+              <h1 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h1><h2 id="如何查看CPU-数量"><a href="#如何查看CPU-数量" class="headerlink" title="如何查看CPU 数量"></a>如何查看CPU 数量</h2><p>一般来说，一颗物理CPU 上可以分出多个逻辑核心，加上intel 的超线程技术，可以在逻辑核心上再分出一倍数量的核心出来。</p>
+<pre><code># 如果是相同physical id 的cpu，那么是同一个物理核心封装的物理核或者超线程
+# 如果是相同core id 的cpu，那么是同一个逻辑核的超线程
+$ cat /proc/cpuinfo
 
-#设置git config
-#在 .git/config 文件中的  `[remote &quot;origin&quot;]` 节中添加以下内容：
-# fetch = +refs/branch-heads/*:refs/remotes/origin/*
+# 查看有多少个物理核心
+$ cat /proc/cpuinfo | grep &quot;physical id&quot; | sort | uniq | wc -l
 
-git pull
-
-# 拉取远端tags
-
-git fetch --tags</code></pre>
-<img  src=http://www.plantuml.com/plantuml/svg/dLTTRzn457tVNp7gGxIxogeelDKbKjc2L8bAKLQKHyjhJnEhwmyyinjLW9G2gHO4H9Le12LGYbIAGEm6zO6aRSYFOUrrdlWBp7ZizNpP6_1BrkDxxznxvjnp9utGikzOMn1SiYFNlWFnfSO73K0UguzmPDaOs0CB8N0JEgxLtRPy7mu0iw1FFmW6u9hZzA3lz704BQzf1px2WBriM97beHM0mfOX-cn2BnX1pcte-lZrDHC3X29RjYOxR49xz3zsuDnqEtpKq1LxotLW85NCcwlVEvqFrmMCgkEIZA1BIi-IaW8pi_TWVnFRMkEYGlLZ6w3ihsaecOf1EfsWSWS-2_Nh6fS02Zm8HjPW2941veUFuyaFyqUVZgXFn7nOElN9h37WwXFXaYtviWouQgfoZ6WPuFBbClju_5tyyaKTj-iT47QkNF6iy6h1jDLAeDlh88V9P3WXyu9Xocn834HUr00yC9LSacXGq5RouG2lS90zX8vG6gMwBTxojrmVtl0nZ6vRDfIvpWTfWox924D-hTa2Ru3NZ5fEi2t-UsHZMUy7sX9gp9Ma51ZpN4iKvU2L8bq3PE3QKFgy0aPqbOTlaRPgIbShaUu6NXWWDqTF1RjsToBLKKJ2NpI5XRt4TosNAEIwx38FRTgbdby4zpSj15N14OdbqJVJ5ZcrQFUXxxu_X6Q8ewkysxhePjQDHNEdSZ2cHv_Cl_v520M8V4bYACRkGKmdA8RTWDJkOnAUg5-z3R6OdPwHhRAQ-gxlDDKmgtZRHIr05FJysxtPyUVq5IJVJ4USUYJZWtHtB-C6Bqpv6KljrERnLoQOUYwQhgyyd1eeqibVyzD9UdOu_srAm4HE26PdJv9xqtzUVP5-zMUyVq3l6M3--sVn_RruSf9y_pHzzdEy_u1DZL4koJdyuexlXWvH8RPfBvVtdMPhoV6tYadCpIM-BGHfvZ4ZHejhu0xiHzYcjq2-jPdXJSidDf7CSQb52ZXXjindlTpQbFfVqkLRDyerMYxlsbdF80MpLu_YlJ63O7QyEpl-LJdmve9yX7Vgx6gjWdJwD9wUf7yycPqUpevVnFiV9m-FM4nbNEeX3YJGEEfgvKbZpB3VW30YnFEXZTt0r-cwAiMYpzj4gOBeBkSXxjOkba6XCnxxODOV7LqN3myaXxlpbsDwyGRn-4WggeXLKL5noE9dQVnMeK4nr5RDt2G2Bx6k19vSUAMBPuLHrc8LkLRlaNqeJudedmEk1mlvkGuH-ISjPAY8LjV2S73tdS2s1eAHGRk1gJ_3DiS1aGcQ79mapnzgmcWsCqGpALOF8aJCE8-MaVnuadmveQ98xyc50B8EEd_yF7rs__od1t_ltYCwPnMq4pTX6fZ7xc7oMnX0MddWrl9Xc4qYCgnTVsi5UAuZbx8nHDjEiEDd_1Ph9ZTz1bsU7Yb47NXqE6IuboiwOBSWfYKWMW8eY-XQWm7GF2GUF-prxGp0RVRBhEcGIYOIbbwiCnfaFFmB>
+#查看有多少个逻辑核心
+$ cat /proc/cpuinfo | grep &quot;processor id&quot; | wc -l</code></pre><h2 id="CPU-平均负载"><a href="#CPU-平均负载" class="headerlink" title="CPU 平均负载"></a>CPU 平均负载</h2><p>top 和 uptime 命令都可以查看</p>
+<p>系统负载升高的原因:<br>一般来说，系统平均负载升高意味着CPU 利用率上升，但是没有必然联系。<br>对于CPU 密集型的操作来说平均负载上升，一般意味着CPU 利用率上升。<br>如果是IO 密集型任务较多的话，此事的CPU 利用率不一定高，可能很多任务处于不可中断状态，等待CPU的调度也会升高平均负载。</p>
+<p>所以在遇到系统平均负载很高，但是CPU利用率上不去的时候，就需要考虑系统是否遇到了IO 瓶颈。<br>因此系统是否遇到CPU瓶颈需要结合CPU 利用率，系统平均负载来查看。</p>
+<p><a href="https://community.tenable.com/s/article/What-is-CPU-Load-Average" target="_blank" rel="noopener">https://community.tenable.com/s/article/What-is-CPU-Load-Average</a><br><a href="https://scoutapm.com/blog/understanding-load-averages" target="_blank" rel="noopener">https://scoutapm.com/blog/understanding-load-averages</a><br><a href="https://www.ruanyifeng.com/blog/2011/07/linux_load_average_explained.html" target="_blank" rel="noopener">https://www.ruanyifeng.com/blog/2011/07/linux_load_average_explained.html</a></p>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/webrtc/">webrtc</a>
-                    
-                      <a class="hover-with-bg" href="/tags/PeerConnection/">PeerConnection</a>
-                    
-                  </div>
                 
               </div>
               
@@ -266,9 +253,9 @@ git fetch --tags</code></pre>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2020/08/04/DevelopeKit/">
+                      <a href="/2020/08/20/keyword/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">DevelopeKit</span>
+                        <span class="hidden-mobile">Keyword</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -276,8 +263,8 @@ git fetch --tags</code></pre>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/07/29/LinuxDebug/">
-                        <span class="hidden-mobile">LinuxDebug</span>
+                      <a href="/2020/08/05/C-Tips/">
+                        <span class="hidden-mobile">C++Tips</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -296,8 +283,8 @@ git fetch --tags</code></pre>
     <div id="disqus_thread"></div>
     <script type="text/javascript">
       var disqus_config = function () {
-        this.page.url = 'http://yoursite.com/2020/08/02/PeerConnection/';
-        this.page.identifier = '/2020/08/02/PeerConnection/';
+        this.page.url = 'http://yoursite.com/2020/08/13/LinuxCpu/';
+        this.page.identifier = '/2020/08/13/LinuxCpu/';
       };
       function loadDisqus() {
         (function () {
@@ -456,7 +443,7 @@ git fetch --tags</code></pre>
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "PeerConnection&nbsp;",
+        "LinuxCpu&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
