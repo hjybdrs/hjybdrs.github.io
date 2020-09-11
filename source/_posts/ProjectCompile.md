@@ -33,6 +33,14 @@ gn gen out/Default
 # 编译
 ninja -C out/Default
 
+# 使用ccache 加速编译
+# out-gn 是编译生成的目录 类似cmake 的build 文件夹
+# https://chromium.googlesource.com/chromium/src/+/master/docs/ccache_mac.md
+# 针对webrtc 不能在args.gn 文件中设置 is_component_build = true
+# 可以在args.gn 文件中查看到对ccache 的设置 cc_wrapper = "ccache"
+gn gen out-gn --args='cc_wrapper="ccache"'
+ninja -C out-gen
+
 # https://webrtc.github.io/webrtc-org/native-code/development 
 ```
 
@@ -59,6 +67,9 @@ gclient sync --with_branch_heads --with_tags
 # https://chromiumdash.appspot.com/branches
 # http://www.chromium.org/developers/how-tos/get-the-code/working-with-release-branches
 # https://blog.csdn.net/chinabinlang/article/details/100122002
+
+# 使用ccache 加速编译过程
+# https://chromium.googlesource.com/chromium/src/+/master/docs/ccache_mac.md
 
 # 开启日志
 

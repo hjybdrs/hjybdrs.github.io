@@ -47,4 +47,6 @@ zip dst.zip file
 
 ```shell
 find ./dir -name "*cpp" | xargs grep "xxxx"
+# 查找文件 -type f
+find ./dir -type f | xargs grep "xxxx"
 ```
