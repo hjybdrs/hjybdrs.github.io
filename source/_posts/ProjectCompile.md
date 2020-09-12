@@ -72,7 +72,12 @@ gclient sync --with_branch_heads --with_tags
 # https://chromium.googlesource.com/chromium/src/+/master/docs/ccache_mac.md
 
 # 开启日志
-
 ./chrome --enable-logging --v=1
 # https://blog.csdn.net/foruok/article/details/71080012
+
+# 日志位置 分两种情况
+# 如果是安装版本的chrome 的话
+~/Library/Application Support/Google/Chrome/chrome_debug.log
+# 如果是自己编译的chromium 的话
+~/Library/Application Support/Chromium/chrome_debug.log
 ```
