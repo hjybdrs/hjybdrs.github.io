@@ -5,6 +5,9 @@ tags:
     - webrtc
 ---
 
+Google Webrtc 统计数据相关整理
+<!-- more -->
+
 # getStats
 
 based on commit: d4089cae47334a4228b69d6bb23f2e49ebb7496e
