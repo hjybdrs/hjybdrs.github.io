@@ -287,7 +287,14 @@ void RetryStashedFrames() {
     - SetProtectionMode()
     - Clear()
     - InsertFrame() 插入数据帧
+        - 1.获取最近解码帧的时间戳以及序列号
+        - 2.针对跳帧情况特殊处理，id_small&&time_new&&keyframe
+        - 3.还是针对跳帧，插入会导致混乱情况，返回
+        - 4.尝试插入，如果已经存在，返回
+        - 5.判断当前帧是否因为重传导致延时(一定范围内？整个一帧？)
+        - 6.如果当前真的参考都到期了，计算准备返回可解码帧id
     - UpdateRtt() 根据rtt 调整jitterEsmitor 策略
     - NextFrame() 弹出数据帧
   - ValidReferences() 判断帧之间的参考是否正确，
+  - UpdateFrameInfoWithIncomingFrame() 更新frameinfo 和其他frame的info
 {% endpullquote %}
