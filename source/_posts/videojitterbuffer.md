@@ -238,7 +238,7 @@ void FindFrames(uint16_t seq) {
 
 ## RtpFrameReferenceFinder
 
-作用：找到每一个帧的参考帧，关键帧是自参考，后续的GOP内的每一帧都参考上一帧。
+作用：找到每一个帧的参考帧，关键帧是自参考，后续的GOP内的每一帧都参考上一帧，GOP 内有序。
 
 {% pullquote mindmap mindmap-md %}
 - [RtpFrameReferenceFinder]
@@ -276,3 +276,18 @@ void RetryStashedFrames() {
 }
 ```
 ## FrameBuffer
+
+作用：GOP间 内有序。
+
+{% pullquote mindmap mindmap-md %}
+- [FrameBuffer]
+  - Public
+    - Start() 随着videoreceivestream start
+    - Stop() 随着stop
+    - SetProtectionMode()
+    - Clear()
+    - InsertFrame() 插入数据帧
+    - UpdateRtt() 根据rtt 调整jitterEsmitor 策略
+    - NextFrame() 弹出数据帧
+  - ValidReferences() 判断帧之间的参考是否正确，
+{% endpullquote %}
