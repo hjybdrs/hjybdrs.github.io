@@ -181,7 +181,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      259 字
+      276 字
     </span>
   
 
@@ -224,7 +224,10 @@
             <h1 style="display: none">网络抓包</h1>
             
             <div class="markdown-body" id="post-body">
-              <h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>“源码面前，了无秘密”，同理在抓包工具面前，网络的各种情况也原型毕露。</p>
+              <p>网络抓包工具指令备忘</p>
+<a id="more"></a>
+
+<h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>“源码面前，了无秘密”，同理在抓包工具面前，网络的各种情况也原型毕露。</p>
 <p>本文主要给大家介绍三个主流的抓包工具以及如何对https 协议进行抓包，更多的是介绍工具的使用以及实操。</p>
 <h1 id="主要工具介绍"><a href="#主要工具介绍" class="headerlink" title="主要工具介绍"></a>主要工具介绍</h1><p>工具主要包括：</p>
 <ul>
@@ -232,7 +235,22 @@
 <li>wireshark</li>
 <li>fiddler</li>
 </ul>
-<h1 id="实操"><a href="#实操" class="headerlink" title="实操"></a>实操</h1><h2 id="tcpdump-实例"><a href="#tcpdump-实例" class="headerlink" title="tcpdump 实例"></a>tcpdump 实例</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> tcpdump -i 指定对应的网卡 将抓包数据写入指定文件</span></span><br><span class="line">tcpdump -w fxxkWall.pcap </span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 抓取经过任意网卡 8888 上的任意数据包(包括tcp 和udp)</span></span><br><span class="line">tcpdump -i any 'port 8888'</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 抓取经过任意网卡 协议是tcp 端口是8888 的数据包</span></span><br><span class="line">tcpdump -i any 'tcp port 8888'</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 抓取经过任意网卡 从源端口 协议是tcp 端口是8888 的数据包</span></span><br><span class="line">tcpdump -i any 'tcp src port 8888'</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 抓取经过任意网卡 从源端口 协议是tcp 端口是8888 的数据包 或者 从目的端口 协议是udp 端口是9999 的数据包</span></span><br><span class="line">tcpdump -i any 'tcp src port 8888 or udp dst port 9999'</span><br></pre></td></tr></table></figure>
+<h1 id="实操"><a href="#实操" class="headerlink" title="实操"></a>实操</h1><h2 id="tcpdump-实例"><a href="#tcpdump-实例" class="headerlink" title="tcpdump 实例"></a>tcpdump 实例</h2><pre><code class="shell"># tcpdump -i 指定对应的网卡 将抓包数据写入指定文件
+tcpdump -w fxxkWall.pcap 
+
+# 抓取经过任意网卡 8888 上的任意数据包(包括tcp 和udp)
+tcpdump -i any &#39;port 8888&#39;
+
+# 抓取经过任意网卡 协议是tcp 端口是8888 的数据包
+tcpdump -i any &#39;tcp port 8888&#39;
+
+# 抓取经过任意网卡 从源端口 协议是tcp 端口是8888 的数据包
+tcpdump -i any &#39;tcp src port 8888&#39;
+
+# 抓取经过任意网卡 从源端口 协议是tcp 端口是8888 的数据包 或者 从目的端口 协议是udp 端口是9999 的数据包
+tcpdump -i any &#39;tcp src port 8888 or udp dst port 9999&#39;
+</code></pre>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">
             </div>
             <hr>
             <div>

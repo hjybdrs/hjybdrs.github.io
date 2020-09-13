@@ -181,7 +181,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      489 字
+      671 字
     </span>
   
 
@@ -191,7 +191,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      5
+      7
        分钟
     </span>
   
@@ -268,7 +268,7 @@
 <li>nackCount</li>
 <li>max(min)recvtime</li>
 </ul>
-<h2 id="RtpFrameReferenceFinder"><a href="#RtpFrameReferenceFinder" class="headerlink" title="RtpFrameReferenceFinder"></a>RtpFrameReferenceFinder</h2><p>作用：找到每一个帧的参考帧，关键帧是自参考，后续的GOP内的每一帧都参考上一帧。</p>
+<h2 id="RtpFrameReferenceFinder"><a href="#RtpFrameReferenceFinder" class="headerlink" title="RtpFrameReferenceFinder"></a>RtpFrameReferenceFinder</h2><p>作用：找到每一个帧的参考帧，关键帧是自参考，后续的GOP内的每一帧都参考上一帧，GOP 内有序。</p>
 <blockquote class="pullquote mindmap mindmap-md"><ul>
 <li>[RtpFrameReferenceFinder]<ul>
 <li>ManageFrame()<ul>
@@ -307,7 +307,33 @@ void RetryStashedFrames() {
     // b. 因padding 包的存在，可以使得序列号连续
     // 1. 从缓存帧处遍历，查看是否能找到连续的帧
 }</code></pre>
-<h2 id="FrameBuffer"><a href="#FrameBuffer" class="headerlink" title="FrameBuffer"></a>FrameBuffer</h2><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">
+<h2 id="FrameBuffer"><a href="#FrameBuffer" class="headerlink" title="FrameBuffer"></a>FrameBuffer</h2><p>作用：GOP间 内有序。</p>
+<blockquote class="pullquote mindmap mindmap-md"><ul>
+<li>[FrameBuffer]<ul>
+<li>Public<ul>
+<li>Start() 随着videoreceivestream start</li>
+<li>Stop() 随着stop</li>
+<li>SetProtectionMode()</li>
+<li>Clear()</li>
+<li>InsertFrame() 插入数据帧<ul>
+<li>1.获取最近解码帧的时间戳以及序列号</li>
+<li>2.针对跳帧情况特殊处理，id_small&amp;&amp;time_new&amp;&amp;keyframe</li>
+<li>3.还是针对跳帧，插入会导致混乱情况，返回</li>
+<li>4.尝试插入，如果已经存在，返回</li>
+<li>5.判断当前帧是否因为重传导致延时(一定范围内？整个一帧？)</li>
+<li>6.如果当前真的参考都到期了，计算准备返回可解码帧id</li>
+</ul>
+</li>
+<li>UpdateRtt() 根据rtt 调整jitterEsmitor 策略</li>
+<li>NextFrame() 弹出数据帧</li>
+</ul>
+</li>
+<li>ValidReferences() 判断帧之间的参考是否正确，</li>
+<li>UpdateFrameInfoWithIncomingFrame() 更新frameinfo 和其他frame的info</li>
+</ul>
+</li>
+</ul>
+</blockquote><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">
             </div>
             <hr>
             <div>

@@ -185,33 +185,7 @@
           
             
           
-          主要内容WebrtcBase:基础内容
-
-sdp
-code
-
-WebrtcStats:数据采集相关
-
-callstack
-
-WebrtcCall:会话控制管理
-
-callstack
-
-WebrtcVideo:视频相关
-
-send recv
-jitterbuffer
-
-WebrtcRateControl:流控
-
-layer
-callstack
-
-WebrtcNetwork:抗弱网相关
-
-layer
-
+          Google Webrtc 框架梳理
         </a>
       </p>
 
@@ -258,11 +232,7 @@ layer
           
             
           
-          WebrtcBaseWebrtcCode序列号判断// 如果seq2 比seq1 要老的话，返回真
-// 1 2 3 4 5 6 7 8 
-// seq1 = 6 seq2 = 4 返回真
-bool AheadOf(uint16_t seq1, uint16_t seq2);
-SDPSDP 中的流媒体videoH264h264 有四种级别的画质，分别是baseline、extended、main 
+          Google Webrtc 基础内容以及音视频相关整理
         </a>
       </p>
 
@@ -295,7 +265,7 @@ SDPSDP 中的流媒体videoH264h264 有四种级别的画质，分别是baseline
           
             
           
-          
+          Google Webrtc 带宽预估以及拥塞控制相关整理
         </a>
       </p>
 
@@ -328,7 +298,7 @@ SDPSDP 中的流媒体videoH264h264 有四种级别的画质，分别是baseline
           
             
           
-          
+          Google Webrtc 弱网对抗相关整理
         </a>
       </p>
 
@@ -361,7 +331,7 @@ SDPSDP 中的流媒体videoH264h264 有四种级别的画质，分别是baseline
           
             
           
-          
+          Google Webrtc 流控相关整理
         </a>
       </p>
 
@@ -394,7 +364,7 @@ SDPSDP 中的流媒体videoH264h264 有四种级别的画质，分别是baseline
           
             
           
-          
+          Google Webrtc 视频相关整理
         </a>
       </p>
 
@@ -418,16 +388,16 @@ SDPSDP 中的流媒体videoH264h264 有四种级别的画质，分别是baseline
     
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
-        <a href="/2020/09/10/WebrtcCall/">WebrtcCall</a>
+        <a href="/2020/09/10/WebrtcCall_PeerConnection/">WebrtcCall_PeerConnection</a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2020/09/10/WebrtcCall/">
+        <a href="/2020/09/10/WebrtcCall_PeerConnection/">
           
           
             
           
-          
+          Google Webrtc 会话控制管理以及PeerConnection相关整理
         </a>
       </p>
 
@@ -460,13 +430,7 @@ SDPSDP 中的流媒体videoH264h264 有四种级别的画质，分别是baseline
           
             
           
-          getStatsbased on commit: d4089cae47334a4228b69d6bb23f2e49ebb7496e
-call-chain
-
-Field
-frameRate: receiveFps、decodeFps、dropFps、renderFps
-bps: rtpBps(ori + fec)、rtxBps、payLoadBps(%)
-transport: rtt、jitterB
+          Google Webrtc 统计数据相关整理
         </a>
       </p>
 
@@ -566,15 +530,7 @@ VideoReceiverVideoStreamDecoderVCTimingPacketBuffer作用： 包缓存，返回�
           
             
           
-          项目编译Requirements# depot_tools
-git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
-
-# export tools
-export PATH=&quot;$PATH:/path/to/depot_tools&quot;
-
-# fetch
-# 查看哪些项目代码可以获取
-fetc
+          Google Chromium 和 Webrtc 编译调试
         </a>
       </p>
 

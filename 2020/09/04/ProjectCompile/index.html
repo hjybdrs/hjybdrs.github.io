@@ -181,7 +181,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      260 字
+      416 字
     </span>
   
 
@@ -191,7 +191,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      4
+      6
        分钟
     </span>
   
@@ -224,7 +224,10 @@
             <h1 style="display: none">ProjectCompile</h1>
             
             <div class="markdown-body" id="post-body">
-              <h1 id="项目编译"><a href="#项目编译" class="headerlink" title="项目编译"></a>项目编译</h1><h2 id="Requirements"><a href="#Requirements" class="headerlink" title="Requirements"></a>Requirements</h2><pre><code class="shell"># depot_tools
+              <p>Google Chromium 和 Webrtc 编译调试</p>
+<a id="more"></a>
+
+<h1 id="项目编译"><a href="#项目编译" class="headerlink" title="项目编译"></a>项目编译</h1><h2 id="Requirements"><a href="#Requirements" class="headerlink" title="Requirements"></a>Requirements</h2><pre><code class="shell"># depot_tools
 git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
 
 # export tools
@@ -241,6 +244,14 @@ mkdir webrtc-checkout &amp;&amp; cd webrtc-checkout &amp;&amp; fetch webrtc &amp
 gn gen out/Default
 # 编译
 ninja -C out/Default
+
+# 使用ccache 加速编译
+# out-gn 是编译生成的目录 类似cmake 的build 文件夹
+# https://chromium.googlesource.com/chromium/src/+/master/docs/ccache_mac.md
+# 针对webrtc 不能在args.gn 文件中设置 is_component_build = true
+# 可以在args.gn 文件中查看到对ccache 的设置 cc_wrapper = &quot;ccache&quot;
+gn gen out-gn --args=&#39;cc_wrapper=&quot;ccache&quot;&#39;
+ninja -C out-gen
 
 # https://webrtc.github.io/webrtc-org/native-code/development </code></pre>
 <h2 id="Chromuim"><a href="#Chromuim" class="headerlink" title="Chromuim"></a>Chromuim</h2><pre><code class="shell"># 创建文件夹 拉取代码
@@ -265,10 +276,18 @@ gclient sync --with_branch_heads --with_tags
 # http://www.chromium.org/developers/how-tos/get-the-code/working-with-release-branches
 # https://blog.csdn.net/chinabinlang/article/details/100122002
 
-# 开启日志
+# 使用ccache 加速编译过程
+# https://chromium.googlesource.com/chromium/src/+/master/docs/ccache_mac.md
 
+# 开启日志
 ./chrome --enable-logging --v=1
-# https://blog.csdn.net/foruok/article/details/71080012</code></pre>
+# https://blog.csdn.net/foruok/article/details/71080012
+
+# 日志位置 分两种情况
+# 如果是安装版本的chrome 的话
+~/Library/Application Support/Google/Chrome/chrome_debug.log
+# 如果是自己编译的chromium 的话
+~/Library/Application Support/Chromium/chrome_debug.log</code></pre>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">
             </div>
             <hr>
@@ -304,7 +323,7 @@ gclient sync --with_branch_heads --with_tags
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/09/02/gtest/">
+                      <a href="/2020/09/02/Gtest/">
                         <span class="hidden-mobile">Gtest</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>

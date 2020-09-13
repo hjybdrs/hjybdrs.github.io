@@ -181,7 +181,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      71 字
+      78 字
     </span>
   
 
@@ -224,7 +224,10 @@
             <h1 style="display: none">PeerConnection</h1>
             
             <div class="markdown-body" id="post-body">
-              <h1 id="PeerConnection"><a href="#PeerConnection" class="headerlink" title="PeerConnection"></a>PeerConnection</h1><p>based on commit: d4089cae47334a4228b69d6bb23f2e49ebb7496e<br>useful file: </p>
+              <p>和PeerConnection 有关的一切</p>
+<a id="more"></a>
+
+<h1 id="PeerConnection"><a href="#PeerConnection" class="headerlink" title="PeerConnection"></a>PeerConnection</h1><p>based on commit: d4089cae47334a4228b69d6bb23f2e49ebb7496e<br>useful file: </p>
 <ul>
 <li>conductor.cc(examples/peerconnection/client)</li>
 <li>simple_peer_connection.cc(examples/unityplugin)</li>
@@ -241,7 +244,7 @@ git pull
 # 拉取远端tags
 
 git fetch --tags</code></pre>
-<img  src=http://www.plantuml.com/plantuml/svg/dLTTRzn457tVNp7gGxIxogeelDKbKjc2L8bAKLQKHyjhJnEhwmyyinjLW9G2gHO4H9Le12LGYbIAGEm6zO6aRSYFOUrrdlWBp7ZizNpP6_1BrkDxxznxvjnp9utGikzOMn1SiYFNlWFnfSO73K0UguzmPDaOs0CB8N0JEgxLtRPy7mu0iw1FFmW6u9hZzA3lz704BQzf1px2WBriM97beHM0mfOX-cn2BnX1pcte-lZrDHC3X29RjYOxR49xz3zsuDnqEtpKq1LxotLW85NCcwlVEvqFrmMCgkEIZA1BIi-IaW8pi_TWVnFRMkEYGlLZ6w3ihsaecOf1EfsWSWS-2_Nh6fS02Zm8HjPW2941veUFuyaFyqUVZgXFn7nOElN9h37WwXFXaYtviWouQgfoZ6WPuFBbClju_5tyyaKTj-iT47QkNF6iy6h1jDLAeDlh88V9P3WXyu9Xocn834HUr00yC9LSacXGq5RouG2lS90zX8vG6gMwBTxojrmVtl0nZ6vRDfIvpWTfWox924D-hTa2Ru3NZ5fEi2t-UsHZMUy7sX9gp9Ma51ZpN4iKvU2L8bq3PE3QKFgy0aPqbOTlaRPgIbShaUu6NXWWDqTF1RjsToBLKKJ2NpI5XRt4TosNAEIwx38FRTgbdby4zpSj15N14OdbqJVJ5ZcrQFUXxxu_X6Q8ewkysxhePjQDHNEdSZ2cHv_Cl_v520M8V4bYACRkGKmdA8RTWDJkOnAUg5-z3R6OdPwHhRAQ-gxlDDKmgtZRHIr05FJysxtPyUVq5IJVJ4USUYJZWtHtB-C6Bqpv6KljrERnLoQOUYwQhgyyd1eeqibVyzD9UdOu_srAm4HE26PdJv9xqtzUVP5-zMUyVq3l6M3--sVn_RruSf9y_pHzzdEy_u1DZL4koJdyuexlXWvH8RPfBvVtdMPhoV6tYadCpIM-BGHfvZ4ZHejhu0xiHzYcjq2-jPdXJSidDf7CSQb52ZXXjindlTpQbFfVqkLRDyerMYxlsbdF80MpLu_YlJ63O7QyEpl-LJdmve9yX7Vgx6gjWdJwD9wUf7yycPqUpevVnFiV9m-FM4nbNEeX3YJGEEfgvKbZpB3VW30YnFEXZTt0r-cwAiMYpzj4gOBeBkSXxjOkba6XCnxxODOV7LqN3myaXxlpbsDwyGRn-4WggeXLKL5noE9dQVnMeK4nr5RDt2G2Bx6k19vSUAMBPuLHrc8LkLRlaNqeJudedmEk1mlvkGuH-ISjPAY8LjV2S73tdS2s1eAHGRk1gJ_3DiS1aGcQ79mapnzgmcWsCqGpALOF8aJCE8-MaVnuadmveQ98xyc50B8EEd_yF7rs__od1t_ltYCwPnMq4pTX6fZ7xc7oMnX0MddWrl9Xc4qYCgnTVsi5UAuZbx8nHDjEiEDd_1Ph9ZTz1bsU7Yb47NXqE6IuboiwOBSWfYKWMW8eY-XQWm7GF2GUF-prxGp0RVRBhEcGIYOIbbwiCnfaFFmB>
+<img  src=http://www.plantuml.com/plantuml/svg/dLTTRzn457tVNp7gGxIxogeelDKbKjc2L8bAKLQKHyjhJnEhwmyyinjLW9G2gHO4H9Le12LGYbIAGEm6zO6aRSYFOUrrdlWBp7ZizNpP6_1BrkDxxznxvjnp9utGikzOMn1SiYFNlWFnfSO73K0UguzmPDaOs0CB8N0JEgxLtRPy7mu0iw1FFmW6u9hZzA3lz704BQzf1px2WBriM97beHM0mfOX-cn2BnX1pcte-lZrDHC3X29RjYOxR49xz3zsuDnqEtpKq1LxotLW85NCcwlVEvqFrmMCgkEIZA1BIi-IaW8pi_TWVnFRMkEYGlLZ6w3ihsaecOf1EfsWSWS-2_Nh6fS02Zm8HjPW2941veUFuyaFyqUVZgXFn7nOElN9h37WwXFXaYtviWouQgfoZ6WPuFBbClju_5tyyaKTj-iT47QkNF6iy6h1jDLAeDlh88V9P3WXyu9Xocn834HUr00yC9LSacXGq5RouG2lS90zX8vG6gMwBTxojrmVtl0nZ6vRDfIvpWTfWox924D-hTa2Ru3NZ5fEi2t-UsHZMUy7sX9gp9Ma51ZpN4iKvU2L8bq3PE3QKFgy0aPqbOTlaRPgIbShaUu6NXWWDqTF1RjsToBLKKJ2NpI5XRt4TosNAEIwx38FRTgbdby4zpSj15N14OdbqJVJ5ZcrQFUXxxu_X6Q8ewkysxhePjQDHNEdSZ2cHv_Cl_v520M8V4bYACRkGKmdA8RTWDJkOnAUg5-z3R6OdPwHhRAQ-gxlDDKmgtZRHIr05FJysxtPyUVq5IJVJ4USUYJZWtHtB-C6Bqpv6KljrERnLoQOUYwQhgyyd1eeqibVyzD9UdOu_srAm4HE26PdJv9xqtzUVP5-zMUyVq3l6M3--sVn_RruSf9y_pHzzdEy_u1DZL4koJdyuexlXWvH8RPfBvVtdMPhoV6tYadCpIM-BGHfvZ4ZHejhu0xiHzYcjq2-jPdXJSidDf7CSQb52ZXXjindlTpQbFfVqkLRDyerMYxlsbdF80MpLu_YlJ63O7QyEpl-LJdmve9yX7Vgx6gjWdJwD9wUf7yycPqUpevVnFiV9m-FM4nbNEeX3YJGEEfgvKbZpB3VW30YnFEXZTt0r-cwAiMYpzj4gOBeBkSXxjOkba6XCnxxODOV7LqN3myaXxlpbsDwyGRn-4WggeXLKL5noE9dQVnMeK4nr5RDt2G2Bx6k19vSUAMBPuLHrc8LkLRlaNqeJudedmEk1mlvkGuH-ISjPAY8LjV2S73tdS2s1eAHGRk1gJ_3DiS1aGcQ79mapnzgmcWsCqGpALOF8aJCE8-MaVnuadmveQ98xyc50B8EEd_yF7rs__od1t_ltYCwPnMq4pTX6fZ7xc7oMnX0MddWrl9Xc4qYCgnTVsi5UAuZbx8nHDjEiEDd_1Ph9ZTz1bsU7Yb47NXqE6IuboiwOBSWfYKWMW8eY-XQWm7GF2GUF-prxGp0RVRBhEcGIYOIbbwiCnfaFFmB><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">
             </div>
             <hr>
             <div>

@@ -181,7 +181,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      969 字
+      981 字
     </span>
   
 
@@ -224,7 +224,10 @@
             <h1 style="display: none">Security</h1>
             
             <div class="markdown-body" id="post-body">
-              <h1 id="Security"><a href="#Security" class="headerlink" title="Security"></a>Security</h1><h2 id="加解密"><a href="#加解密" class="headerlink" title="加解密"></a>加解密</h2><h3 id="对称加密"><a href="#对称加密" class="headerlink" title="对称加密"></a>对称加密</h3><p>加密和解密使用同一套秘钥，加密强度高，难以被破解。随之而来的问题就是如何安全的保存秘钥，特别是客户端庞大的时候，很难保证秘钥不被泄露。</p>
+              <p>加解密以及ssh 登录原理备忘</p>
+<a id="more"></a>
+
+<h1 id="Security"><a href="#Security" class="headerlink" title="Security"></a>Security</h1><h2 id="加解密"><a href="#加解密" class="headerlink" title="加解密"></a>加解密</h2><h3 id="对称加密"><a href="#对称加密" class="headerlink" title="对称加密"></a>对称加密</h3><p>加密和解密使用同一套秘钥，加密强度高，难以被破解。随之而来的问题就是如何安全的保存秘钥，特别是客户端庞大的时候，很难保证秘钥不被泄露。</p>
 <h3 id="非对称加密"><a href="#非对称加密" class="headerlink" title="非对称加密"></a>非对称加密</h3><p>公钥和私钥</p>
 <p>公钥和私钥都可以加密和解密，公钥加密私钥解密，私钥加密公钥解密。</p>
 <h4 id="中间人攻击"><a href="#中间人攻击" class="headerlink" title="中间人攻击"></a>中间人攻击</h4><p>中间人在客户端和服务端中间，让客户端误以为是真实的服务端，从而获取相关内容。</p>
@@ -260,7 +263,7 @@ openssl req -new -x509 -key cert.key &gt; cert.pem
 
 #生成证书的fingerprint
 openssl x509 -fingerprint -sha256 -in cert.pem</code></pre>
-
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">
             </div>
             <hr>
             <div>

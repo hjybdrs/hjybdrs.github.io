@@ -185,11 +185,7 @@
           
             
           
-          Security加解密对称加密加密和解密使用同一套秘钥，加密强度高，难以被破解。随之而来的问题就是如何安全的保存秘钥，特别是客户端庞大的时候，很难保证秘钥不被泄露。
-非对称加密公钥和私钥
-公钥和私钥都可以加密和解密，公钥加密私钥解密，私钥加密公钥解密。
-中间人攻击中间人在客户端和服务端中间，让客户端误以为是真实的服务端，从而获取相关内容。
-数字签名和数字证书数字签名：对data 进行hash，将h
+          加解密以及ssh 登录原理备忘
         </a>
       </p>
 
@@ -235,15 +231,7 @@
           
             
           
-          介绍“源码面前，了无秘密”，同理在抓包工具面前，网络的各种情况也原型毕露。
-本文主要给大家介绍三个主流的抓包工具以及如何对https 协议进行抓包，更多的是介绍工具的使用以及实操。
-主要工具介绍工具主要包括：
-
-tcpdump
-wireshark
-fiddler
-
-实操tcpdump 实例1234567891011121314# tcpdump -i 指定对应的网卡 将抓包数据写入指定文件tcpd
+          网络抓包工具指令备忘
         </a>
       </p>
 
@@ -289,33 +277,7 @@ fiddler
           
             
           
-          2020 Plan基础内容TCP/IP要求:
-
-tcp
-tcp 握手与挥手
-tcp  option
-tcp 拥塞控制
-
-
-udp
-udp 编程范式
-
-
-抓包分析
-wireshark
-fiddler
-tcpdump
-
-
-
-流媒体getStats要求：
-
-熟悉getStats 调用链路(2020-08-30)
-熟悉getStats 内部相关数据获取原理(2020-09-30)
-
-封装与解封装要求：
-
-
+          2020Plan
         </a>
       </p>
 
@@ -339,26 +301,16 @@ tcpdump
     
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
-        <a href="/2020/03/28/git/">Git 常用指令</a>
+        <a href="/2020/03/28/Git/">Git 常用指令</a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2020/03/28/git/">
+        <a href="/2020/03/28/Git/">
           
           
             
           
-          指令仓库操作克隆远端仓库# 在本地生成一个目录
-git clone gitxxxxURL.git
-
-# 在本地生成一个指定目录
-git clone gitxxxxURL.git myGitDir
-
-# clone 远端仓库的指定分支
-git clone -b branchName gitxxxxURL.git
-
-## clone 远端仓库失败情况处理   for the fxxk war
-git 
+          Git 个人常用命令相关整理
         </a>
       </p>
 
