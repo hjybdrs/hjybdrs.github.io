@@ -181,7 +181,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      671 字
+      974 字
     </span>
   
 
@@ -191,7 +191,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      7
+      11
        分钟
     </span>
   
@@ -310,26 +310,62 @@ void RetryStashedFrames() {
 <h2 id="FrameBuffer"><a href="#FrameBuffer" class="headerlink" title="FrameBuffer"></a>FrameBuffer</h2><p>作用：GOP间 内有序。</p>
 <blockquote class="pullquote mindmap mindmap-md"><ul>
 <li>[FrameBuffer]<ul>
+<li>ValidReferences() 判断帧之间的参考是否正确<ul>
+<li>判断pic_id pic_id 就是当前帧最后一个包的seq</li>
+<li>判断pid 和依赖的序列号是否乱序</li>
+<li>判断所依赖的序列号是否有重复</li>
+<li>应该是判断时域分层内容</li>
+</ul>
+</li>
+<li>UpdateFrameInfoWithIncomingFrame() 更新frameinfo 和其他frame的info<ul>
+<li>遍历当前帧的依赖帧<ul>
+<li>如果上一次解码的帧比依赖帧更新，依赖帧永远不会被解码 rt=&gt;false</li>
+<li>在frames 中查找依赖帧，并判断依赖帧是否连续</li>
+</ul>
+</li>
+<li>inter_layer_predicted only vp9 support</li>
+<li>未连续参考帧和未解码参考帧计数器</li>
+<li>判断依赖帧是否连续，并且更新依赖帧被哪些帧所依赖(反向依赖关系)</li>
+</ul>
+</li>
+<li>PropagateContinuity()<ul>
+<li>通过BFS来进行连续性的传播，还有个依赖的就是上一层建立的反向依赖关系</li>
+</ul>
+</li>
 <li>Public<ul>
 <li>Start() 随着videoreceivestream start</li>
 <li>Stop() 随着stop</li>
 <li>SetProtectionMode()</li>
 <li>Clear()</li>
 <li>InsertFrame() 插入数据帧<ul>
-<li>1.获取最近解码帧的时间戳以及序列号</li>
-<li>2.针对跳帧情况特殊处理，id_small&amp;&amp;time_new&amp;&amp;keyframe</li>
-<li>3.还是针对跳帧，插入会导致混乱情况，返回</li>
-<li>4.尝试插入，如果已经存在，返回</li>
-<li>5.判断当前帧是否因为重传导致延时(一定范围内？整个一帧？)</li>
-<li>6.如果当前真的参考都到期了，计算准备返回可解码帧id</li>
+<li>0.stats 回调</li>
+<li>1.最近连续pic_id(实际上就是seq)</li>
+<li>2.ValidReferences()</li>
+<li>3.缓存帧数量控制</li>
+<li>4.获取最近解码帧的pic_id 和 时间戳(rtp tmp)</li>
+<li>5.针对跳帧情况特殊处理，id_small&amp;&amp;time_new&amp;&amp;keyframe</li>
+<li>6.还是针对跳帧，插入会导致混乱情况，返回</li>
+<li>7.尝试插入，如果已经存在，返回</li>
+<li>8.UpdateFrameInfoWithIncomingFrame()</li>
+<li>9.判断当前帧是否因为重传导致延时(一定范围内？整个一帧)</li>
+<li>10.如果当前真的参考都到期了，计算准备返回可解码帧id</li>
+<li>11.call PropagateContinuity()</li>
+<li>12.最后唤醒解码线程并返回可以连续的帧pic_id</li>
 </ul>
 </li>
 <li>UpdateRtt() 根据rtt 调整jitterEsmitor 策略</li>
-<li>NextFrame() 弹出数据帧</li>
+<li>NextFrame() 弹出数据帧<ul>
+<li>keyframe-&gt;200ms deltaframe-&gt;3000ms</li>
+<li>遍历缓存帧<ul>
+<li>没有连续或者还有依赖的未解码帧</li>
+<li>当前帧并不为目前所需要的关键帧</li>
+<li>获取上一次解码帧的rtp tmp 比较筛选出跳帧的情况</li>
 </ul>
 </li>
-<li>ValidReferences() 判断帧之间的参考是否正确，</li>
-<li>UpdateFrameInfoWithIncomingFrame() 更新frameinfo 和其他frame的info</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -401,8 +437,8 @@ void RetryStashedFrames() {
     <div id="disqus_thread"></div>
     <script type="text/javascript">
       var disqus_config = function () {
-        this.page.url = 'http://yoursite.com/2020/09/08/videojitterbuffer/';
-        this.page.identifier = '/2020/09/08/videojitterbuffer/';
+        this.page.url = 'http://yoursite.com/2020/09/08/Videojitterbuffer/';
+        this.page.identifier = '/2020/09/08/Videojitterbuffer/';
       };
       function loadDisqus() {
         (function () {

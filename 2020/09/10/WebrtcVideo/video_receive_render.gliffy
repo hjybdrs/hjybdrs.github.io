@@ -1,1 +1,2403 @@
-{"contentType":"application/gliffy+json","version":"1.1","metadata":{"title":"untitled","revision":0,"exportBorder":false},"embeddedResources":{"index":0,"resources":[]},"stage":{"objects":[{"x":564,"y":235,"rotation":0,"id":8,"uid":"com.gliffy.shape.basic.basic_v1.default.line","width":100,"height":100,"lockAspectRatio":false,"lockShape":false,"order":4,"graphic":{"type":"Line","Line":{"strokeWidth":2,"strokeColor":"#000000","fillColor":"none","dashStyle":null,"startArrow":0,"endArrow":1,"startArrowRotation":"auto","endArrowRotation":"auto","ortho":true,"interpolationType":"linear","cornerRadius":10,"controlPath":[[1,-15],[1,-1.6666666666666572],[1,11.666666666666657],[1,25]],"lockSegments":{}}},"children":null,"constraints":{"constraints":[],"startConstraint":{"type":"StartPositionConstraint","StartPositionConstraint":{"nodeId":2,"px":0.5,"py":1}},"endConstraint":{"type":"EndPositionConstraint","EndPositionConstraint":{"nodeId":7,"px":0.5,"py":0}}},"linkMap":[]},{"x":440,"y":260,"rotation":0,"id":7,"uid":"com.gliffy.shape.flowchart.flowchart_v1.default.start_end","width":250,"height":70,"lockAspectRatio":false,"lockShape":false,"order":2,"graphic":{"type":"Shape","Shape":{"tid":"com.gliffy.stencil.start_end.flowchart_v1","strokeWidth":2,"strokeColor":"#333333","fillColor":"#FFFFFF","gradient":false,"dropShadow":false,"state":0,"shadowX":0,"shadowY":0,"opacity":1}},"children":[{"x":2,"y":0,"rotation":0,"id":11,"uid":null,"width":246,"height":56,"lockAspectRatio":false,"lockShape":false,"order":"auto","graphic":{"type":"Text","Text":{"tid":null,"valign":"middle","overflow":"none","vposition":"none","hposition":"none","html":"<p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">rtpvideostreamreceiver.cc\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">RtpVideoStreamReceiver\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">OnRtpPacket()\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">VcmPacket.receive_tims_ms = now</span></p>","paddingLeft":2,"paddingRight":2,"paddingBottom":2,"paddingTop":2}},"children":null}],"linkMap":[]},{"x":440,"y":150,"rotation":0,"id":2,"uid":"com.gliffy.shape.flowchart.flowchart_v1.default.start_end","width":250.00000000000003,"height":70,"lockAspectRatio":false,"lockShape":false,"order":0,"graphic":{"type":"Shape","Shape":{"tid":"com.gliffy.stencil.start_end.flowchart_v1","strokeWidth":2,"strokeColor":"#333333","fillColor":"#FFFFFF","gradient":false,"dropShadow":false,"state":0,"shadowX":0,"shadowY":0,"opacity":1}},"children":[{"x":3.125,"y":0,"rotation":0,"id":10,"uid":null,"width":243.75000000000003,"height":70,"lockAspectRatio":false,"lockShape":false,"order":"auto","graphic":{"type":"Text","Text":{"tid":null,"valign":"middle","overflow":"none","vposition":"none","hposition":"none","html":"<p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">call.cc\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">Call(音视频流管理)\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">DeliverRtp()\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">RtpPacketReceived.arrivaltime = now\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\"></span></p>","paddingLeft":2,"paddingRight":2,"paddingBottom":2,"paddingTop":2}},"children":null}],"linkMap":[]},{"x":440,"y":376,"rotation":0,"id":13,"uid":"com.gliffy.shape.flowchart.flowchart_v1.default.start_end","width":250,"height":84,"lockAspectRatio":false,"lockShape":false,"order":5,"graphic":{"type":"Shape","Shape":{"tid":"com.gliffy.stencil.start_end.flowchart_v1","strokeWidth":2,"strokeColor":"#333333","fillColor":"#FFFFFF","gradient":false,"dropShadow":false,"state":0,"shadowX":0,"shadowY":0,"opacity":1}},"children":[{"x":2,"y":0,"rotation":0,"id":14,"uid":null,"width":246,"height":84,"lockAspectRatio":false,"lockShape":false,"order":"auto","graphic":{"type":"Text","Text":{"tid":null,"valign":"middle","overflow":"none","vposition":"none","hposition":"none","html":"<p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">packetbuffer.cc\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">PacketBuffer\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">FindFrames()\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">RtpFrameObject(no data，just seq)\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">min(max)time \n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">使用上一层的receive_tims_ms</span></p>","paddingLeft":2,"paddingRight":2,"paddingBottom":2,"paddingTop":2}},"children":null}],"linkMap":[]},{"x":566,"y":364,"rotation":0,"id":15,"uid":"com.gliffy.shape.basic.basic_v1.default.line","width":100,"height":100,"lockAspectRatio":false,"lockShape":false,"order":7,"graphic":{"type":"Line","Line":{"strokeWidth":2,"strokeColor":"#000000","fillColor":"none","dashStyle":null,"startArrow":0,"endArrow":1,"startArrowRotation":"auto","endArrowRotation":"auto","ortho":true,"interpolationType":"linear","cornerRadius":10,"controlPath":[[-1,-34],[-1,-18.666666666666686],[-1,-3.3333333333333144],[-1,12]],"lockSegments":{}}},"children":null,"constraints":{"constraints":[],"startConstraint":{"type":"StartPositionConstraint","StartPositionConstraint":{"nodeId":7,"px":0.5,"py":1}},"endConstraint":{"type":"EndPositionConstraint","EndPositionConstraint":{"nodeId":13,"px":0.5,"py":0}}},"linkMap":[]},{"x":440,"y":511,"rotation":0,"id":16,"uid":"com.gliffy.shape.flowchart.flowchart_v1.default.start_end","width":250,"height":69,"lockAspectRatio":false,"lockShape":false,"order":8,"graphic":{"type":"Shape","Shape":{"tid":"com.gliffy.stencil.start_end.flowchart_v1","strokeWidth":2,"strokeColor":"#333333","fillColor":"#FFFFFF","gradient":false,"dropShadow":false,"state":0,"shadowX":0,"shadowY":0,"opacity":1}},"children":[{"x":2,"y":0,"rotation":0,"id":17,"uid":null,"width":246,"height":70,"lockAspectRatio":false,"lockShape":false,"order":"auto","graphic":{"type":"Text","Text":{"tid":null,"valign":"middle","overflow":"none","vposition":"none","hposition":"none","html":"<p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">framereferencefinder.cc\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">FrameReferenceFinder\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">ManageFrame()\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">EncodedFrame\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">set id(public)</span></p>","paddingLeft":2,"paddingRight":2,"paddingBottom":2,"paddingTop":2}},"children":null}],"linkMap":[]},{"x":559,"y":514,"rotation":0,"id":18,"uid":"com.gliffy.shape.basic.basic_v1.default.line","width":100,"height":100,"lockAspectRatio":false,"lockShape":false,"order":10,"graphic":{"type":"Line","Line":{"strokeWidth":2,"strokeColor":"#000000","fillColor":"none","dashStyle":null,"startArrow":0,"endArrow":1,"startArrowRotation":"auto","endArrowRotation":"auto","ortho":true,"interpolationType":"linear","cornerRadius":10,"controlPath":[[6,-54],[6,-37],[6,-20],[6,-3]],"lockSegments":{}}},"children":null,"constraints":{"constraints":[],"startConstraint":{"type":"StartPositionConstraint","StartPositionConstraint":{"nodeId":13,"px":0.5,"py":1}},"endConstraint":{"type":"EndPositionConstraint","EndPositionConstraint":{"nodeId":16,"px":0.5,"py":0}}},"linkMap":[]},{"x":440,"y":640,"rotation":0,"id":19,"uid":"com.gliffy.shape.flowchart.flowchart_v1.default.start_end","width":250,"height":60,"lockAspectRatio":false,"lockShape":false,"order":11,"graphic":{"type":"Shape","Shape":{"tid":"com.gliffy.stencil.start_end.flowchart_v1","strokeWidth":2,"strokeColor":"#333333","fillColor":"#FFFFFF","gradient":false,"dropShadow":false,"state":0,"shadowX":0,"shadowY":0,"opacity":1}},"children":[{"x":2,"y":0,"rotation":0,"id":20,"uid":null,"width":246,"height":56,"lockAspectRatio":false,"lockShape":false,"order":"auto","graphic":{"type":"Text","Text":{"tid":null,"valign":"middle","overflow":"none","vposition":"none","hposition":"none","html":"<p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">framebuffer.cc\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">FrameBuffer\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">InsertFrame()\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">NextFrame()</span></p>","paddingLeft":2,"paddingRight":2,"paddingBottom":2,"paddingTop":2}},"children":null}],"linkMap":[]},{"x":559,"y":653,"rotation":0,"id":21,"uid":"com.gliffy.shape.basic.basic_v1.default.line","width":100,"height":100,"lockAspectRatio":false,"lockShape":false,"order":13,"graphic":{"type":"Line","Line":{"strokeWidth":2,"strokeColor":"#000000","fillColor":"none","dashStyle":null,"startArrow":0,"endArrow":1,"startArrowRotation":"auto","endArrowRotation":"auto","ortho":true,"interpolationType":"linear","cornerRadius":10,"controlPath":[[6,-73],[6,-53],[6,-33],[6,-13]],"lockSegments":{}}},"children":null,"constraints":{"constraints":[],"startConstraint":{"type":"StartPositionConstraint","StartPositionConstraint":{"nodeId":16,"px":0.5,"py":1}},"endConstraint":{"type":"EndPositionConstraint","EndPositionConstraint":{"nodeId":19,"px":0.5,"py":0}}},"linkMap":[]},{"x":440,"y":760,"rotation":0,"id":38,"uid":"com.gliffy.shape.flowchart.flowchart_v1.default.start_end","width":250,"height":60,"lockAspectRatio":false,"lockShape":false,"order":29,"graphic":{"type":"Shape","Shape":{"tid":"com.gliffy.stencil.start_end.flowchart_v1","strokeWidth":2,"strokeColor":"#333333","fillColor":"#FFFFFF","gradient":false,"dropShadow":false,"state":0,"shadowX":0,"shadowY":0,"opacity":1}},"children":[{"x":2,"y":0,"rotation":0,"id":39,"uid":null,"width":246,"height":56,"lockAspectRatio":false,"lockShape":false,"order":"auto","graphic":{"type":"Text","Text":{"tid":null,"valign":"middle","overflow":"none","vposition":"none","hposition":"none","html":"<p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">videoreceivestream.cc\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">VideoReceiveStream\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">Decoded()\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">EncodedFrame</span></p>","paddingLeft":2,"paddingRight":2,"paddingBottom":2,"paddingTop":2}},"children":null}],"linkMap":[]},{"x":574,"y":813,"rotation":0,"id":40,"uid":"com.gliffy.shape.basic.basic_v1.default.line","width":100,"height":100,"lockAspectRatio":false,"lockShape":false,"order":31,"graphic":{"type":"Line","Line":{"strokeWidth":2,"strokeColor":"#000000","fillColor":"none","dashStyle":null,"startArrow":0,"endArrow":1,"startArrowRotation":"auto","endArrowRotation":"auto","ortho":true,"interpolationType":"linear","cornerRadius":10,"controlPath":[[-9,-113],[-9,-93],[-9,-73],[-9,-53]],"lockSegments":{}}},"children":null,"constraints":{"constraints":[],"startConstraint":{"type":"StartPositionConstraint","StartPositionConstraint":{"nodeId":19,"px":0.5,"py":1}},"endConstraint":{"type":"EndPositionConstraint","EndPositionConstraint":{"nodeId":38,"px":0.5,"py":0}}},"linkMap":[]},{"x":800,"y":760,"rotation":0,"id":41,"uid":"com.gliffy.shape.flowchart.flowchart_v1.default.start_end","width":250,"height":60,"lockAspectRatio":false,"lockShape":false,"order":32,"graphic":{"type":"Shape","Shape":{"tid":"com.gliffy.stencil.start_end.flowchart_v1","strokeWidth":2,"strokeColor":"#333333","fillColor":"#FFFFFF","gradient":false,"dropShadow":false,"state":0,"shadowX":0,"shadowY":0,"opacity":1}},"children":[{"x":2,"y":0,"rotation":0,"id":42,"uid":null,"width":246,"height":56,"lockAspectRatio":false,"lockShape":false,"order":"auto","graphic":{"type":"Text","Text":{"tid":null,"valign":"middle","overflow":"none","vposition":"none","hposition":"none","html":"<p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">videoreceiver.cc\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">VideoReceiver\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">Decoded()\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">VcmEncodedFrame</span></p>","paddingLeft":2,"paddingRight":2,"paddingBottom":2,"paddingTop":2}},"children":null}],"linkMap":[]},{"x":584,"y":823,"rotation":0,"id":43,"uid":"com.gliffy.shape.basic.basic_v1.default.line","width":100,"height":100,"lockAspectRatio":false,"lockShape":false,"order":34,"graphic":{"type":"Line","Line":{"strokeWidth":2,"strokeColor":"#000000","fillColor":"none","dashStyle":null,"startArrow":0,"endArrow":1,"startArrowRotation":"auto","endArrowRotation":"auto","ortho":true,"interpolationType":"linear","cornerRadius":10,"controlPath":[[-19,-3],[-19,37],[341,37],[341,-3]],"lockSegments":{}}},"children":null,"constraints":{"constraints":[],"startConstraint":{"type":"StartPositionConstraint","StartPositionConstraint":{"nodeId":38,"px":0.5,"py":1}},"endConstraint":{"type":"EndPositionConstraint","EndPositionConstraint":{"nodeId":41,"px":0.5,"py":1}}},"linkMap":[]},{"x":800,"y":630,"rotation":0,"id":62,"uid":"com.gliffy.shape.flowchart.flowchart_v1.default.start_end","width":250,"height":80,"lockAspectRatio":false,"lockShape":false,"order":51,"graphic":{"type":"Shape","Shape":{"tid":"com.gliffy.stencil.start_end.flowchart_v1","strokeWidth":2,"strokeColor":"#333333","fillColor":"#FFFFFF","gradient":false,"dropShadow":false,"state":0,"shadowX":0,"shadowY":0,"opacity":1}},"children":[{"x":2,"y":0,"rotation":0,"id":63,"uid":null,"width":246,"height":70,"lockAspectRatio":false,"lockShape":false,"order":"auto","graphic":{"type":"Text","Text":{"tid":null,"valign":"middle","overflow":"none","vposition":"none","hposition":"none","html":"<p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">generic_decoder.cc\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">VCMGenericDecoder\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">Decoded()\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">VcmEncodedFrame\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">(这里的回调就是VideoStreamEncoder)</span></p>","paddingLeft":2,"paddingRight":2,"paddingBottom":2,"paddingTop":2}},"children":null}],"linkMap":[]},{"x":800,"y":511,"rotation":0,"id":64,"uid":"com.gliffy.shape.flowchart.flowchart_v1.default.start_end","width":250,"height":60,"lockAspectRatio":false,"lockShape":false,"order":53,"graphic":{"type":"Shape","Shape":{"tid":"com.gliffy.stencil.start_end.flowchart_v1","strokeWidth":2,"strokeColor":"#333333","fillColor":"#FFFFFF","gradient":false,"dropShadow":false,"state":0,"shadowX":0,"shadowY":0,"opacity":1}},"children":[{"x":2,"y":0,"rotation":0,"id":65,"uid":null,"width":246,"height":28,"lockAspectRatio":false,"lockShape":false,"order":"auto","graphic":{"type":"Text","Text":{"tid":null,"valign":"middle","overflow":"none","vposition":"none","hposition":"none","html":"<p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">h264_decoder_impl.cc\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">Decoded()</span></p>","paddingLeft":2,"paddingRight":2,"paddingBottom":2,"paddingTop":2}},"children":null}],"linkMap":[]},{"x":775,"y":371.5,"rotation":0,"id":66,"uid":"com.gliffy.shape.flowchart.flowchart_v1.default.start_end","width":300,"height":100,"lockAspectRatio":false,"lockShape":false,"order":55,"graphic":{"type":"Shape","Shape":{"tid":"com.gliffy.stencil.start_end.flowchart_v1","strokeWidth":2,"strokeColor":"#333333","fillColor":"#FFFFFF","gradient":false,"dropShadow":false,"state":0,"shadowX":0,"shadowY":0,"opacity":1}},"children":[{"x":2.4000000000000004,"y":0,"rotation":0,"id":67,"uid":null,"width":295.20000000000005,"height":84,"lockAspectRatio":false,"lockShape":false,"order":"auto","graphic":{"type":"Text","Text":{"tid":null,"valign":"middle","overflow":"none","vposition":"none","hposition":"none","html":"<p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">generic_decoder.cc\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">VCMDecodedFrameCallback\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">Decoded()\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">该类作为VideoReceiver 成员，在初始化VideoStreamDecoder\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">的时候注册了VideoStreamDecoder作为回调</span></p>","paddingLeft":2,"paddingRight":2,"paddingBottom":2,"paddingTop":2}},"children":null}],"linkMap":[]},{"x":800,"y":280,"rotation":0,"id":69,"uid":"com.gliffy.shape.flowchart.flowchart_v1.default.start_end","width":250,"height":60,"lockAspectRatio":false,"lockShape":false,"order":57,"graphic":{"type":"Shape","Shape":{"tid":"com.gliffy.stencil.start_end.flowchart_v1","strokeWidth":2,"strokeColor":"#333333","fillColor":"#FFFFFF","gradient":false,"dropShadow":false,"state":0,"shadowX":0,"shadowY":0,"opacity":1}},"children":[{"x":2,"y":0,"rotation":0,"id":70,"uid":null,"width":246,"height":56,"lockAspectRatio":false,"lockShape":false,"order":"auto","graphic":{"type":"Text","Text":{"tid":null,"valign":"middle","overflow":"none","vposition":"none","hposition":"none","html":"<p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">incoming_video_stream.cc或者真实render\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">IncomingVideoStream\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">OnFrame()\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">再回调到VideoReceiveStream调用render</span></p>","paddingLeft":2,"paddingRight":2,"paddingBottom":2,"paddingTop":2}},"children":null}],"linkMap":[]},{"x":935,"y":837,"rotation":0,"id":71,"uid":"com.gliffy.shape.basic.basic_v1.default.line","width":100,"height":100,"lockAspectRatio":false,"lockShape":false,"order":59,"graphic":{"type":"Line","Line":{"strokeWidth":2,"strokeColor":"#000000","fillColor":"none","dashStyle":null,"startArrow":1,"endArrow":0,"startArrowRotation":"auto","endArrowRotation":"auto","ortho":true,"interpolationType":"linear","cornerRadius":10,"controlPath":[[-10,-127],[-10,-110.33333333333337],[-10,-93.66666666666663],[-10,-77]],"lockSegments":{}}},"children":null,"constraints":{"constraints":[],"startConstraint":{"type":"StartPositionConstraint","StartPositionConstraint":{"nodeId":62,"px":0.5,"py":1}},"endConstraint":{"type":"EndPositionConstraint","EndPositionConstraint":{"nodeId":41,"px":0.5,"py":0}}},"linkMap":[]},{"x":944,"y":721,"rotation":0,"id":72,"uid":"com.gliffy.shape.basic.basic_v1.default.line","width":100,"height":100,"lockAspectRatio":false,"lockShape":false,"order":60,"graphic":{"type":"Line","Line":{"strokeWidth":2,"strokeColor":"#000000","fillColor":"none","dashStyle":null,"startArrow":1,"endArrow":0,"startArrowRotation":"auto","endArrowRotation":"auto","ortho":true,"interpolationType":"linear","cornerRadius":10,"controlPath":[[-19,-150],[-19,-130.33333333333337],[-19,-110.66666666666663],[-19,-91]],"lockSegments":{}}},"children":null,"constraints":{"constraints":[],"startConstraint":{"type":"StartPositionConstraint","StartPositionConstraint":{"nodeId":64,"px":0.5,"py":1}},"endConstraint":{"type":"EndPositionConstraint","EndPositionConstraint":{"nodeId":62,"px":0.5,"py":0}}},"linkMap":[]},{"x":953,"y":605,"rotation":0,"id":73,"uid":"com.gliffy.shape.basic.basic_v1.default.line","width":100,"height":100,"lockAspectRatio":false,"lockShape":false,"order":61,"graphic":{"type":"Line","Line":{"strokeWidth":2,"strokeColor":"#000000","fillColor":"none","dashStyle":null,"startArrow":1,"endArrow":0,"startArrowRotation":"auto","endArrowRotation":"auto","ortho":true,"interpolationType":"linear","cornerRadius":10,"controlPath":[[-28,-133.5],[-28,-120.33333333333331],[-28,-107.16666666666669],[-28,-94]],"lockSegments":{}}},"children":null,"constraints":{"constraints":[],"startConstraint":{"type":"StartPositionConstraint","StartPositionConstraint":{"nodeId":66,"px":0.5,"py":1}},"endConstraint":{"type":"EndPositionConstraint","EndPositionConstraint":{"nodeId":64,"px":0.5,"py":0}}},"linkMap":[]},{"x":962,"y":489,"rotation":0,"id":74,"uid":"com.gliffy.shape.basic.basic_v1.default.line","width":100,"height":100,"lockAspectRatio":false,"lockShape":false,"order":62,"graphic":{"type":"Line","Line":{"strokeWidth":2,"strokeColor":"#000000","fillColor":"none","dashStyle":null,"startArrow":1,"endArrow":0,"startArrowRotation":"auto","endArrowRotation":"auto","ortho":true,"interpolationType":"linear","cornerRadius":10,"controlPath":[[-37,-149],[-37,-138.5],[-37,-128],[-37,-117.5]],"lockSegments":{}}},"children":null,"constraints":{"constraints":[],"startConstraint":{"type":"StartPositionConstraint","StartPositionConstraint":{"nodeId":69,"px":0.5,"py":1}},"endConstraint":{"type":"EndPositionConstraint","EndPositionConstraint":{"nodeId":66,"px":0.5,"py":0}}},"linkMap":[]},{"x":1210,"y":260,"rotation":0,"id":54,"uid":"com.gliffy.shape.uml.uml_v1.default.class","width":250,"height":80,"lockAspectRatio":false,"lockShape":false,"order":44,"graphic":null,"children":[{"x":0,"y":0,"rotation":0,"id":55,"uid":null,"width":250,"height":18,"lockAspectRatio":false,"lockShape":false,"order":"auto","graphic":{"type":"Shape","Shape":{"tid":"com.gliffy.stencil.rectangle.basic_v1","strokeWidth":2,"strokeColor":"#000000","fillColor":"#FFFFFF","gradient":false,"dropShadow":true,"state":0,"shadowX":4,"shadowY":4,"opacity":1}},"children":[{"x":0,"y":0,"rotation":0,"id":56,"uid":null,"width":250,"height":18,"lockAspectRatio":false,"lockShape":false,"order":"auto","graphic":{"type":"Text","Text":{"tid":null,"valign":"top","overflow":"none","vposition":"none","hposition":"none","html":"<p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; font-weight: bold; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">EncodedImage</span></p>","paddingLeft":2,"paddingRight":2,"paddingBottom":2,"paddingTop":2}},"children":null}],"constraints":{"constraints":[{"type":"HeightConstraint","HeightConstraint":{"isMin":false,"heightInfo":[{"id":56,"magnitude":1}],"growParent":true,"padding":0}}]}},{"x":0,"y":18,"rotation":0,"id":57,"uid":null,"width":250,"height":18,"lockAspectRatio":false,"lockShape":false,"order":"auto","graphic":{"type":"Shape","Shape":{"tid":"com.gliffy.stencil.rectangle.basic_v1","strokeWidth":2,"strokeColor":"#000000","fillColor":"#FFFFFF","gradient":false,"dropShadow":true,"state":0,"shadowX":4,"shadowY":4,"opacity":1}},"children":[{"x":0,"y":0,"rotation":0,"id":58,"uid":null,"width":250,"height":18,"lockAspectRatio":false,"lockShape":false,"order":"auto","graphic":{"type":"Text","Text":{"tid":null,"valign":"top","overflow":"none","vposition":"none","hposition":"none","html":"<p style=\"text-align:left;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; font-weight: normal; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">attribute</span></p>","paddingLeft":2,"paddingRight":2,"paddingBottom":2,"paddingTop":2}},"children":null}],"constraints":{"constraints":[{"type":"PositionConstraint","PositionConstraint":{"nodeId":55,"px":0,"py":1}},{"type":"HeightConstraint","HeightConstraint":{"isMin":false,"heightInfo":[{"id":58,"magnitude":1}],"growParent":true,"padding":0}}]}},{"x":0,"y":36,"rotation":0,"id":59,"uid":null,"width":250,"height":44,"lockAspectRatio":false,"lockShape":false,"order":"auto","graphic":{"type":"Shape","Shape":{"tid":"com.gliffy.stencil.rectangle.basic_v1","strokeWidth":2,"strokeColor":"#000000","fillColor":"#FFFFFF","gradient":false,"dropShadow":true,"state":0,"shadowX":4,"shadowY":4,"opacity":1}},"children":[{"x":0,"y":0,"rotation":0,"id":60,"uid":null,"width":250,"height":18,"lockAspectRatio":false,"lockShape":false,"order":"auto","graphic":{"type":"Text","Text":{"tid":null,"valign":"top","overflow":"none","vposition":"none","hposition":"none","html":"<p style=\"text-align: left;\"><span class=\"gliffy-placeholder-text\" style=\"font-family: Arial; font-size: 12px; font-weight: normal; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">Method</span></p>","paddingLeft":2,"paddingRight":2,"paddingBottom":2,"paddingTop":2}},"children":null}],"constraints":{"constraints":[{"type":"HeightConstraint","HeightConstraint":{"isMin":false,"heightInfo":[{"id":54,"magnitude":1},{"id":55,"magnitude":-1},{"id":57,"magnitude":-1}],"growParent":false,"padding":0}},{"type":"PositionConstraint","PositionConstraint":{"nodeId":57,"px":0,"py":1}}]}}],"constraints":{"constraints":[{"type":"HeightConstraint","HeightConstraint":{"isMin":true,"heightInfo":[{"id":55,"magnitude":1},{"id":57,"magnitude":1},{"id":60,"magnitude":1}],"growParent":false,"padding":0}}]},"linkMap":[]},{"x":718,"y":549,"rotation":0,"id":53,"uid":"com.gliffy.shape.uml.uml_v1.default.generalization","width":100,"height":100,"lockAspectRatio":false,"lockShape":false,"order":43,"graphic":{"type":"Line","Line":{"strokeWidth":1,"strokeColor":"#000000","fillColor":"none","dashStyle":null,"startArrow":0,"endArrow":4,"startArrowRotation":"auto","endArrowRotation":"auto","ortho":true,"interpolationType":"linear","cornerRadius":null,"controlPath":[[617,-153],[617,-171.66666666666669],[617,-190.33333333333331],[617,-209]],"lockSegments":{}}},"children":null,"constraints":{"constraints":[],"startConstraint":{"type":"StartPositionConstraint","StartPositionConstraint":{"nodeId":45,"px":0.5,"py":0}},"endConstraint":{"type":"EndPositionConstraint","EndPositionConstraint":{"nodeId":54,"px":0.5,"py":1}}},"linkMap":[]},{"x":1095,"y":583,"rotation":0,"id":52,"uid":"com.gliffy.shape.uml.uml_v1.default.generalization","width":100,"height":100,"lockAspectRatio":false,"lockShape":false,"order":42,"graphic":{"type":"Line","Line":{"strokeWidth":1,"strokeColor":"#000000","fillColor":"none","dashStyle":null,"startArrow":0,"endArrow":4,"startArrowRotation":"auto","endArrowRotation":"auto","ortho":true,"interpolationType":"linear","cornerRadius":null,"controlPath":[[240,-65.5],[240,-81],[240,-96.5],[240,-112]],"lockSegments":{}}},"children":null,"constraints":{"constraints":[],"startConstraint":{"type":"StartPositionConstraint","StartPositionConstraint":{"nodeId":29,"px":0.5,"py":0}},"endConstraint":{"type":"EndPositionConstraint","EndPositionConstraint":{"nodeId":45,"px":0.5,"py":1}}},"linkMap":[]},{"x":1210,"y":396,"rotation":0,"id":45,"uid":"com.gliffy.shape.uml.uml_v1.default.class","width":250,"height":75,"lockAspectRatio":false,"lockShape":false,"order":35,"graphic":null,"children":[{"x":0,"y":0,"rotation":0,"id":46,"uid":null,"width":250,"height":18,"lockAspectRatio":false,"lockShape":false,"order":"auto","graphic":{"type":"Shape","Shape":{"tid":"com.gliffy.stencil.rectangle.basic_v1","strokeWidth":2,"strokeColor":"#000000","fillColor":"#FFFFFF","gradient":false,"dropShadow":true,"state":0,"shadowX":4,"shadowY":4,"opacity":1}},"children":[{"x":0,"y":0,"rotation":0,"id":47,"uid":null,"width":250,"height":18,"lockAspectRatio":false,"lockShape":false,"order":"auto","graphic":{"type":"Text","Text":{"tid":null,"valign":"top","overflow":"none","vposition":"none","hposition":"none","html":"<p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; font-weight: bold; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">VcmEncodedFrame</span></p>","paddingLeft":2,"paddingRight":2,"paddingBottom":2,"paddingTop":2}},"children":null}],"constraints":{"constraints":[{"type":"HeightConstraint","HeightConstraint":{"isMin":false,"heightInfo":[{"id":47,"magnitude":1}],"growParent":true,"padding":0}}]}},{"x":0,"y":18,"rotation":0,"id":48,"uid":null,"width":250,"height":18,"lockAspectRatio":false,"lockShape":false,"order":"auto","graphic":{"type":"Shape","Shape":{"tid":"com.gliffy.stencil.rectangle.basic_v1","strokeWidth":2,"strokeColor":"#000000","fillColor":"#FFFFFF","gradient":false,"dropShadow":true,"state":0,"shadowX":4,"shadowY":4,"opacity":1}},"children":[{"x":0,"y":0,"rotation":0,"id":49,"uid":null,"width":250,"height":18,"lockAspectRatio":false,"lockShape":false,"order":"auto","graphic":{"type":"Text","Text":{"tid":null,"valign":"top","overflow":"none","vposition":"none","hposition":"none","html":"<p style=\"text-align:left;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; font-weight: normal; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">attribute\n</span></p><p style=\"text-align:left;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; font-weight: normal; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\"></span></p>","paddingLeft":2,"paddingRight":2,"paddingBottom":2,"paddingTop":2}},"children":null}],"constraints":{"constraints":[{"type":"PositionConstraint","PositionConstraint":{"nodeId":46,"px":0,"py":1}},{"type":"HeightConstraint","HeightConstraint":{"isMin":false,"heightInfo":[{"id":49,"magnitude":1}],"growParent":true,"padding":0}}]}},{"x":0,"y":36,"rotation":0,"id":50,"uid":null,"width":250,"height":39,"lockAspectRatio":false,"lockShape":false,"order":"auto","graphic":{"type":"Shape","Shape":{"tid":"com.gliffy.stencil.rectangle.basic_v1","strokeWidth":2,"strokeColor":"#000000","fillColor":"#FFFFFF","gradient":false,"dropShadow":true,"state":0,"shadowX":4,"shadowY":4,"opacity":1}},"children":[{"x":0,"y":0,"rotation":0,"id":51,"uid":null,"width":250,"height":18,"lockAspectRatio":false,"lockShape":false,"order":"auto","graphic":{"type":"Text","Text":{"tid":null,"valign":"top","overflow":"none","vposition":"none","hposition":"none","html":"<p style=\"text-align: left;\"><span class=\"gliffy-placeholder-text\" style=\"font-family: Arial; font-size: 12px; font-weight: normal; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">Method</span></p>","paddingLeft":2,"paddingRight":2,"paddingBottom":2,"paddingTop":2}},"children":null}],"constraints":{"constraints":[{"type":"HeightConstraint","HeightConstraint":{"isMin":false,"heightInfo":[{"id":45,"magnitude":1},{"id":46,"magnitude":-1},{"id":48,"magnitude":-1}],"growParent":false,"padding":0}},{"type":"PositionConstraint","PositionConstraint":{"nodeId":48,"px":0,"py":1}}]}}],"constraints":{"constraints":[{"type":"HeightConstraint","HeightConstraint":{"isMin":true,"heightInfo":[{"id":46,"magnitude":1},{"id":48,"magnitude":1},{"id":51,"magnitude":1}],"growParent":false,"padding":0}}]},"linkMap":[]},{"x":1079,"y":724,"rotation":0,"id":36,"uid":"com.gliffy.shape.uml.uml_v1.default.generalization","width":100,"height":100,"lockAspectRatio":false,"lockShape":false,"order":28,"graphic":{"type":"Line","Line":{"strokeWidth":1,"strokeColor":"#000000","fillColor":"none","dashStyle":null,"startArrow":0,"endArrow":4,"startArrowRotation":"auto","endArrowRotation":"auto","ortho":true,"interpolationType":"linear","cornerRadius":null,"controlPath":[[256,-46],[256,-58.16666666666663],[256,-70.33333333333337],[256,-82.5]],"lockSegments":{}}},"children":null,"constraints":{"constraints":[],"startConstraint":{"type":"StartPositionConstraint","StartPositionConstraint":{"nodeId":22,"px":0.5,"py":0}},"endConstraint":{"type":"EndPositionConstraint","EndPositionConstraint":{"nodeId":29,"px":0.5,"py":1}}},"linkMap":[]},{"x":1190,"y":517.5,"rotation":0,"id":29,"uid":"com.gliffy.shape.uml.uml_v1.default.class","width":290,"height":124,"lockAspectRatio":false,"lockShape":false,"order":21,"graphic":null,"children":[{"x":0,"y":0,"rotation":0,"id":30,"uid":null,"width":290,"height":18,"lockAspectRatio":false,"lockShape":false,"order":"auto","graphic":{"type":"Shape","Shape":{"tid":"com.gliffy.stencil.rectangle.basic_v1","strokeWidth":2,"strokeColor":"#000000","fillColor":"#FFFFFF","gradient":false,"dropShadow":true,"state":0,"shadowX":4,"shadowY":4,"opacity":1}},"children":[{"x":0,"y":0,"rotation":0,"id":31,"uid":null,"width":290,"height":18,"lockAspectRatio":false,"lockShape":false,"order":"auto","graphic":{"type":"Text","Text":{"tid":null,"valign":"top","overflow":"none","vposition":"none","hposition":"none","html":"<p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; font-weight: bold; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">EncodedFrame</span></p>","paddingLeft":2,"paddingRight":2,"paddingBottom":2,"paddingTop":2}},"children":null}],"constraints":{"constraints":[{"type":"HeightConstraint","HeightConstraint":{"isMin":false,"heightInfo":[{"id":31,"magnitude":1}],"growParent":true,"padding":0}}]}},{"x":0,"y":18,"rotation":0,"id":32,"uid":null,"width":290,"height":88,"lockAspectRatio":false,"lockShape":false,"order":"auto","graphic":{"type":"Shape","Shape":{"tid":"com.gliffy.stencil.rectangle.basic_v1","strokeWidth":2,"strokeColor":"#000000","fillColor":"#FFFFFF","gradient":false,"dropShadow":true,"state":0,"shadowX":4,"shadowY":4,"opacity":1}},"children":[{"x":0,"y":0,"rotation":0,"id":33,"uid":null,"width":290,"height":88,"lockAspectRatio":false,"lockShape":false,"order":"auto","graphic":{"type":"Text","Text":{"tid":null,"valign":"top","overflow":"none","vposition":"none","hposition":"none","html":"<p style=\"text-align:left;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; font-weight: normal; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">VideoLayerFrameId id; 在refefnd dependence\n</span></p><p style=\"text-align:left;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; font-weight: normal; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">以下变量用在frameBuffer 的validReference 判断中\n</span></p><p style=\"text-align:left;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; font-weight: normal; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">size_t num_references = 0;\n</span></p><p style=\"text-align:left;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; font-weight: normal; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">int64_t references[kMaxFrameReferences];\n</span></p><p style=\"text-align:left;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; font-weight: normal; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">bool inter_layer_predicted = false;\n</span></p><p style=\"text-align:left;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; font-weight: normal; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">bool is_last_spatial_layer = true;</span></p>","paddingLeft":2,"paddingRight":2,"paddingBottom":2,"paddingTop":2}},"children":null}],"constraints":{"constraints":[{"type":"PositionConstraint","PositionConstraint":{"nodeId":30,"px":0,"py":1}},{"type":"HeightConstraint","HeightConstraint":{"isMin":false,"heightInfo":[{"id":33,"magnitude":1}],"growParent":true,"padding":0}}]}},{"x":0,"y":106,"rotation":0,"id":34,"uid":null,"width":290,"height":18,"lockAspectRatio":false,"lockShape":false,"order":"auto","graphic":{"type":"Shape","Shape":{"tid":"com.gliffy.stencil.rectangle.basic_v1","strokeWidth":2,"strokeColor":"#000000","fillColor":"#FFFFFF","gradient":false,"dropShadow":true,"state":0,"shadowX":4,"shadowY":4,"opacity":1}},"children":[{"x":0,"y":0,"rotation":0,"id":35,"uid":null,"width":290,"height":18,"lockAspectRatio":false,"lockShape":false,"order":"auto","graphic":{"type":"Text","Text":{"tid":null,"valign":"top","overflow":"none","vposition":"none","hposition":"none","html":"<p style=\"text-align: left;\"><span class=\"gliffy-placeholder-text\" style=\"font-family: Arial; font-size: 12px; font-weight: normal; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">Method</span></p>","paddingLeft":2,"paddingRight":2,"paddingBottom":2,"paddingTop":2}},"children":null}],"constraints":{"constraints":[{"type":"HeightConstraint","HeightConstraint":{"isMin":false,"heightInfo":[{"id":29,"magnitude":1},{"id":30,"magnitude":-1},{"id":32,"magnitude":-1}],"growParent":false,"padding":0}},{"type":"PositionConstraint","PositionConstraint":{"nodeId":32,"px":0,"py":1}}]}}],"constraints":{"constraints":[{"type":"HeightConstraint","HeightConstraint":{"isMin":true,"heightInfo":[{"id":30,"magnitude":1},{"id":32,"magnitude":1},{"id":35,"magnitude":1}],"growParent":false,"padding":0}}]},"linkMap":[]},{"x":1265,"y":678,"rotation":0,"id":22,"uid":"com.gliffy.shape.uml.uml_v1.default.class","width":140,"height":75,"lockAspectRatio":false,"lockShape":false,"order":14,"graphic":null,"children":[{"x":0,"y":0,"rotation":0,"id":23,"uid":null,"width":140,"height":18,"lockAspectRatio":false,"lockShape":false,"order":"auto","graphic":{"type":"Shape","Shape":{"tid":"com.gliffy.stencil.rectangle.basic_v1","strokeWidth":2,"strokeColor":"#000000","fillColor":"#FFFFFF","gradient":false,"dropShadow":true,"state":0,"shadowX":4,"shadowY":4,"opacity":1}},"children":[{"x":0,"y":0,"rotation":0,"id":24,"uid":null,"width":140,"height":18,"lockAspectRatio":false,"lockShape":false,"order":"auto","graphic":{"type":"Text","Text":{"tid":null,"valign":"top","overflow":"none","vposition":"none","hposition":"none","html":"<p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; font-weight: bold; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">RtpFrameObject</span></p>","paddingLeft":2,"paddingRight":2,"paddingBottom":2,"paddingTop":2}},"children":null}],"constraints":{"constraints":[{"type":"HeightConstraint","HeightConstraint":{"isMin":false,"heightInfo":[{"id":24,"magnitude":1}],"growParent":true,"padding":0}}]}},{"x":0,"y":18,"rotation":0,"id":25,"uid":null,"width":140,"height":18,"lockAspectRatio":false,"lockShape":false,"order":"auto","graphic":{"type":"Shape","Shape":{"tid":"com.gliffy.stencil.rectangle.basic_v1","strokeWidth":2,"strokeColor":"#000000","fillColor":"#FFFFFF","gradient":false,"dropShadow":true,"state":0,"shadowX":4,"shadowY":4,"opacity":1}},"children":[{"x":0,"y":0,"rotation":0,"id":26,"uid":null,"width":140,"height":18,"lockAspectRatio":false,"lockShape":false,"order":"auto","graphic":{"type":"Text","Text":{"tid":null,"valign":"top","overflow":"none","vposition":"none","hposition":"none","html":"<p style=\"text-align: left;\"><span class=\"gliffy-placeholder-text\" style=\"font-family: Arial; font-size: 12px; font-weight: normal; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">Attribute</span></p>","paddingLeft":2,"paddingRight":2,"paddingBottom":2,"paddingTop":2}},"children":null}],"constraints":{"constraints":[{"type":"PositionConstraint","PositionConstraint":{"nodeId":23,"px":0,"py":1}},{"type":"HeightConstraint","HeightConstraint":{"isMin":false,"heightInfo":[{"id":26,"magnitude":1}],"growParent":true,"padding":0}}]}},{"x":0,"y":36,"rotation":0,"id":27,"uid":null,"width":140,"height":39,"lockAspectRatio":false,"lockShape":false,"order":"auto","graphic":{"type":"Shape","Shape":{"tid":"com.gliffy.stencil.rectangle.basic_v1","strokeWidth":2,"strokeColor":"#000000","fillColor":"#FFFFFF","gradient":false,"dropShadow":true,"state":0,"shadowX":4,"shadowY":4,"opacity":1}},"children":[{"x":0,"y":0,"rotation":0,"id":28,"uid":null,"width":140,"height":18,"lockAspectRatio":false,"lockShape":false,"order":"auto","graphic":{"type":"Text","Text":{"tid":null,"valign":"top","overflow":"none","vposition":"none","hposition":"none","html":"<p style=\"text-align: left;\"><span class=\"gliffy-placeholder-text\" style=\"font-family: Arial; font-size: 12px; font-weight: normal; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">Method</span></p>","paddingLeft":2,"paddingRight":2,"paddingBottom":2,"paddingTop":2}},"children":null}],"constraints":{"constraints":[{"type":"HeightConstraint","HeightConstraint":{"isMin":false,"heightInfo":[{"id":22,"magnitude":1},{"id":23,"magnitude":-1},{"id":25,"magnitude":-1}],"growParent":false,"padding":0}},{"type":"PositionConstraint","PositionConstraint":{"nodeId":25,"px":0,"py":1}}]}}],"constraints":{"constraints":[{"type":"HeightConstraint","HeightConstraint":{"isMin":true,"heightInfo":[{"id":23,"magnitude":1},{"id":25,"magnitude":1},{"id":28,"magnitude":1}],"growParent":false,"padding":0}}]},"linkMap":[]}],"background":"#FFFFFF","width":1482,"height":865,"maxWidth":5000,"maxHeight":5000,"nodeIndex":77,"autoFit":true,"exportBorder":false,"gridOn":true,"snapToGrid":true,"drawingGuidesOn":true,"pageBreaksOn":false,"printGridOn":false,"printPaper":"LETTER","printShrinkToFit":false,"printPortrait":true,"shapeStyles":{"com.gliffy.shape.basic.basic_v1.default":{"fill":"#FFFFFF","stroke":"#333333","strokeWidth":2},"com.gliffy.shape.flowchart.flowchart_v1.default":{"fill":"#FFFFFF","stroke":"#333333","strokeWidth":2}},"lineStyles":{"global":{"startArrow":1}},"textStyles":{},"themeData":null}}
+{
+    "contentType": "application/gliffy+json",
+    "version": "1.1",
+    "metadata": {
+        "title": "untitled",
+        "revision": 0,
+        "exportBorder": false
+    },
+    "embeddedResources": {
+        "index": 0,
+        "resources": []
+    },
+    "stage": {
+        "objects": [{
+            "x": 1132,
+            "y": 609,
+            "rotation": 0,
+            "id": 74,
+            "uid": "com.gliffy.shape.basic.basic_v1.default.line",
+            "width": 100,
+            "height": 100,
+            "lockAspectRatio": false,
+            "lockShape": false,
+            "order": 62,
+            "graphic": {
+                "type": "Line",
+                "Line": {
+                    "strokeWidth": 2,
+                    "strokeColor": "#000000",
+                    "fillColor": "none",
+                    "dashStyle": null,
+                    "startArrow": 1,
+                    "endArrow": 0,
+                    "startArrowRotation": "auto",
+                    "endArrowRotation": "auto",
+                    "ortho": true,
+                    "interpolationType": "linear",
+                    "cornerRadius": 10,
+                    "controlPath": [
+                        [-37, -149],
+                        [-37, -138.5],
+                        [-37, -128],
+                        [-37, -117.5]
+                    ],
+                    "lockSegments": {}
+                }
+            },
+            "children": null,
+            "constraints": {
+                "constraints": [],
+                "startConstraint": {
+                    "type": "StartPositionConstraint",
+                    "StartPositionConstraint": {
+                        "nodeId": 69,
+                        "px": 0.5,
+                        "py": 1
+                    }
+                },
+                "endConstraint": {
+                    "type": "EndPositionConstraint",
+                    "EndPositionConstraint": {
+                        "nodeId": 66,
+                        "px": 0.5,
+                        "py": 0
+                    }
+                }
+            },
+            "linkMap": []
+        }, {
+            "x": 1123,
+            "y": 725,
+            "rotation": 0,
+            "id": 73,
+            "uid": "com.gliffy.shape.basic.basic_v1.default.line",
+            "width": 100,
+            "height": 100,
+            "lockAspectRatio": false,
+            "lockShape": false,
+            "order": 61,
+            "graphic": {
+                "type": "Line",
+                "Line": {
+                    "strokeWidth": 2,
+                    "strokeColor": "#000000",
+                    "fillColor": "none",
+                    "dashStyle": null,
+                    "startArrow": 1,
+                    "endArrow": 0,
+                    "startArrowRotation": "auto",
+                    "endArrowRotation": "auto",
+                    "ortho": true,
+                    "interpolationType": "linear",
+                    "cornerRadius": 10,
+                    "controlPath": [
+                        [-28, -133.5],
+                        [-28, -120.33333333333337],
+                        [-28, -107.16666666666663],
+                        [-28, -94]
+                    ],
+                    "lockSegments": {}
+                }
+            },
+            "children": null,
+            "constraints": {
+                "constraints": [],
+                "startConstraint": {
+                    "type": "StartPositionConstraint",
+                    "StartPositionConstraint": {
+                        "nodeId": 66,
+                        "px": 0.5,
+                        "py": 1
+                    }
+                },
+                "endConstraint": {
+                    "type": "EndPositionConstraint",
+                    "EndPositionConstraint": {
+                        "nodeId": 64,
+                        "px": 0.5,
+                        "py": 0
+                    }
+                }
+            },
+            "linkMap": []
+        }, {
+            "x": 1114,
+            "y": 841,
+            "rotation": 0,
+            "id": 72,
+            "uid": "com.gliffy.shape.basic.basic_v1.default.line",
+            "width": 100,
+            "height": 100,
+            "lockAspectRatio": false,
+            "lockShape": false,
+            "order": 60,
+            "graphic": {
+                "type": "Line",
+                "Line": {
+                    "strokeWidth": 2,
+                    "strokeColor": "#000000",
+                    "fillColor": "none",
+                    "dashStyle": null,
+                    "startArrow": 1,
+                    "endArrow": 0,
+                    "startArrowRotation": "auto",
+                    "endArrowRotation": "auto",
+                    "ortho": true,
+                    "interpolationType": "linear",
+                    "cornerRadius": 10,
+                    "controlPath": [
+                        [-19, -150],
+                        [-19, -130.33333333333337],
+                        [-19, -110.66666666666663],
+                        [-19, -91]
+                    ],
+                    "lockSegments": {}
+                }
+            },
+            "children": null,
+            "constraints": {
+                "constraints": [],
+                "startConstraint": {
+                    "type": "StartPositionConstraint",
+                    "StartPositionConstraint": {
+                        "nodeId": 64,
+                        "px": 0.5,
+                        "py": 1
+                    }
+                },
+                "endConstraint": {
+                    "type": "EndPositionConstraint",
+                    "EndPositionConstraint": {
+                        "nodeId": 62,
+                        "px": 0.5,
+                        "py": 0
+                    }
+                }
+            },
+            "linkMap": []
+        }, {
+            "x": 1105,
+            "y": 957,
+            "rotation": 0,
+            "id": 71,
+            "uid": "com.gliffy.shape.basic.basic_v1.default.line",
+            "width": 100,
+            "height": 100,
+            "lockAspectRatio": false,
+            "lockShape": false,
+            "order": 59,
+            "graphic": {
+                "type": "Line",
+                "Line": {
+                    "strokeWidth": 2,
+                    "strokeColor": "#000000",
+                    "fillColor": "none",
+                    "dashStyle": null,
+                    "startArrow": 1,
+                    "endArrow": 0,
+                    "startArrowRotation": "auto",
+                    "endArrowRotation": "auto",
+                    "ortho": true,
+                    "interpolationType": "linear",
+                    "cornerRadius": 10,
+                    "controlPath": [
+                        [-10, -127],
+                        [-10, -110.33333333333337],
+                        [-10, -93.66666666666663],
+                        [-10, -77]
+                    ],
+                    "lockSegments": {}
+                }
+            },
+            "children": null,
+            "constraints": {
+                "constraints": [],
+                "startConstraint": {
+                    "type": "StartPositionConstraint",
+                    "StartPositionConstraint": {
+                        "nodeId": 62,
+                        "px": 0.5,
+                        "py": 1
+                    }
+                },
+                "endConstraint": {
+                    "type": "EndPositionConstraint",
+                    "EndPositionConstraint": {
+                        "nodeId": 41,
+                        "px": 0.5,
+                        "py": 0
+                    }
+                }
+            },
+            "linkMap": []
+        }, {
+            "x": 970,
+            "y": 400,
+            "rotation": 0,
+            "id": 69,
+            "uid": "com.gliffy.shape.flowchart.flowchart_v1.default.start_end",
+            "width": 250,
+            "height": 60,
+            "lockAspectRatio": false,
+            "lockShape": false,
+            "order": 57,
+            "graphic": {
+                "type": "Shape",
+                "Shape": {
+                    "tid": "com.gliffy.stencil.start_end.flowchart_v1",
+                    "strokeWidth": 2,
+                    "strokeColor": "#333333",
+                    "fillColor": "#FFFFFF",
+                    "gradient": false,
+                    "dropShadow": false,
+                    "state": 0,
+                    "shadowX": 0,
+                    "shadowY": 0,
+                    "opacity": 1
+                }
+            },
+            "children": [{
+                "x": 2,
+                "y": 0,
+                "rotation": 0,
+                "id": 70,
+                "uid": null,
+                "width": 246,
+                "height": 56,
+                "lockAspectRatio": false,
+                "lockShape": false,
+                "order": "auto",
+                "graphic": {
+                    "type": "Text",
+                    "Text": {
+                        "tid": null,
+                        "valign": "middle",
+                        "overflow": "none",
+                        "vposition": "none",
+                        "hposition": "none",
+                        "html": "<p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">incoming_video_stream.cc或者真实render\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">IncomingVideoStream\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">OnFrame()\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">再回调到VideoReceiveStream调用render</span></p>",
+                        "paddingLeft": 2,
+                        "paddingRight": 2,
+                        "paddingBottom": 2,
+                        "paddingTop": 2
+                    }
+                },
+                "children": null
+            }],
+            "linkMap": []
+        }, {
+            "x": 945,
+            "y": 491.5,
+            "rotation": 0,
+            "id": 66,
+            "uid": "com.gliffy.shape.flowchart.flowchart_v1.default.start_end",
+            "width": 300,
+            "height": 100,
+            "lockAspectRatio": false,
+            "lockShape": false,
+            "order": 55,
+            "graphic": {
+                "type": "Shape",
+                "Shape": {
+                    "tid": "com.gliffy.stencil.start_end.flowchart_v1",
+                    "strokeWidth": 2,
+                    "strokeColor": "#333333",
+                    "fillColor": "#FFFFFF",
+                    "gradient": false,
+                    "dropShadow": false,
+                    "state": 0,
+                    "shadowX": 0,
+                    "shadowY": 0,
+                    "opacity": 1
+                }
+            },
+            "children": [{
+                "x": 2.4000000000000004,
+                "y": 0,
+                "rotation": 0,
+                "id": 67,
+                "uid": null,
+                "width": 295.20000000000005,
+                "height": 84,
+                "lockAspectRatio": false,
+                "lockShape": false,
+                "order": "auto",
+                "graphic": {
+                    "type": "Text",
+                    "Text": {
+                        "tid": null,
+                        "valign": "middle",
+                        "overflow": "none",
+                        "vposition": "none",
+                        "hposition": "none",
+                        "html": "<p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">generic_decoder.cc\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">VCMDecodedFrameCallback\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">Decoded()\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">该类作为VideoReceiver 成员，在初始化VideoStreamDecoder\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">的时候注册了VideoStreamDecoder作为回调</span></p>",
+                        "paddingLeft": 2,
+                        "paddingRight": 2,
+                        "paddingBottom": 2,
+                        "paddingTop": 2
+                    }
+                },
+                "children": null
+            }],
+            "linkMap": []
+        }, {
+            "x": 970,
+            "y": 631,
+            "rotation": 0,
+            "id": 64,
+            "uid": "com.gliffy.shape.flowchart.flowchart_v1.default.start_end",
+            "width": 250,
+            "height": 60,
+            "lockAspectRatio": false,
+            "lockShape": false,
+            "order": 53,
+            "graphic": {
+                "type": "Shape",
+                "Shape": {
+                    "tid": "com.gliffy.stencil.start_end.flowchart_v1",
+                    "strokeWidth": 2,
+                    "strokeColor": "#333333",
+                    "fillColor": "#FFFFFF",
+                    "gradient": false,
+                    "dropShadow": false,
+                    "state": 0,
+                    "shadowX": 0,
+                    "shadowY": 0,
+                    "opacity": 1
+                }
+            },
+            "children": [{
+                "x": 2,
+                "y": 0,
+                "rotation": 0,
+                "id": 65,
+                "uid": null,
+                "width": 246,
+                "height": 28,
+                "lockAspectRatio": false,
+                "lockShape": false,
+                "order": "auto",
+                "graphic": {
+                    "type": "Text",
+                    "Text": {
+                        "tid": null,
+                        "valign": "middle",
+                        "overflow": "none",
+                        "vposition": "none",
+                        "hposition": "none",
+                        "html": "<p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">h264_decoder_impl.cc\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">Decoded()</span></p>",
+                        "paddingLeft": 2,
+                        "paddingRight": 2,
+                        "paddingBottom": 2,
+                        "paddingTop": 2
+                    }
+                },
+                "children": null
+            }],
+            "linkMap": []
+        }, {
+            "x": 970,
+            "y": 750,
+            "rotation": 0,
+            "id": 62,
+            "uid": "com.gliffy.shape.flowchart.flowchart_v1.default.start_end",
+            "width": 250,
+            "height": 80,
+            "lockAspectRatio": false,
+            "lockShape": false,
+            "order": 51,
+            "graphic": {
+                "type": "Shape",
+                "Shape": {
+                    "tid": "com.gliffy.stencil.start_end.flowchart_v1",
+                    "strokeWidth": 2,
+                    "strokeColor": "#333333",
+                    "fillColor": "#FFFFFF",
+                    "gradient": false,
+                    "dropShadow": false,
+                    "state": 0,
+                    "shadowX": 0,
+                    "shadowY": 0,
+                    "opacity": 1
+                }
+            },
+            "children": [{
+                "x": 2,
+                "y": 0,
+                "rotation": 0,
+                "id": 63,
+                "uid": null,
+                "width": 246,
+                "height": 70,
+                "lockAspectRatio": false,
+                "lockShape": false,
+                "order": "auto",
+                "graphic": {
+                    "type": "Text",
+                    "Text": {
+                        "tid": null,
+                        "valign": "middle",
+                        "overflow": "none",
+                        "vposition": "none",
+                        "hposition": "none",
+                        "html": "<p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">generic_decoder.cc\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">VCMGenericDecoder\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">Decoded()\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">VcmEncodedFrame\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">(这里的回调就是VideoStreamEncoder)</span></p>",
+                        "paddingLeft": 2,
+                        "paddingRight": 2,
+                        "paddingBottom": 2,
+                        "paddingTop": 2
+                    }
+                },
+                "children": null
+            }],
+            "linkMap": []
+        }, {
+            "x": 1380,
+            "y": 380,
+            "rotation": 0,
+            "id": 54,
+            "uid": "com.gliffy.shape.uml.uml_v1.default.class",
+            "width": 250,
+            "height": 80,
+            "lockAspectRatio": false,
+            "lockShape": false,
+            "order": 44,
+            "graphic": null,
+            "children": [{
+                "x": 0,
+                "y": 0,
+                "rotation": 0,
+                "id": 55,
+                "uid": null,
+                "width": 250,
+                "height": 18,
+                "lockAspectRatio": false,
+                "lockShape": false,
+                "order": "auto",
+                "graphic": {
+                    "type": "Shape",
+                    "Shape": {
+                        "tid": "com.gliffy.stencil.rectangle.basic_v1",
+                        "strokeWidth": 2,
+                        "strokeColor": "#000000",
+                        "fillColor": "#FFFFFF",
+                        "gradient": false,
+                        "dropShadow": true,
+                        "state": 0,
+                        "shadowX": 4,
+                        "shadowY": 4,
+                        "opacity": 1
+                    }
+                },
+                "children": [{
+                    "x": 0,
+                    "y": 0,
+                    "rotation": 0,
+                    "id": 56,
+                    "uid": null,
+                    "width": 250,
+                    "height": 18,
+                    "lockAspectRatio": false,
+                    "lockShape": false,
+                    "order": "auto",
+                    "graphic": {
+                        "type": "Text",
+                        "Text": {
+                            "tid": null,
+                            "valign": "top",
+                            "overflow": "none",
+                            "vposition": "none",
+                            "hposition": "none",
+                            "html": "<p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; font-weight: bold; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">EncodedImage</span></p>",
+                            "paddingLeft": 2,
+                            "paddingRight": 2,
+                            "paddingBottom": 2,
+                            "paddingTop": 2
+                        }
+                    },
+                    "children": null
+                }],
+                "constraints": {
+                    "constraints": [{
+                        "type": "HeightConstraint",
+                        "HeightConstraint": {
+                            "isMin": false,
+                            "heightInfo": [{
+                                "id": 56,
+                                "magnitude": 1
+                            }],
+                            "growParent": true,
+                            "padding": 0
+                        }
+                    }]
+                }
+            }, {
+                "x": 0,
+                "y": 18,
+                "rotation": 0,
+                "id": 57,
+                "uid": null,
+                "width": 250,
+                "height": 18,
+                "lockAspectRatio": false,
+                "lockShape": false,
+                "order": "auto",
+                "graphic": {
+                    "type": "Shape",
+                    "Shape": {
+                        "tid": "com.gliffy.stencil.rectangle.basic_v1",
+                        "strokeWidth": 2,
+                        "strokeColor": "#000000",
+                        "fillColor": "#FFFFFF",
+                        "gradient": false,
+                        "dropShadow": true,
+                        "state": 0,
+                        "shadowX": 4,
+                        "shadowY": 4,
+                        "opacity": 1
+                    }
+                },
+                "children": [{
+                    "x": 0,
+                    "y": 0,
+                    "rotation": 0,
+                    "id": 58,
+                    "uid": null,
+                    "width": 250,
+                    "height": 18,
+                    "lockAspectRatio": false,
+                    "lockShape": false,
+                    "order": "auto",
+                    "graphic": {
+                        "type": "Text",
+                        "Text": {
+                            "tid": null,
+                            "valign": "top",
+                            "overflow": "none",
+                            "vposition": "none",
+                            "hposition": "none",
+                            "html": "<p style=\"text-align:left;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; font-weight: normal; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">attribute</span></p>",
+                            "paddingLeft": 2,
+                            "paddingRight": 2,
+                            "paddingBottom": 2,
+                            "paddingTop": 2
+                        }
+                    },
+                    "children": null
+                }],
+                "constraints": {
+                    "constraints": [{
+                        "type": "PositionConstraint",
+                        "PositionConstraint": {
+                            "nodeId": 55,
+                            "px": 0,
+                            "py": 1
+                        }
+                    }, {
+                        "type": "HeightConstraint",
+                        "HeightConstraint": {
+                            "isMin": false,
+                            "heightInfo": [{
+                                "id": 58,
+                                "magnitude": 1
+                            }],
+                            "growParent": true,
+                            "padding": 0
+                        }
+                    }]
+                }
+            }, {
+                "x": 0,
+                "y": 36,
+                "rotation": 0,
+                "id": 59,
+                "uid": null,
+                "width": 250,
+                "height": 44,
+                "lockAspectRatio": false,
+                "lockShape": false,
+                "order": "auto",
+                "graphic": {
+                    "type": "Shape",
+                    "Shape": {
+                        "tid": "com.gliffy.stencil.rectangle.basic_v1",
+                        "strokeWidth": 2,
+                        "strokeColor": "#000000",
+                        "fillColor": "#FFFFFF",
+                        "gradient": false,
+                        "dropShadow": true,
+                        "state": 0,
+                        "shadowX": 4,
+                        "shadowY": 4,
+                        "opacity": 1
+                    }
+                },
+                "children": [{
+                    "x": 0,
+                    "y": 0,
+                    "rotation": 0,
+                    "id": 60,
+                    "uid": null,
+                    "width": 250,
+                    "height": 18,
+                    "lockAspectRatio": false,
+                    "lockShape": false,
+                    "order": "auto",
+                    "graphic": {
+                        "type": "Text",
+                        "Text": {
+                            "tid": null,
+                            "valign": "top",
+                            "overflow": "none",
+                            "vposition": "none",
+                            "hposition": "none",
+                            "html": "<p style=\"text-align:left;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; font-weight: normal; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">Timestamp() rtp_tmp</span></p>",
+                            "paddingLeft": 2,
+                            "paddingRight": 2,
+                            "paddingBottom": 2,
+                            "paddingTop": 2
+                        }
+                    },
+                    "children": null
+                }],
+                "constraints": {
+                    "constraints": [{
+                        "type": "HeightConstraint",
+                        "HeightConstraint": {
+                            "isMin": false,
+                            "heightInfo": [{
+                                "id": 54,
+                                "magnitude": 1
+                            }, {
+                                "id": 55,
+                                "magnitude": -1
+                            }, {
+                                "id": 57,
+                                "magnitude": -1
+                            }],
+                            "growParent": false,
+                            "padding": 0
+                        }
+                    }, {
+                        "type": "PositionConstraint",
+                        "PositionConstraint": {
+                            "nodeId": 57,
+                            "px": 0,
+                            "py": 1
+                        }
+                    }]
+                }
+            }],
+            "constraints": {
+                "constraints": [{
+                    "type": "HeightConstraint",
+                    "HeightConstraint": {
+                        "isMin": true,
+                        "heightInfo": [{
+                            "id": 55,
+                            "magnitude": 1
+                        }, {
+                            "id": 57,
+                            "magnitude": 1
+                        }, {
+                            "id": 60,
+                            "magnitude": 1
+                        }],
+                        "growParent": false,
+                        "padding": 0
+                    }
+                }]
+            },
+            "linkMap": []
+        }, {
+            "x": 888,
+            "y": 669,
+            "rotation": 0,
+            "id": 53,
+            "uid": "com.gliffy.shape.uml.uml_v1.default.generalization",
+            "width": 100,
+            "height": 100,
+            "lockAspectRatio": false,
+            "lockShape": false,
+            "order": 43,
+            "graphic": {
+                "type": "Line",
+                "Line": {
+                    "strokeWidth": 1,
+                    "strokeColor": "#000000",
+                    "fillColor": "none",
+                    "dashStyle": null,
+                    "startArrow": 0,
+                    "endArrow": 4,
+                    "startArrowRotation": "auto",
+                    "endArrowRotation": "auto",
+                    "ortho": true,
+                    "interpolationType": "linear",
+                    "cornerRadius": null,
+                    "controlPath": [
+                        [617, -153],
+                        [617, -171.66666666666669],
+                        [617, -190.33333333333331],
+                        [617, -209]
+                    ],
+                    "lockSegments": {}
+                }
+            },
+            "children": null,
+            "constraints": {
+                "constraints": [],
+                "startConstraint": {
+                    "type": "StartPositionConstraint",
+                    "StartPositionConstraint": {
+                        "nodeId": 45,
+                        "px": 0.5,
+                        "py": 0
+                    }
+                },
+                "endConstraint": {
+                    "type": "EndPositionConstraint",
+                    "EndPositionConstraint": {
+                        "nodeId": 54,
+                        "px": 0.5,
+                        "py": 1
+                    }
+                }
+            },
+            "linkMap": []
+        }, {
+            "x": 1265,
+            "y": 703,
+            "rotation": 0,
+            "id": 52,
+            "uid": "com.gliffy.shape.uml.uml_v1.default.generalization",
+            "width": 100,
+            "height": 100,
+            "lockAspectRatio": false,
+            "lockShape": false,
+            "order": 42,
+            "graphic": {
+                "type": "Line",
+                "Line": {
+                    "strokeWidth": 1,
+                    "strokeColor": "#000000",
+                    "fillColor": "none",
+                    "dashStyle": null,
+                    "startArrow": 0,
+                    "endArrow": 4,
+                    "startArrowRotation": "auto",
+                    "endArrowRotation": "auto",
+                    "ortho": true,
+                    "interpolationType": "linear",
+                    "cornerRadius": null,
+                    "controlPath": [
+                        [240, -71.5],
+                        [240, -85],
+                        [240, -98.5],
+                        [240, -112]
+                    ],
+                    "lockSegments": {}
+                }
+            },
+            "children": null,
+            "constraints": {
+                "constraints": [],
+                "startConstraint": {
+                    "type": "StartPositionConstraint",
+                    "StartPositionConstraint": {
+                        "nodeId": 29,
+                        "px": 0.5,
+                        "py": 0
+                    }
+                },
+                "endConstraint": {
+                    "type": "EndPositionConstraint",
+                    "EndPositionConstraint": {
+                        "nodeId": 45,
+                        "px": 0.5,
+                        "py": 1
+                    }
+                }
+            },
+            "linkMap": []
+        }, {
+            "x": 1380,
+            "y": 516,
+            "rotation": 0,
+            "id": 45,
+            "uid": "com.gliffy.shape.uml.uml_v1.default.class",
+            "width": 250,
+            "height": 75,
+            "lockAspectRatio": false,
+            "lockShape": false,
+            "order": 35,
+            "graphic": null,
+            "children": [{
+                "x": 0,
+                "y": 0,
+                "rotation": 0,
+                "id": 46,
+                "uid": null,
+                "width": 250,
+                "height": 18,
+                "lockAspectRatio": false,
+                "lockShape": false,
+                "order": "auto",
+                "graphic": {
+                    "type": "Shape",
+                    "Shape": {
+                        "tid": "com.gliffy.stencil.rectangle.basic_v1",
+                        "strokeWidth": 2,
+                        "strokeColor": "#000000",
+                        "fillColor": "#FFFFFF",
+                        "gradient": false,
+                        "dropShadow": true,
+                        "state": 0,
+                        "shadowX": 4,
+                        "shadowY": 4,
+                        "opacity": 1
+                    }
+                },
+                "children": [{
+                    "x": 0,
+                    "y": 0,
+                    "rotation": 0,
+                    "id": 47,
+                    "uid": null,
+                    "width": 250,
+                    "height": 18,
+                    "lockAspectRatio": false,
+                    "lockShape": false,
+                    "order": "auto",
+                    "graphic": {
+                        "type": "Text",
+                        "Text": {
+                            "tid": null,
+                            "valign": "top",
+                            "overflow": "none",
+                            "vposition": "none",
+                            "hposition": "none",
+                            "html": "<p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; font-weight: bold; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">VcmEncodedFrame</span></p>",
+                            "paddingLeft": 2,
+                            "paddingRight": 2,
+                            "paddingBottom": 2,
+                            "paddingTop": 2
+                        }
+                    },
+                    "children": null
+                }],
+                "constraints": {
+                    "constraints": [{
+                        "type": "HeightConstraint",
+                        "HeightConstraint": {
+                            "isMin": false,
+                            "heightInfo": [{
+                                "id": 47,
+                                "magnitude": 1
+                            }],
+                            "growParent": true,
+                            "padding": 0
+                        }
+                    }]
+                }
+            }, {
+                "x": 0,
+                "y": 18,
+                "rotation": 0,
+                "id": 48,
+                "uid": null,
+                "width": 250,
+                "height": 18,
+                "lockAspectRatio": false,
+                "lockShape": false,
+                "order": "auto",
+                "graphic": {
+                    "type": "Shape",
+                    "Shape": {
+                        "tid": "com.gliffy.stencil.rectangle.basic_v1",
+                        "strokeWidth": 2,
+                        "strokeColor": "#000000",
+                        "fillColor": "#FFFFFF",
+                        "gradient": false,
+                        "dropShadow": true,
+                        "state": 0,
+                        "shadowX": 4,
+                        "shadowY": 4,
+                        "opacity": 1
+                    }
+                },
+                "children": [{
+                    "x": 0,
+                    "y": 0,
+                    "rotation": 0,
+                    "id": 49,
+                    "uid": null,
+                    "width": 250,
+                    "height": 18,
+                    "lockAspectRatio": false,
+                    "lockShape": false,
+                    "order": "auto",
+                    "graphic": {
+                        "type": "Text",
+                        "Text": {
+                            "tid": null,
+                            "valign": "top",
+                            "overflow": "none",
+                            "vposition": "none",
+                            "hposition": "none",
+                            "html": "<p style=\"text-align:left;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; font-weight: normal; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">attribute\n</span></p><p style=\"text-align:left;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; font-weight: normal; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\"></span></p>",
+                            "paddingLeft": 2,
+                            "paddingRight": 2,
+                            "paddingBottom": 2,
+                            "paddingTop": 2
+                        }
+                    },
+                    "children": null
+                }],
+                "constraints": {
+                    "constraints": [{
+                        "type": "PositionConstraint",
+                        "PositionConstraint": {
+                            "nodeId": 46,
+                            "px": 0,
+                            "py": 1
+                        }
+                    }, {
+                        "type": "HeightConstraint",
+                        "HeightConstraint": {
+                            "isMin": false,
+                            "heightInfo": [{
+                                "id": 49,
+                                "magnitude": 1
+                            }],
+                            "growParent": true,
+                            "padding": 0
+                        }
+                    }]
+                }
+            }, {
+                "x": 0,
+                "y": 36,
+                "rotation": 0,
+                "id": 50,
+                "uid": null,
+                "width": 250,
+                "height": 39,
+                "lockAspectRatio": false,
+                "lockShape": false,
+                "order": "auto",
+                "graphic": {
+                    "type": "Shape",
+                    "Shape": {
+                        "tid": "com.gliffy.stencil.rectangle.basic_v1",
+                        "strokeWidth": 2,
+                        "strokeColor": "#000000",
+                        "fillColor": "#FFFFFF",
+                        "gradient": false,
+                        "dropShadow": true,
+                        "state": 0,
+                        "shadowX": 4,
+                        "shadowY": 4,
+                        "opacity": 1
+                    }
+                },
+                "children": [{
+                    "x": 0,
+                    "y": 0,
+                    "rotation": 0,
+                    "id": 51,
+                    "uid": null,
+                    "width": 250,
+                    "height": 18,
+                    "lockAspectRatio": false,
+                    "lockShape": false,
+                    "order": "auto",
+                    "graphic": {
+                        "type": "Text",
+                        "Text": {
+                            "tid": null,
+                            "valign": "top",
+                            "overflow": "none",
+                            "vposition": "none",
+                            "hposition": "none",
+                            "html": "<p style=\"text-align: left;\"><span class=\"gliffy-placeholder-text\" style=\"font-family: Arial; font-size: 12px; font-weight: normal; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">Method</span></p>",
+                            "paddingLeft": 2,
+                            "paddingRight": 2,
+                            "paddingBottom": 2,
+                            "paddingTop": 2
+                        }
+                    },
+                    "children": null
+                }],
+                "constraints": {
+                    "constraints": [{
+                        "type": "HeightConstraint",
+                        "HeightConstraint": {
+                            "isMin": false,
+                            "heightInfo": [{
+                                "id": 45,
+                                "magnitude": 1
+                            }, {
+                                "id": 46,
+                                "magnitude": -1
+                            }, {
+                                "id": 48,
+                                "magnitude": -1
+                            }],
+                            "growParent": false,
+                            "padding": 0
+                        }
+                    }, {
+                        "type": "PositionConstraint",
+                        "PositionConstraint": {
+                            "nodeId": 48,
+                            "px": 0,
+                            "py": 1
+                        }
+                    }]
+                }
+            }],
+            "constraints": {
+                "constraints": [{
+                    "type": "HeightConstraint",
+                    "HeightConstraint": {
+                        "isMin": true,
+                        "heightInfo": [{
+                            "id": 46,
+                            "magnitude": 1
+                        }, {
+                            "id": 48,
+                            "magnitude": 1
+                        }, {
+                            "id": 51,
+                            "magnitude": 1
+                        }],
+                        "growParent": false,
+                        "padding": 0
+                    }
+                }]
+            },
+            "linkMap": []
+        }, {
+            "x": 754,
+            "y": 943,
+            "rotation": 0,
+            "id": 43,
+            "uid": "com.gliffy.shape.basic.basic_v1.default.line",
+            "width": 100,
+            "height": 100,
+            "lockAspectRatio": false,
+            "lockShape": false,
+            "order": 34,
+            "graphic": {
+                "type": "Line",
+                "Line": {
+                    "strokeWidth": 2,
+                    "strokeColor": "#000000",
+                    "fillColor": "none",
+                    "dashStyle": null,
+                    "startArrow": 0,
+                    "endArrow": 1,
+                    "startArrowRotation": "auto",
+                    "endArrowRotation": "auto",
+                    "ortho": true,
+                    "interpolationType": "linear",
+                    "cornerRadius": 10,
+                    "controlPath": [
+                        [-19, -3],
+                        [-19, 37],
+                        [341, 37],
+                        [341, -3]
+                    ],
+                    "lockSegments": {}
+                }
+            },
+            "children": null,
+            "constraints": {
+                "constraints": [],
+                "startConstraint": {
+                    "type": "StartPositionConstraint",
+                    "StartPositionConstraint": {
+                        "nodeId": 38,
+                        "px": 0.5,
+                        "py": 1
+                    }
+                },
+                "endConstraint": {
+                    "type": "EndPositionConstraint",
+                    "EndPositionConstraint": {
+                        "nodeId": 41,
+                        "px": 0.5,
+                        "py": 1
+                    }
+                }
+            },
+            "linkMap": []
+        }, {
+            "x": 970,
+            "y": 880,
+            "rotation": 0,
+            "id": 41,
+            "uid": "com.gliffy.shape.flowchart.flowchart_v1.default.start_end",
+            "width": 250,
+            "height": 60,
+            "lockAspectRatio": false,
+            "lockShape": false,
+            "order": 32,
+            "graphic": {
+                "type": "Shape",
+                "Shape": {
+                    "tid": "com.gliffy.stencil.start_end.flowchart_v1",
+                    "strokeWidth": 2,
+                    "strokeColor": "#333333",
+                    "fillColor": "#FFFFFF",
+                    "gradient": false,
+                    "dropShadow": false,
+                    "state": 0,
+                    "shadowX": 0,
+                    "shadowY": 0,
+                    "opacity": 1
+                }
+            },
+            "children": [{
+                "x": 2,
+                "y": 0,
+                "rotation": 0,
+                "id": 42,
+                "uid": null,
+                "width": 246,
+                "height": 56,
+                "lockAspectRatio": false,
+                "lockShape": false,
+                "order": "auto",
+                "graphic": {
+                    "type": "Text",
+                    "Text": {
+                        "tid": null,
+                        "valign": "middle",
+                        "overflow": "none",
+                        "vposition": "none",
+                        "hposition": "none",
+                        "html": "<p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">videoreceiver.cc\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">VideoReceiver\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">Decoded()\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">VcmEncodedFrame</span></p>",
+                        "paddingLeft": 2,
+                        "paddingRight": 2,
+                        "paddingBottom": 2,
+                        "paddingTop": 2
+                    }
+                },
+                "children": null
+            }],
+            "linkMap": []
+        }, {
+            "x": 744,
+            "y": 933,
+            "rotation": 0,
+            "id": 40,
+            "uid": "com.gliffy.shape.basic.basic_v1.default.line",
+            "width": 100,
+            "height": 100,
+            "lockAspectRatio": false,
+            "lockShape": false,
+            "order": 31,
+            "graphic": {
+                "type": "Line",
+                "Line": {
+                    "strokeWidth": 2,
+                    "strokeColor": "#000000",
+                    "fillColor": "none",
+                    "dashStyle": null,
+                    "startArrow": 0,
+                    "endArrow": 1,
+                    "startArrowRotation": "auto",
+                    "endArrowRotation": "auto",
+                    "ortho": true,
+                    "interpolationType": "linear",
+                    "cornerRadius": 10,
+                    "controlPath": [
+                        [-9, -113],
+                        [-9, -93],
+                        [-9, -73],
+                        [-9, -53]
+                    ],
+                    "lockSegments": {}
+                }
+            },
+            "children": null,
+            "constraints": {
+                "constraints": [],
+                "startConstraint": {
+                    "type": "StartPositionConstraint",
+                    "StartPositionConstraint": {
+                        "nodeId": 19,
+                        "px": 0.5,
+                        "py": 1
+                    }
+                },
+                "endConstraint": {
+                    "type": "EndPositionConstraint",
+                    "EndPositionConstraint": {
+                        "nodeId": 38,
+                        "px": 0.5,
+                        "py": 0
+                    }
+                }
+            },
+            "linkMap": []
+        }, {
+            "x": 610,
+            "y": 880,
+            "rotation": 0,
+            "id": 38,
+            "uid": "com.gliffy.shape.flowchart.flowchart_v1.default.start_end",
+            "width": 250,
+            "height": 60,
+            "lockAspectRatio": false,
+            "lockShape": false,
+            "order": 29,
+            "graphic": {
+                "type": "Shape",
+                "Shape": {
+                    "tid": "com.gliffy.stencil.start_end.flowchart_v1",
+                    "strokeWidth": 2,
+                    "strokeColor": "#333333",
+                    "fillColor": "#FFFFFF",
+                    "gradient": false,
+                    "dropShadow": false,
+                    "state": 0,
+                    "shadowX": 0,
+                    "shadowY": 0,
+                    "opacity": 1
+                }
+            },
+            "children": [{
+                "x": 2,
+                "y": 0,
+                "rotation": 0,
+                "id": 39,
+                "uid": null,
+                "width": 246,
+                "height": 56,
+                "lockAspectRatio": false,
+                "lockShape": false,
+                "order": "auto",
+                "graphic": {
+                    "type": "Text",
+                    "Text": {
+                        "tid": null,
+                        "valign": "middle",
+                        "overflow": "none",
+                        "vposition": "none",
+                        "hposition": "none",
+                        "html": "<p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">videoreceivestream.cc\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">VideoReceiveStream\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">Decoded()\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">EncodedFrame</span></p>",
+                        "paddingLeft": 2,
+                        "paddingRight": 2,
+                        "paddingBottom": 2,
+                        "paddingTop": 2
+                    }
+                },
+                "children": null
+            }],
+            "linkMap": []
+        }, {
+            "x": 1249,
+            "y": 844,
+            "rotation": 0,
+            "id": 36,
+            "uid": "com.gliffy.shape.uml.uml_v1.default.generalization",
+            "width": 100,
+            "height": 100,
+            "lockAspectRatio": false,
+            "lockShape": false,
+            "order": 28,
+            "graphic": {
+                "type": "Line",
+                "Line": {
+                    "strokeWidth": 1,
+                    "strokeColor": "#000000",
+                    "fillColor": "none",
+                    "dashStyle": null,
+                    "startArrow": 0,
+                    "endArrow": 4,
+                    "startArrowRotation": "auto",
+                    "endArrowRotation": "auto",
+                    "ortho": true,
+                    "interpolationType": "linear",
+                    "cornerRadius": null,
+                    "controlPath": [
+                        [256, -46],
+                        [256, -55.5],
+                        [256, -65],
+                        [256, -74.5]
+                    ],
+                    "lockSegments": {}
+                }
+            },
+            "children": null,
+            "constraints": {
+                "constraints": [],
+                "startConstraint": {
+                    "type": "StartPositionConstraint",
+                    "StartPositionConstraint": {
+                        "nodeId": 22,
+                        "px": 0.5,
+                        "py": 0
+                    }
+                },
+                "endConstraint": {
+                    "type": "EndPositionConstraint",
+                    "EndPositionConstraint": {
+                        "nodeId": 29,
+                        "px": 0.5,
+                        "py": 1
+                    }
+                }
+            },
+            "linkMap": []
+        }, {
+            "x": 1335,
+            "y": 631.5,
+            "rotation": 0,
+            "id": 29,
+            "uid": "com.gliffy.shape.uml.uml_v1.default.class",
+            "width": 340,
+            "height": 138,
+            "lockAspectRatio": false,
+            "lockShape": false,
+            "order": 21,
+            "graphic": null,
+            "children": [{
+                "x": 0,
+                "y": 0,
+                "rotation": 0,
+                "id": 30,
+                "uid": null,
+                "width": 340,
+                "height": 18,
+                "lockAspectRatio": false,
+                "lockShape": false,
+                "order": "auto",
+                "graphic": {
+                    "type": "Shape",
+                    "Shape": {
+                        "tid": "com.gliffy.stencil.rectangle.basic_v1",
+                        "strokeWidth": 2,
+                        "strokeColor": "#000000",
+                        "fillColor": "#FFFFFF",
+                        "gradient": false,
+                        "dropShadow": true,
+                        "state": 0,
+                        "shadowX": 4,
+                        "shadowY": 4,
+                        "opacity": 1
+                    }
+                },
+                "children": [{
+                    "x": 0,
+                    "y": 0,
+                    "rotation": 0,
+                    "id": 31,
+                    "uid": null,
+                    "width": 340,
+                    "height": 18,
+                    "lockAspectRatio": false,
+                    "lockShape": false,
+                    "order": "auto",
+                    "graphic": {
+                        "type": "Text",
+                        "Text": {
+                            "tid": null,
+                            "valign": "top",
+                            "overflow": "none",
+                            "vposition": "none",
+                            "hposition": "none",
+                            "html": "<p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; font-weight: bold; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">EncodedFrame</span></p>",
+                            "paddingLeft": 2,
+                            "paddingRight": 2,
+                            "paddingBottom": 2,
+                            "paddingTop": 2
+                        }
+                    },
+                    "children": null
+                }],
+                "constraints": {
+                    "constraints": [{
+                        "type": "HeightConstraint",
+                        "HeightConstraint": {
+                            "isMin": false,
+                            "heightInfo": [{
+                                "id": 31,
+                                "magnitude": 1
+                            }],
+                            "growParent": true,
+                            "padding": 0
+                        }
+                    }]
+                }
+            }, {
+                "x": 0,
+                "y": 18,
+                "rotation": 0,
+                "id": 32,
+                "uid": null,
+                "width": 340,
+                "height": 88,
+                "lockAspectRatio": false,
+                "lockShape": false,
+                "order": "auto",
+                "graphic": {
+                    "type": "Shape",
+                    "Shape": {
+                        "tid": "com.gliffy.stencil.rectangle.basic_v1",
+                        "strokeWidth": 2,
+                        "strokeColor": "#000000",
+                        "fillColor": "#FFFFFF",
+                        "gradient": false,
+                        "dropShadow": true,
+                        "state": 0,
+                        "shadowX": 4,
+                        "shadowY": 4,
+                        "opacity": 1
+                    }
+                },
+                "children": [{
+                    "x": 0,
+                    "y": 0,
+                    "rotation": 0,
+                    "id": 33,
+                    "uid": null,
+                    "width": 340,
+                    "height": 88,
+                    "lockAspectRatio": false,
+                    "lockShape": false,
+                    "order": "auto",
+                    "graphic": {
+                        "type": "Text",
+                        "Text": {
+                            "tid": null,
+                            "valign": "top",
+                            "overflow": "none",
+                            "vposition": "none",
+                            "hposition": "none",
+                            "html": "<p style=\"text-align:left;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; font-weight: normal; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">VideoLayerFrameId id; 在refefind dep set pid frame last seq\n</span></p><p style=\"text-align:left;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; font-weight: normal; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">以下变量用在frameBuffer 的validReference 判断中\n</span></p><p style=\"text-align:left;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; font-weight: normal; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">size_t num_references = 0;\n</span></p><p style=\"text-align:left;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; font-weight: normal; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">int64_t references[kMaxFrameReferences];\n</span></p><p style=\"text-align:left;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; font-weight: normal; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">bool inter_layer_predicted = false;\n</span></p><p style=\"text-align:left;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; font-weight: normal; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">bool is_last_spatial_layer = true;</span></p>",
+                            "paddingLeft": 2,
+                            "paddingRight": 2,
+                            "paddingBottom": 2,
+                            "paddingTop": 2
+                        }
+                    },
+                    "children": null
+                }],
+                "constraints": {
+                    "constraints": [{
+                        "type": "PositionConstraint",
+                        "PositionConstraint": {
+                            "nodeId": 30,
+                            "px": 0,
+                            "py": 1
+                        }
+                    }, {
+                        "type": "HeightConstraint",
+                        "HeightConstraint": {
+                            "isMin": false,
+                            "heightInfo": [{
+                                "id": 33,
+                                "magnitude": 1
+                            }],
+                            "growParent": true,
+                            "padding": 0
+                        }
+                    }]
+                }
+            }, {
+                "x": 0,
+                "y": 106,
+                "rotation": 0,
+                "id": 34,
+                "uid": null,
+                "width": 340,
+                "height": 32,
+                "lockAspectRatio": false,
+                "lockShape": false,
+                "order": "auto",
+                "graphic": {
+                    "type": "Shape",
+                    "Shape": {
+                        "tid": "com.gliffy.stencil.rectangle.basic_v1",
+                        "strokeWidth": 2,
+                        "strokeColor": "#000000",
+                        "fillColor": "#FFFFFF",
+                        "gradient": false,
+                        "dropShadow": true,
+                        "state": 0,
+                        "shadowX": 4,
+                        "shadowY": 4,
+                        "opacity": 1
+                    }
+                },
+                "children": [{
+                    "x": 0,
+                    "y": 0,
+                    "rotation": 0,
+                    "id": 35,
+                    "uid": null,
+                    "width": 340,
+                    "height": 18,
+                    "lockAspectRatio": false,
+                    "lockShape": false,
+                    "order": "auto",
+                    "graphic": {
+                        "type": "Text",
+                        "Text": {
+                            "tid": null,
+                            "valign": "top",
+                            "overflow": "none",
+                            "vposition": "none",
+                            "hposition": "none",
+                            "html": "<p style=\"text-align: left;\"><span class=\"gliffy-placeholder-text\" style=\"font-family: Arial; font-size: 12px; font-weight: normal; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">Method</span></p>",
+                            "paddingLeft": 2,
+                            "paddingRight": 2,
+                            "paddingBottom": 2,
+                            "paddingTop": 2
+                        }
+                    },
+                    "children": null
+                }],
+                "constraints": {
+                    "constraints": [{
+                        "type": "HeightConstraint",
+                        "HeightConstraint": {
+                            "isMin": false,
+                            "heightInfo": [{
+                                "id": 29,
+                                "magnitude": 1
+                            }, {
+                                "id": 30,
+                                "magnitude": -1
+                            }, {
+                                "id": 32,
+                                "magnitude": -1
+                            }],
+                            "growParent": false,
+                            "padding": 0
+                        }
+                    }, {
+                        "type": "PositionConstraint",
+                        "PositionConstraint": {
+                            "nodeId": 32,
+                            "px": 0,
+                            "py": 1
+                        }
+                    }]
+                }
+            }],
+            "constraints": {
+                "constraints": [{
+                    "type": "HeightConstraint",
+                    "HeightConstraint": {
+                        "isMin": true,
+                        "heightInfo": [{
+                            "id": 30,
+                            "magnitude": 1
+                        }, {
+                            "id": 32,
+                            "magnitude": 1
+                        }, {
+                            "id": 35,
+                            "magnitude": 1
+                        }],
+                        "growParent": false,
+                        "padding": 0
+                    }
+                }]
+            },
+            "linkMap": []
+        }, {
+            "x": 1435,
+            "y": 798,
+            "rotation": 0,
+            "id": 22,
+            "uid": "com.gliffy.shape.uml.uml_v1.default.class",
+            "width": 140,
+            "height": 75,
+            "lockAspectRatio": false,
+            "lockShape": false,
+            "order": 14,
+            "graphic": null,
+            "children": [{
+                "x": 0,
+                "y": 0,
+                "rotation": 0,
+                "id": 23,
+                "uid": null,
+                "width": 140,
+                "height": 18,
+                "lockAspectRatio": false,
+                "lockShape": false,
+                "order": "auto",
+                "graphic": {
+                    "type": "Shape",
+                    "Shape": {
+                        "tid": "com.gliffy.stencil.rectangle.basic_v1",
+                        "strokeWidth": 2,
+                        "strokeColor": "#000000",
+                        "fillColor": "#FFFFFF",
+                        "gradient": false,
+                        "dropShadow": true,
+                        "state": 0,
+                        "shadowX": 4,
+                        "shadowY": 4,
+                        "opacity": 1
+                    }
+                },
+                "children": [{
+                    "x": 0,
+                    "y": 0,
+                    "rotation": 0,
+                    "id": 24,
+                    "uid": null,
+                    "width": 140,
+                    "height": 18,
+                    "lockAspectRatio": false,
+                    "lockShape": false,
+                    "order": "auto",
+                    "graphic": {
+                        "type": "Text",
+                        "Text": {
+                            "tid": null,
+                            "valign": "top",
+                            "overflow": "none",
+                            "vposition": "none",
+                            "hposition": "none",
+                            "html": "<p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; font-weight: bold; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">RtpFrameObject</span></p>",
+                            "paddingLeft": 2,
+                            "paddingRight": 2,
+                            "paddingBottom": 2,
+                            "paddingTop": 2
+                        }
+                    },
+                    "children": null
+                }],
+                "constraints": {
+                    "constraints": [{
+                        "type": "HeightConstraint",
+                        "HeightConstraint": {
+                            "isMin": false,
+                            "heightInfo": [{
+                                "id": 24,
+                                "magnitude": 1
+                            }],
+                            "growParent": true,
+                            "padding": 0
+                        }
+                    }]
+                }
+            }, {
+                "x": 0,
+                "y": 18,
+                "rotation": 0,
+                "id": 25,
+                "uid": null,
+                "width": 140,
+                "height": 18,
+                "lockAspectRatio": false,
+                "lockShape": false,
+                "order": "auto",
+                "graphic": {
+                    "type": "Shape",
+                    "Shape": {
+                        "tid": "com.gliffy.stencil.rectangle.basic_v1",
+                        "strokeWidth": 2,
+                        "strokeColor": "#000000",
+                        "fillColor": "#FFFFFF",
+                        "gradient": false,
+                        "dropShadow": true,
+                        "state": 0,
+                        "shadowX": 4,
+                        "shadowY": 4,
+                        "opacity": 1
+                    }
+                },
+                "children": [{
+                    "x": 0,
+                    "y": 0,
+                    "rotation": 0,
+                    "id": 26,
+                    "uid": null,
+                    "width": 140,
+                    "height": 18,
+                    "lockAspectRatio": false,
+                    "lockShape": false,
+                    "order": "auto",
+                    "graphic": {
+                        "type": "Text",
+                        "Text": {
+                            "tid": null,
+                            "valign": "top",
+                            "overflow": "none",
+                            "vposition": "none",
+                            "hposition": "none",
+                            "html": "<p style=\"text-align: left;\"><span class=\"gliffy-placeholder-text\" style=\"font-family: Arial; font-size: 12px; font-weight: normal; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">Attribute</span></p>",
+                            "paddingLeft": 2,
+                            "paddingRight": 2,
+                            "paddingBottom": 2,
+                            "paddingTop": 2
+                        }
+                    },
+                    "children": null
+                }],
+                "constraints": {
+                    "constraints": [{
+                        "type": "PositionConstraint",
+                        "PositionConstraint": {
+                            "nodeId": 23,
+                            "px": 0,
+                            "py": 1
+                        }
+                    }, {
+                        "type": "HeightConstraint",
+                        "HeightConstraint": {
+                            "isMin": false,
+                            "heightInfo": [{
+                                "id": 26,
+                                "magnitude": 1
+                            }],
+                            "growParent": true,
+                            "padding": 0
+                        }
+                    }]
+                }
+            }, {
+                "x": 0,
+                "y": 36,
+                "rotation": 0,
+                "id": 27,
+                "uid": null,
+                "width": 140,
+                "height": 39,
+                "lockAspectRatio": false,
+                "lockShape": false,
+                "order": "auto",
+                "graphic": {
+                    "type": "Shape",
+                    "Shape": {
+                        "tid": "com.gliffy.stencil.rectangle.basic_v1",
+                        "strokeWidth": 2,
+                        "strokeColor": "#000000",
+                        "fillColor": "#FFFFFF",
+                        "gradient": false,
+                        "dropShadow": true,
+                        "state": 0,
+                        "shadowX": 4,
+                        "shadowY": 4,
+                        "opacity": 1
+                    }
+                },
+                "children": [{
+                    "x": 0,
+                    "y": 0,
+                    "rotation": 0,
+                    "id": 28,
+                    "uid": null,
+                    "width": 140,
+                    "height": 18,
+                    "lockAspectRatio": false,
+                    "lockShape": false,
+                    "order": "auto",
+                    "graphic": {
+                        "type": "Text",
+                        "Text": {
+                            "tid": null,
+                            "valign": "top",
+                            "overflow": "none",
+                            "vposition": "none",
+                            "hposition": "none",
+                            "html": "<p style=\"text-align: left;\"><span class=\"gliffy-placeholder-text\" style=\"font-family: Arial; font-size: 12px; font-weight: normal; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">Method</span></p>",
+                            "paddingLeft": 2,
+                            "paddingRight": 2,
+                            "paddingBottom": 2,
+                            "paddingTop": 2
+                        }
+                    },
+                    "children": null
+                }],
+                "constraints": {
+                    "constraints": [{
+                        "type": "HeightConstraint",
+                        "HeightConstraint": {
+                            "isMin": false,
+                            "heightInfo": [{
+                                "id": 22,
+                                "magnitude": 1
+                            }, {
+                                "id": 23,
+                                "magnitude": -1
+                            }, {
+                                "id": 25,
+                                "magnitude": -1
+                            }],
+                            "growParent": false,
+                            "padding": 0
+                        }
+                    }, {
+                        "type": "PositionConstraint",
+                        "PositionConstraint": {
+                            "nodeId": 25,
+                            "px": 0,
+                            "py": 1
+                        }
+                    }]
+                }
+            }],
+            "constraints": {
+                "constraints": [{
+                    "type": "HeightConstraint",
+                    "HeightConstraint": {
+                        "isMin": true,
+                        "heightInfo": [{
+                            "id": 23,
+                            "magnitude": 1
+                        }, {
+                            "id": 25,
+                            "magnitude": 1
+                        }, {
+                            "id": 28,
+                            "magnitude": 1
+                        }],
+                        "growParent": false,
+                        "padding": 0
+                    }
+                }]
+            },
+            "linkMap": []
+        }, {
+            "x": 729,
+            "y": 773,
+            "rotation": 0,
+            "id": 21,
+            "uid": "com.gliffy.shape.basic.basic_v1.default.line",
+            "width": 100,
+            "height": 100,
+            "lockAspectRatio": false,
+            "lockShape": false,
+            "order": 13,
+            "graphic": {
+                "type": "Line",
+                "Line": {
+                    "strokeWidth": 2,
+                    "strokeColor": "#000000",
+                    "fillColor": "none",
+                    "dashStyle": null,
+                    "startArrow": 0,
+                    "endArrow": 1,
+                    "startArrowRotation": "auto",
+                    "endArrowRotation": "auto",
+                    "ortho": true,
+                    "interpolationType": "linear",
+                    "cornerRadius": 10,
+                    "controlPath": [
+                        [6, -73],
+                        [6, -53],
+                        [6, -33],
+                        [6, -13]
+                    ],
+                    "lockSegments": {}
+                }
+            },
+            "children": null,
+            "constraints": {
+                "constraints": [],
+                "startConstraint": {
+                    "type": "StartPositionConstraint",
+                    "StartPositionConstraint": {
+                        "nodeId": 16,
+                        "px": 0.5,
+                        "py": 1
+                    }
+                },
+                "endConstraint": {
+                    "type": "EndPositionConstraint",
+                    "EndPositionConstraint": {
+                        "nodeId": 19,
+                        "px": 0.5,
+                        "py": 0
+                    }
+                }
+            },
+            "linkMap": []
+        }, {
+            "x": 610,
+            "y": 760,
+            "rotation": 0,
+            "id": 19,
+            "uid": "com.gliffy.shape.flowchart.flowchart_v1.default.start_end",
+            "width": 250,
+            "height": 60,
+            "lockAspectRatio": false,
+            "lockShape": false,
+            "order": 11,
+            "graphic": {
+                "type": "Shape",
+                "Shape": {
+                    "tid": "com.gliffy.stencil.start_end.flowchart_v1",
+                    "strokeWidth": 2,
+                    "strokeColor": "#333333",
+                    "fillColor": "#FFFFFF",
+                    "gradient": false,
+                    "dropShadow": false,
+                    "state": 0,
+                    "shadowX": 0,
+                    "shadowY": 0,
+                    "opacity": 1
+                }
+            },
+            "children": [{
+                "x": 2,
+                "y": 0,
+                "rotation": 0,
+                "id": 20,
+                "uid": null,
+                "width": 246,
+                "height": 56,
+                "lockAspectRatio": false,
+                "lockShape": false,
+                "order": "auto",
+                "graphic": {
+                    "type": "Text",
+                    "Text": {
+                        "tid": null,
+                        "valign": "middle",
+                        "overflow": "none",
+                        "vposition": "none",
+                        "hposition": "none",
+                        "html": "<p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">framebuffer.cc\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">FrameBuffer\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">InsertFrame()\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">NextFrame()</span></p>",
+                        "paddingLeft": 2,
+                        "paddingRight": 2,
+                        "paddingBottom": 2,
+                        "paddingTop": 2
+                    }
+                },
+                "children": null
+            }],
+            "linkMap": []
+        }, {
+            "x": 729,
+            "y": 634,
+            "rotation": 0,
+            "id": 18,
+            "uid": "com.gliffy.shape.basic.basic_v1.default.line",
+            "width": 100,
+            "height": 100,
+            "lockAspectRatio": false,
+            "lockShape": false,
+            "order": 10,
+            "graphic": {
+                "type": "Line",
+                "Line": {
+                    "strokeWidth": 2,
+                    "strokeColor": "#000000",
+                    "fillColor": "none",
+                    "dashStyle": null,
+                    "startArrow": 0,
+                    "endArrow": 1,
+                    "startArrowRotation": "auto",
+                    "endArrowRotation": "auto",
+                    "ortho": true,
+                    "interpolationType": "linear",
+                    "cornerRadius": 10,
+                    "controlPath": [
+                        [6, -43],
+                        [6, -29.66666666666663],
+                        [6, -16.33333333333337],
+                        [6, -3]
+                    ],
+                    "lockSegments": {}
+                }
+            },
+            "children": null,
+            "constraints": {
+                "constraints": [],
+                "startConstraint": {
+                    "type": "StartPositionConstraint",
+                    "StartPositionConstraint": {
+                        "nodeId": 13,
+                        "px": 0.5,
+                        "py": 1
+                    }
+                },
+                "endConstraint": {
+                    "type": "EndPositionConstraint",
+                    "EndPositionConstraint": {
+                        "nodeId": 16,
+                        "px": 0.5,
+                        "py": 0
+                    }
+                }
+            },
+            "linkMap": []
+        }, {
+            "x": 610,
+            "y": 631,
+            "rotation": 0,
+            "id": 16,
+            "uid": "com.gliffy.shape.flowchart.flowchart_v1.default.start_end",
+            "width": 250,
+            "height": 69,
+            "lockAspectRatio": false,
+            "lockShape": false,
+            "order": 8,
+            "graphic": {
+                "type": "Shape",
+                "Shape": {
+                    "tid": "com.gliffy.stencil.start_end.flowchart_v1",
+                    "strokeWidth": 2,
+                    "strokeColor": "#333333",
+                    "fillColor": "#FFFFFF",
+                    "gradient": false,
+                    "dropShadow": false,
+                    "state": 0,
+                    "shadowX": 0,
+                    "shadowY": 0,
+                    "opacity": 1
+                }
+            },
+            "children": [{
+                "x": 2,
+                "y": 0,
+                "rotation": 0,
+                "id": 17,
+                "uid": null,
+                "width": 246,
+                "height": 70,
+                "lockAspectRatio": false,
+                "lockShape": false,
+                "order": "auto",
+                "graphic": {
+                    "type": "Text",
+                    "Text": {
+                        "tid": null,
+                        "valign": "middle",
+                        "overflow": "none",
+                        "vposition": "none",
+                        "hposition": "none",
+                        "html": "<p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">framereferencefinder.cc\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">FrameReferenceFinder\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">ManageFrame()\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">EncodedFrame\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">set pid(frame last seq public)</span></p>",
+                        "paddingLeft": 2,
+                        "paddingRight": 2,
+                        "paddingBottom": 2,
+                        "paddingTop": 2
+                    }
+                },
+                "children": null
+            }],
+            "linkMap": []
+        }, {
+            "x": 736,
+            "y": 484,
+            "rotation": 0,
+            "id": 15,
+            "uid": "com.gliffy.shape.basic.basic_v1.default.line",
+            "width": 100,
+            "height": 100,
+            "lockAspectRatio": false,
+            "lockShape": false,
+            "order": 7,
+            "graphic": {
+                "type": "Line",
+                "Line": {
+                    "strokeWidth": 2,
+                    "strokeColor": "#000000",
+                    "fillColor": "none",
+                    "dashStyle": null,
+                    "startArrow": 0,
+                    "endArrow": 1,
+                    "startArrowRotation": "auto",
+                    "endArrowRotation": "auto",
+                    "ortho": true,
+                    "interpolationType": "linear",
+                    "cornerRadius": 10,
+                    "controlPath": [
+                        [-1, -34],
+                        [-1, -20.333333333333314],
+                        [-1, -6.666666666666686],
+                        [-1, 7]
+                    ],
+                    "lockSegments": {}
+                }
+            },
+            "children": null,
+            "constraints": {
+                "constraints": [],
+                "startConstraint": {
+                    "type": "StartPositionConstraint",
+                    "StartPositionConstraint": {
+                        "nodeId": 7,
+                        "px": 0.5,
+                        "py": 1
+                    }
+                },
+                "endConstraint": {
+                    "type": "EndPositionConstraint",
+                    "EndPositionConstraint": {
+                        "nodeId": 13,
+                        "px": 0.5,
+                        "py": 0
+                    }
+                }
+            },
+            "linkMap": []
+        }, {
+            "x": 610,
+            "y": 491,
+            "rotation": 0,
+            "id": 13,
+            "uid": "com.gliffy.shape.flowchart.flowchart_v1.default.start_end",
+            "width": 250,
+            "height": 100,
+            "lockAspectRatio": false,
+            "lockShape": false,
+            "order": 5,
+            "graphic": {
+                "type": "Shape",
+                "Shape": {
+                    "tid": "com.gliffy.stencil.start_end.flowchart_v1",
+                    "strokeWidth": 2,
+                    "strokeColor": "#333333",
+                    "fillColor": "#FFFFFF",
+                    "gradient": false,
+                    "dropShadow": false,
+                    "state": 0,
+                    "shadowX": 0,
+                    "shadowY": 0,
+                    "opacity": 1
+                }
+            },
+            "children": [{
+                "x": 2,
+                "y": 0,
+                "rotation": 0,
+                "id": 14,
+                "uid": null,
+                "width": 246,
+                "height": 98,
+                "lockAspectRatio": false,
+                "lockShape": false,
+                "order": "auto",
+                "graphic": {
+                    "type": "Text",
+                    "Text": {
+                        "tid": null,
+                        "valign": "middle",
+                        "overflow": "none",
+                        "vposition": "none",
+                        "hposition": "none",
+                        "html": "<p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">packetbuffer.cc\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">PacketBuffer\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">FindFrames()\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">RtpFrameObject(no data，just seq)\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">min(max)time \n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">使用上一层的receive_tims_ms\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">根据第一个包的时间戳设置rtp tmp</span></p>",
+                        "paddingLeft": 2,
+                        "paddingRight": 2,
+                        "paddingBottom": 2,
+                        "paddingTop": 2
+                    }
+                },
+                "children": null
+            }],
+            "linkMap": []
+        }, {
+            "x": 734,
+            "y": 355,
+            "rotation": 0,
+            "id": 8,
+            "uid": "com.gliffy.shape.basic.basic_v1.default.line",
+            "width": 100,
+            "height": 100,
+            "lockAspectRatio": false,
+            "lockShape": false,
+            "order": 4,
+            "graphic": {
+                "type": "Line",
+                "Line": {
+                    "strokeWidth": 2,
+                    "strokeColor": "#000000",
+                    "fillColor": "none",
+                    "dashStyle": null,
+                    "startArrow": 0,
+                    "endArrow": 1,
+                    "startArrowRotation": "auto",
+                    "endArrowRotation": "auto",
+                    "ortho": true,
+                    "interpolationType": "linear",
+                    "cornerRadius": 10,
+                    "controlPath": [
+                        [1, -15],
+                        [1, -1.6666666666666856],
+                        [1, 11.666666666666686],
+                        [1, 25]
+                    ],
+                    "lockSegments": {}
+                }
+            },
+            "children": null,
+            "constraints": {
+                "constraints": [],
+                "startConstraint": {
+                    "type": "StartPositionConstraint",
+                    "StartPositionConstraint": {
+                        "nodeId": 2,
+                        "px": 0.5,
+                        "py": 1
+                    }
+                },
+                "endConstraint": {
+                    "type": "EndPositionConstraint",
+                    "EndPositionConstraint": {
+                        "nodeId": 7,
+                        "px": 0.5,
+                        "py": 0
+                    }
+                }
+            },
+            "linkMap": []
+        }, {
+            "x": 610,
+            "y": 380,
+            "rotation": 0,
+            "id": 7,
+            "uid": "com.gliffy.shape.flowchart.flowchart_v1.default.start_end",
+            "width": 250,
+            "height": 70,
+            "lockAspectRatio": false,
+            "lockShape": false,
+            "order": 2,
+            "graphic": {
+                "type": "Shape",
+                "Shape": {
+                    "tid": "com.gliffy.stencil.start_end.flowchart_v1",
+                    "strokeWidth": 2,
+                    "strokeColor": "#333333",
+                    "fillColor": "#FFFFFF",
+                    "gradient": false,
+                    "dropShadow": false,
+                    "state": 0,
+                    "shadowX": 0,
+                    "shadowY": 0,
+                    "opacity": 1
+                }
+            },
+            "children": [{
+                "x": 2,
+                "y": 0,
+                "rotation": 0,
+                "id": 11,
+                "uid": null,
+                "width": 246,
+                "height": 56,
+                "lockAspectRatio": false,
+                "lockShape": false,
+                "order": "auto",
+                "graphic": {
+                    "type": "Text",
+                    "Text": {
+                        "tid": null,
+                        "valign": "middle",
+                        "overflow": "none",
+                        "vposition": "none",
+                        "hposition": "none",
+                        "html": "<p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">rtpvideostreamreceiver.cc\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">RtpVideoStreamReceiver\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">OnRtpPacket()\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">VcmPacket.receive_tims_ms = now</span></p>",
+                        "paddingLeft": 2,
+                        "paddingRight": 2,
+                        "paddingBottom": 2,
+                        "paddingTop": 2
+                    }
+                },
+                "children": null
+            }],
+            "linkMap": []
+        }, {
+            "x": 610,
+            "y": 270,
+            "rotation": 0,
+            "id": 2,
+            "uid": "com.gliffy.shape.flowchart.flowchart_v1.default.start_end",
+            "width": 250.00000000000003,
+            "height": 70,
+            "lockAspectRatio": false,
+            "lockShape": false,
+            "order": 0,
+            "graphic": {
+                "type": "Shape",
+                "Shape": {
+                    "tid": "com.gliffy.stencil.start_end.flowchart_v1",
+                    "strokeWidth": 2,
+                    "strokeColor": "#333333",
+                    "fillColor": "#FFFFFF",
+                    "gradient": false,
+                    "dropShadow": false,
+                    "state": 0,
+                    "shadowX": 0,
+                    "shadowY": 0,
+                    "opacity": 1
+                }
+            },
+            "children": [{
+                "x": 3.125,
+                "y": 0,
+                "rotation": 0,
+                "id": 10,
+                "uid": null,
+                "width": 243.75000000000003,
+                "height": 70,
+                "lockAspectRatio": false,
+                "lockShape": false,
+                "order": "auto",
+                "graphic": {
+                    "type": "Text",
+                    "Text": {
+                        "tid": null,
+                        "valign": "middle",
+                        "overflow": "none",
+                        "vposition": "none",
+                        "hposition": "none",
+                        "html": "<p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">call.cc\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">Call(音视频流管理)\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">DeliverRtp()\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">RtpPacketReceived.arrivaltime = now\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\">\n</span></p><p style=\"text-align:center;\"><span style=\"font-size: 12px; font-family: Arial; white-space: pre-wrap; text-decoration: none; line-height: 14px; color: rgb(0, 0, 0);\"></span></p>",
+                        "paddingLeft": 2,
+                        "paddingRight": 2,
+                        "paddingBottom": 2,
+                        "paddingTop": 2
+                    }
+                },
+                "children": null
+            }],
+            "linkMap": []
+        }],
+        "background": "#FFFFFF",
+        "width": 1677,
+        "height": 985,
+        "maxWidth": 5000,
+        "maxHeight": 5000,
+        "nodeIndex": 78,
+        "autoFit": true,
+        "exportBorder": false,
+        "gridOn": true,
+        "snapToGrid": true,
+        "drawingGuidesOn": true,
+        "pageBreaksOn": false,
+        "printGridOn": false,
+        "printPaper": "LETTER",
+        "printShrinkToFit": false,
+        "printPortrait": true,
+        "shapeStyles": {
+            "com.gliffy.shape.basic.basic_v1.default": {
+                "fill": "#FFFFFF",
+                "stroke": "#333333",
+                "strokeWidth": 2
+            },
+            "com.gliffy.shape.flowchart.flowchart_v1.default": {
+                "fill": "#FFFFFF",
+                "stroke": "#333333",
+                "strokeWidth": 2
+            }
+        },
+        "lineStyles": {
+            "global": {
+                "startArrow": 1
+            }
+        },
+        "textStyles": {},
+        "themeData": null
+    }
+}
