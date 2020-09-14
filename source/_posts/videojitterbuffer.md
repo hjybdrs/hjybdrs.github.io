@@ -281,20 +281,37 @@ void RetryStashedFrames() {
 
 {% pullquote mindmap mindmap-md %}
 - [FrameBuffer]
+  - ValidReferences() 判断帧之间的参考是否正确
+    - 判断pic_id pic_id 就是当前帧最后一个包的seq
+    - 判断pid 和依赖的序列号是否乱序
+    - 判断所依赖的序列号是否有重复
+    - 应该是判断时域分层内容
+  - UpdateFrameInfoWithIncomingFrame() 更新frameinfo 和其他frame的info
+    - 遍历当前帧的依赖帧
+      - 如果上一次解码的帧比依赖帧更新，依赖帧永远不会被解码 rt=>false
+      - 在frames 中查找依赖帧，并判断依赖帧是否连续
+    - inter_layer_predicted only vp9 support
+    - 未连续参考帧和未解码参考帧计数器
+    - 判断依赖帧是否连续，并且更新依赖帧被哪些帧所依赖(反向依赖关系)
+  - PropagateContinuity()
+    - 通过BFS来进行连续性的传播，还有个依赖的就是上一层建立的反向依赖关系
   - Public
     - Start() 随着videoreceivestream start
     - Stop() 随着stop
     - SetProtectionMode()
     - Clear()
     - InsertFrame() 插入数据帧
-        - 1.获取最近解码帧的时间戳以及序列号
-        - 2.针对跳帧情况特殊处理，id_small&&time_new&&keyframe
-        - 3.还是针对跳帧，插入会导致混乱情况，返回
-        - 4.尝试插入，如果已经存在，返回
-        - 5.判断当前帧是否因为重传导致延时(一定范围内？整个一帧？)
-        - 6.如果当前真的参考都到期了，计算准备返回可解码帧id
+        - 0.stats 回调
+        - 1.最近连续pic_id(实际上就是seq)
+        - 2.ValidReferences()
+        - 3.缓存帧数量控制
+        - 4.获取最近解码帧的pic_id 和 时间戳(rtp tmp)
+        - 5.针对跳帧情况特殊处理，id_small&&time_new&&keyframe
+        - 6.还是针对跳帧，插入会导致混乱情况，返回
+        - 7.尝试插入，如果已经存在，返回
+        - 8.UpdateFrameInfoWithIncomingFrame()
+        - 9.判断当前帧是否因为重传导致延时(一定范围内？整个一帧)
+        - 10.如果当前真的参考都到期了，计算准备返回可解码帧id
     - UpdateRtt() 根据rtt 调整jitterEsmitor 策略
     - NextFrame() 弹出数据帧
-  - ValidReferences() 判断帧之间的参考是否正确，
-  - UpdateFrameInfoWithIncomingFrame() 更新frameinfo 和其他frame的info
 {% endpullquote %}
