@@ -312,6 +312,13 @@ void RetryStashedFrames() {
         - 8.UpdateFrameInfoWithIncomingFrame()
         - 9.判断当前帧是否因为重传导致延时(一定范围内？整个一帧)
         - 10.如果当前真的参考都到期了，计算准备返回可解码帧id
+        - 11.call PropagateContinuity()
+        - 12.最后唤醒解码线程并返回可以连续的帧pic_id
     - UpdateRtt() 根据rtt 调整jitterEsmitor 策略
     - NextFrame() 弹出数据帧
+      - keyframe->200ms deltaframe->3000ms
+      - 遍历缓存帧
+        - 没有连续或者还有依赖的未解码帧
+        - 当前帧并不为目前所需要的关键帧
+        - 获取上一次解码帧的rtp tmp 比较筛选出跳帧的情况
 {% endpullquote %}
