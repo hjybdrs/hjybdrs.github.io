@@ -1,8 +1,7 @@
 ---
-title: Git 常用指令
-date: 2020-03-28 10:02:29
-tags: 
-    - git
+title: GitCommand
+date: 2020-03-16 22:48:54
+tags:
 ---
 
 Git 个人常用命令相关整理

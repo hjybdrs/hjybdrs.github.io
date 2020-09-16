@@ -1,8 +1,9 @@
 ---
-title: Perf
-date: 2020-08-28 16:39:10
+title: PerfCommand
+date: 2020-08-16 22:50:53
 tags:
 ---
+
 
 perf 基本原理是在cpu PMU(performance Monitor Unit) 寄存器和软件特性中获取相关信息来进行系统性能输出。
 可以监控的事件分为三类:
