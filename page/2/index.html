@@ -176,16 +176,16 @@
     
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
-        <a href="/2020/09/02/Gtest/">Gtest</a>
+        <a href="/2020/09/10/WebrtcCall_PeerConnection/">WebrtcCall_PeerConnection</a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2020/09/02/Gtest/">
+        <a href="/2020/09/10/WebrtcCall_PeerConnection/">
           
           
             
           
-          Google Gtest 单元测试框架相关整理
+          Google Webrtc 会话控制管理以及PeerConnection相关整理
         </a>
       </p>
 
@@ -193,12 +193,154 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2020-09-02 10:45" pubdate>
-              2020-09-02
+            <time datetime="2020-09-10 16:42" pubdate>
+              2020-09-10
             </time>
           </div>
         
         
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2020/09/10/WebrtcStats/">WebrtcStats</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/09/10/WebrtcStats/">
+          
+          
+            
+          
+          Google Webrtc 统计数据相关整理
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-09-10 11:08" pubdate>
+              2020-09-10
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/webrtc/">webrtc</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2020/09/08/Videojitterbuffer/">Videojitterbuffer</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/09/08/Videojitterbuffer/">
+          
+          
+            
+          
+          JitterBufferbased on:m74(commit cc1b32545db7823b85f5a83a92ed5f85970492c9)
+RtpVideoStreamReceiver
+
+VideoReceiverVideoStreamDecoderVCTimingPacketBuffer作用： 包缓存，返回数据帧(如何定义帧？)到RtpVideoStreamReceiver
+
+[Pack
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-09-08 22:53" pubdate>
+              2020-09-08
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/webrtc/">webrtc</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/webrtc/">webrtc</a>
+            
+              <a href="/tags/jitterbuffer/">jitterbuffer</a>
+            
+              <a href="/tags/pakcetbuffer/">pakcetbuffer</a>
+            
+              <a href="/tags/referencefinder/">referencefinder</a>
+            
+              <a href="/tags/framebuffer/">framebuffer</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2020/09/04/ProjectCompile/">ProjectCompile</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/09/04/ProjectCompile/">
+          
+          
+            
+          
+          Google Chromium 和 Webrtc 编译调试
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-09-04 14:41" pubdate>
+              2020-09-04
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/webrtc/">webrtc</a>
+            
+              <a href="/tags/chromuim/">chromuim</a>
+            
+          </div>
         
       </div>
     </article>
@@ -263,76 +405,6 @@
             <i class="iconfont icon-date"></i>
             <time datetime="2020-08-28 20:07" pubdate>
               2020-08-28
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        <a href="/2020/08/28/perf/">Perf</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2020/08/28/perf/">
-          
-          
-            
-          
-          perf 基本原理是在cpu PMU(performance Monitor Unit) 寄存器和软件特性中获取相关信息来进行系统性能输出。可以监控的事件分为三类:
-
-Hardware Event 这块主要是由PMU 寄存机硬件产生的，如如cache miss 等，如果需要了解程序对硬件特性使用情况，需要使用这类事件
-Software Event 内核软件产生的时间，比如进程切换  tick 数
-
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-08-28 16:39" pubdate>
-              2020-08-28
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        <a href="/2020/08/20/keyword/">Keyword</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2020/08/20/keyword/">
-          
-          
-            
-          
-          快捷键
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-08-20 20:45" pubdate>
-              2020-08-20
             </time>
           </div>
         
@@ -500,49 +572,6 @@ zip dst.zip file
               <a href="/tags/PeerConnection/">PeerConnection</a>
             
           </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        <a href="/2020/07/29/LinuxDebug/">LinuxDebug</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2020/07/29/LinuxDebug/">
-          
-          
-            
-          
-          Linux-Debuggdb调试# 支持三种类型的断点
-# 1 普通断点 break 
-# 2 观察断点 watch 
-# 3 普通断点 ？？ 
-
-
-watch value
-coredump系统默认不会生成core 文件，依赖shell 中的设置。
-$ ulimit -a
-# -c: core file size (blocks)         0 这一行表示不会有core 文件生成
--t: c
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-07-29 14:49" pubdate>
-              2020-07-29
-            </time>
-          </div>
-        
-        
         
       </div>
     </article>

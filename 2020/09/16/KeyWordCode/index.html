@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="hjybdrs">
   <meta name="keywords" content="">
-  <title>Perf - 豆三呈祥</title>
+  <title>KeyWordCode - 豆三呈祥</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
@@ -169,8 +169,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2020-08-28 16:39" pubdate>
-        August 28, 2020 pm
+      <time datetime="2020-09-16 22:51" pubdate>
+        September 16, 2020 pm
       </time>
     </span>
   
@@ -181,7 +181,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      424 字
+      13 字
     </span>
   
 
@@ -191,7 +191,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      5
+      1
        分钟
     </span>
   
@@ -221,29 +221,13 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto" id="post">
             <!-- SEO header -->
-            <h1 style="display: none">Perf</h1>
+            <h1 style="display: none">KeyWordCode</h1>
             
             <div class="markdown-body" id="post-body">
-              <p>perf 基本原理是在cpu PMU(performance Monitor Unit) 寄存器和软件特性中获取相关信息来进行系统性能输出。<br>可以监控的事件分为三类:</p>
-<ul>
-<li>Hardware Event 这块主要是由PMU 寄存机硬件产生的，如如cache miss 等，如果需要了解程序对硬件特性使用情况，需要使用这类事件</li>
-<li>Software Event 内核软件产生的时间，比如进程切换  tick 数</li>
-<li>Tracepoint Event 内核中的静态tracepoint 触发的时间，这些tracepoint 用来判断程序运行期间内核的行为细节，比如slab 分配器的分配次数等<pre><code class="shell"># 可以使用/ 进行某些关键字查询
-$ perf top
-# 单独的监控某一个应用程序
-# 事件这么多，不知道监控哪一些，无从下手，最好先从整体到细节。先大致了解有哪一些统计事件，在到具体细节中去
-# 使用perf stat 可以通过精简的方式提供程序运行的整体情况和数据汇总
-$ perf stats xxx.exe
-# task-clock 指的是占用了多少任务时钟周期，越高说明多数时间话费在CPU 计算上
-</code></pre>
-</li>
-</ul>
-<p>$ perf record -g -e kmem:* -F 99 -p 12413 – sleep 20<br>$ perf record -g -e kmem:* -F 99 command<br>$ perf kmem -i perf.data –caller stat</p>
-<h1 id="perf-生成火焰图"><a href="#perf-生成火焰图" class="headerlink" title="perf 生成火焰图"></a>perf 生成火焰图</h1><p>FlameGraph/stackcollapse-perf.pl result.perf &gt; result.folded<br>FlameGraph/flamegraph.pl result.folded &gt; cpu.svg</p>
-<p>diff 火焰图</p>
-<p>除了通常的几种火焰图，我们其实还可以将两个火焰图进行 diff，生成一个 diff 火焰图，</p>
-<p>./FlameGraph/difffolded.pl perf.folded perf.folded1 | ./flamegraph.pl &gt; ../diff.svg</p>
-<p>```<br><a href="https://juejin.im/post/6844903950315945992" target="_blank" rel="noopener">https://juejin.im/post/6844903950315945992</a><br><a href="http://linux.51yip.com/search/perf" target="_blank" rel="noopener">http://linux.51yip.com/search/perf</a><br><a href="https://blog.csdn.net/qq_15437667/article/details/50724330" target="_blank" rel="noopener">https://blog.csdn.net/qq_15437667/article/details/50724330</a><br><a href="https://www.cnblogs.com/sunsky303/p/8328836.html" target="_blank" rel="noopener">https://www.cnblogs.com/sunsky303/p/8328836.html</a><br><a href="http://www.brendangregg.com/perf.html" target="_blank" rel="noopener">http://www.brendangregg.com/perf.html</a></p>
+              <p>快捷键</p>
+<a id="more"></a>
+
+<h1 id="KeyWord"><a href="#KeyWord" class="headerlink" title="KeyWord"></a>KeyWord</h1><h2 id="Vscode"><a href="#Vscode" class="headerlink" title="Vscode"></a>Vscode</h2><h3 id="mac"><a href="#mac" class="headerlink" title="mac"></a>mac</h3><h4 id="多列选择"><a href="#多列选择" class="headerlink" title="多列选择"></a>多列选择</h4><pre><code class="txt">shift+option 鼠标左键</code></pre>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">
             </div>
             <hr>
@@ -260,18 +244,12 @@ $ perf stats xxx.exe
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2020/08/28/Computer/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Computer</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/08/20/keyword/">
-                        <span class="hidden-mobile">Keyword</span>
+                      <a href="/2020/09/16/PerfCommand/">
+                        <span class="hidden-mobile">PerfCommand</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -290,8 +268,8 @@ $ perf stats xxx.exe
     <div id="disqus_thread"></div>
     <script type="text/javascript">
       var disqus_config = function () {
-        this.page.url = 'http://yoursite.com/2020/08/28/perf/';
-        this.page.identifier = '/2020/08/28/perf/';
+        this.page.url = 'http://yoursite.com/2020/09/16/KeyWordCode/';
+        this.page.identifier = '/2020/09/16/KeyWordCode/';
       };
       function loadDisqus() {
         (function () {
@@ -450,7 +428,7 @@ $ perf stats xxx.exe
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "Perf&nbsp;",
+        "KeyWordCode&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,

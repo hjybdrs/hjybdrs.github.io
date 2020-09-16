@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="hjybdrs">
   <meta name="keywords" content="">
-  <title>Git 常用指令 - 豆三呈祥</title>
+  <title>GtestGmock - 豆三呈祥</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
@@ -169,8 +169,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2020-03-28 10:02" pubdate>
-        March 28, 2020 am
+      <time datetime="2020-09-16 22:50" pubdate>
+        September 16, 2020 pm
       </time>
     </span>
   
@@ -181,7 +181,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      590 字
+      56 字
     </span>
   
 
@@ -191,7 +191,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      7
+      1
        分钟
     </span>
   
@@ -221,85 +221,20 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto" id="post">
             <!-- SEO header -->
-            <h1 style="display: none">Git 常用指令</h1>
+            <h1 style="display: none">GtestGmock</h1>
             
             <div class="markdown-body" id="post-body">
-              <p>Git 个人常用命令相关整理</p>
+              <p>Google Gtest 单元测试框架相关整理</p>
 <a id="more"></a>
 
-<h1 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h1><h2 id="仓库操作"><a href="#仓库操作" class="headerlink" title="仓库操作"></a>仓库操作</h2><h3 id="克隆远端仓库"><a href="#克隆远端仓库" class="headerlink" title="克隆远端仓库"></a>克隆远端仓库</h3><pre><code class="shell"># 在本地生成一个目录
-git clone gitxxxxURL.git
-
-# 在本地生成一个指定目录
-git clone gitxxxxURL.git myGitDir
-
-# clone 远端仓库的指定分支
-git clone -b branchName gitxxxxURL.git
-
-## clone 远端仓库失败情况处理   for the fxxk war
-git config --global http.proxy http://127.0.0.1:9666
-</code></pre>
-<h3 id="分支推送"><a href="#分支推送" class="headerlink" title="分支推送"></a>分支推送</h3><pre><code class="shell"># 将本地当前分支推送到远端指定分支，远端分支不需要加origin 因为前面的origin 已经代表了绑定的远端仓库
-git push origin HEAD:specificBranch
-# 本地的分支强制更新远端的指定分支，远端分支的内容有可能被覆盖
-git push origin HEAD:specificBranch --force
-# 将远端指定分支删除
-git push origin :specificBranch</code></pre>
-<h2 id="分支操作"><a href="#分支操作" class="headerlink" title="分支操作"></a>分支操作</h2><h3 id="跟踪远程指定分支"><a href="#跟踪远程指定分支" class="headerlink" title="跟踪远程指定分支"></a>跟踪远程指定分支</h3><p>跟踪后可以直接pull 和push，不需要指定对应的分支名</p>
-<pre><code class="shell"># 生成一个和远端分支名一样的本地分支
-git checkout --track origin/branchName
-# 生成一个本地指定分支与远端分支关联
-git checkout -b localBranchName origin/branchName
-# 从指定的提交号中生成一个本地分支
-git checkout -b localBranchName commit_id</code></pre>
-<h2 id="标签操作"><a href="#标签操作" class="headerlink" title="标签操作"></a>标签操作</h2><h3 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h3><pre><code class="shell"># 轻量级标签
-# 在当前分支的当前commit 上打标签
-git tag v1.0
-# 查看所有标签
-git tag
-# 给指定commit 打标签
-git tag v1.1 commitId
-
-# 注释标签
-# -a 标签名  -m 注释
-git tag -a v1.2 -m &quot;comment&quot; commit
-
-# 推tags
-git push origin tagname
-# 推所有tags
-git push origin --tags
-# 删除本地的tag
-git tag -d tagname
-# 删除远程的tag
-git push origin :refs/tags/tagname
-# 查看tag 内容
-git show tagname
-# 切换到指定tag 对应的代码
-git checkout -b localbranchname tagname</code></pre>
-<h2 id="提交处理"><a href="#提交处理" class="headerlink" title="提交处理"></a>提交处理</h2><h3 id="cherry-pick"><a href="#cherry-pick" class="headerlink" title="cherry-pick"></a>cherry-pick</h3><pre><code class="shell"># 这样会生成一个新的commit-id，如果有冲突的话，还需要解决冲突 
-git cherry-pick commit-id 
-# 中间是两个点.. 
-# 提交一个范围内的commit-id 左开右闭 
-git cherry_pick &lt;start-commit-id&gt;..&lt;end-commit-id&gt; 
-# 提交一个范围内的commit-id 左闭右闭 
-git cherry_pick &lt;start-commit-id&gt;^..&lt;end-commit-id&gt; </code></pre>
-<h2 id="子模块"><a href="#子模块" class="headerlink" title="子模块"></a>子模块</h2><h3 id="修改某个子模块的url"><a href="#修改某个子模块的url" class="headerlink" title="修改某个子模块的url"></a>修改某个子模块的url</h3><pre><code class="shell"># 修改.gitmodules 文件中，对应模块url 信息
-# 使用git submodule sync 将url 更新到.git/config 中
-# 如果第二步骤没有成功的话，手动更新.git/config 文件</code></pre>
-<h2 id="密钥生成"><a href="#密钥生成" class="headerlink" title="密钥生成"></a>密钥生成</h2><pre><code class="shell">ssh-keygen -t rsa -b 4096 -C &quot;handsom@guy.com&quot; </code></pre>
+<h1 id="Gtest-amp-Gmock"><a href="#Gtest-amp-Gmock" class="headerlink" title="Gtest&amp;Gmock"></a>Gtest&amp;Gmock</h1><h2 id="command"><a href="#command" class="headerlink" title="command"></a>command</h2><pre><code class="shell"># --gtest_list_tests 不会执行测试案例，而是输出一个案例的列表
+# --gtest_filter 对执行的测试案例进行过滤，只执行匹配的案例</code></pre>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/git/">git</a>
-                    
-                  </div>
                 
               </div>
               
@@ -310,15 +245,21 @@ git cherry_pick &lt;start-commit-id&gt;^..&lt;end-commit-id&gt; </code></pre>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2020/03/29/2020plan/">
+                      <a href="/2020/09/16/PerfCommand/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">2020plan</span>
+                        <span class="hidden-mobile">PerfCommand</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2020/09/16/GitCommand/">
+                        <span class="hidden-mobile">GitCommand</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
@@ -334,8 +275,8 @@ git cherry_pick &lt;start-commit-id&gt;^..&lt;end-commit-id&gt; </code></pre>
     <div id="disqus_thread"></div>
     <script type="text/javascript">
       var disqus_config = function () {
-        this.page.url = 'http://yoursite.com/2020/03/28/Git/';
-        this.page.identifier = '/2020/03/28/Git/';
+        this.page.url = 'http://yoursite.com/2020/09/16/GtestGmock/';
+        this.page.identifier = '/2020/09/16/GtestGmock/';
       };
       function loadDisqus() {
         (function () {
@@ -494,7 +435,7 @@ git cherry_pick &lt;start-commit-id&gt;^..&lt;end-commit-id&gt; </code></pre>
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "Git 常用指令&nbsp;",
+        "GtestGmock&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,

@@ -4,6 +4,58 @@
   
   
   <entry>
+    <title>KeyWordCode</title>
+    <link href="/2020/09/16/KeyWordCode/"/>
+    <url>/2020/09/16/KeyWordCode/</url>
+    
+    <content type="html"><![CDATA[<p>快捷键</p><a id="more"></a><h1 id="KeyWord"><a href="#KeyWord" class="headerlink" title="KeyWord"></a>KeyWord</h1><h2 id="Vscode"><a href="#Vscode" class="headerlink" title="Vscode"></a>Vscode</h2><h3 id="mac"><a href="#mac" class="headerlink" title="mac"></a>mac</h3><h4 id="多列选择"><a href="#多列选择" class="headerlink" title="多列选择"></a>多列选择</h4><pre><code class="txt">shift+option 鼠标左键</code></pre><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>PerfCommand</title>
+    <link href="/2020/09/16/PerfCommand/"/>
+    <url>/2020/09/16/PerfCommand/</url>
+    
+    <content type="html"><![CDATA[<p>perf 基本原理是在cpu PMU(performance Monitor Unit) 寄存器和软件特性中获取相关信息来进行系统性能输出。<br>可以监控的事件分为三类:</p><ul><li>Hardware Event 这块主要是由PMU 寄存机硬件产生的，如如cache miss 等，如果需要了解程序对硬件特性使用情况，需要使用这类事件</li><li>Software Event 内核软件产生的时间，比如进程切换  tick 数</li><li>Tracepoint Event 内核中的静态tracepoint 触发的时间，这些tracepoint 用来判断程序运行期间内核的行为细节，比如slab 分配器的分配次数等<pre><code class="shell"># 可以使用/ 进行某些关键字查询$ perf top# 单独的监控某一个应用程序# 事件这么多，不知道监控哪一些，无从下手，最好先从整体到细节。先大致了解有哪一些统计事件，在到具体细节中去# 使用perf stat 可以通过精简的方式提供程序运行的整体情况和数据汇总$ perf stats xxx.exe# task-clock 指的是占用了多少任务时钟周期，越高说明多数时间话费在CPU 计算上</code></pre></li></ul><p>$ perf record -g -e kmem:* -F 99 -p 12413 – sleep 20<br>$ perf record -g -e kmem:* -F 99 command<br>$ perf kmem -i perf.data –caller stat</p><h1 id="perf-生成火焰图"><a href="#perf-生成火焰图" class="headerlink" title="perf 生成火焰图"></a>perf 生成火焰图</h1><p>FlameGraph/stackcollapse-perf.pl result.perf &gt; result.folded<br>FlameGraph/flamegraph.pl result.folded &gt; cpu.svg</p><p>diff 火焰图</p><p>除了通常的几种火焰图，我们其实还可以将两个火焰图进行 diff，生成一个 diff 火焰图，</p><p>./FlameGraph/difffolded.pl perf.folded perf.folded1 | ./flamegraph.pl &gt; ../diff.svg</p><p>```<br><a href="https://juejin.im/post/6844903950315945992" target="_blank" rel="noopener">https://juejin.im/post/6844903950315945992</a><br><a href="http://linux.51yip.com/search/perf" target="_blank" rel="noopener">http://linux.51yip.com/search/perf</a><br><a href="https://blog.csdn.net/qq_15437667/article/details/50724330" target="_blank" rel="noopener">https://blog.csdn.net/qq_15437667/article/details/50724330</a><br><a href="https://www.cnblogs.com/sunsky303/p/8328836.html" target="_blank" rel="noopener">https://www.cnblogs.com/sunsky303/p/8328836.html</a><br><a href="http://www.brendangregg.com/perf.html" target="_blank" rel="noopener">http://www.brendangregg.com/perf.html</a></p><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>GtestGmock</title>
+    <link href="/2020/09/16/GtestGmock/"/>
+    <url>/2020/09/16/GtestGmock/</url>
+    
+    <content type="html"><![CDATA[<p>Google Gtest 单元测试框架相关整理</p><a id="more"></a><h1 id="Gtest-amp-Gmock"><a href="#Gtest-amp-Gmock" class="headerlink" title="Gtest&amp;Gmock"></a>Gtest&amp;Gmock</h1><h2 id="command"><a href="#command" class="headerlink" title="command"></a>command</h2><pre><code class="shell"># --gtest_list_tests 不会执行测试案例，而是输出一个案例的列表# --gtest_filter 对执行的测试案例进行过滤，只执行匹配的案例</code></pre><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>GitCommand</title>
+    <link href="/2020/09/16/GitCommand/"/>
+    <url>/2020/09/16/GitCommand/</url>
+    
+    <content type="html"><![CDATA[<p>Git 个人常用命令相关整理</p><a id="more"></a><h1 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h1><h2 id="仓库操作"><a href="#仓库操作" class="headerlink" title="仓库操作"></a>仓库操作</h2><h3 id="克隆远端仓库"><a href="#克隆远端仓库" class="headerlink" title="克隆远端仓库"></a>克隆远端仓库</h3><pre><code class="shell"># 在本地生成一个目录git clone gitxxxxURL.git# 在本地生成一个指定目录git clone gitxxxxURL.git myGitDir# clone 远端仓库的指定分支git clone -b branchName gitxxxxURL.git## clone 远端仓库失败情况处理   for the fxxk wargit config --global http.proxy http://127.0.0.1:9666</code></pre><h3 id="分支推送"><a href="#分支推送" class="headerlink" title="分支推送"></a>分支推送</h3><pre><code class="shell"># 将本地当前分支推送到远端指定分支，远端分支不需要加origin 因为前面的origin 已经代表了绑定的远端仓库git push origin HEAD:specificBranch# 本地的分支强制更新远端的指定分支，远端分支的内容有可能被覆盖git push origin HEAD:specificBranch --force# 将远端指定分支删除git push origin :specificBranch</code></pre><h2 id="分支操作"><a href="#分支操作" class="headerlink" title="分支操作"></a>分支操作</h2><h3 id="跟踪远程指定分支"><a href="#跟踪远程指定分支" class="headerlink" title="跟踪远程指定分支"></a>跟踪远程指定分支</h3><p>跟踪后可以直接pull 和push，不需要指定对应的分支名</p><pre><code class="shell"># 生成一个和远端分支名一样的本地分支git checkout --track origin/branchName# 生成一个本地指定分支与远端分支关联git checkout -b localBranchName origin/branchName# 从指定的提交号中生成一个本地分支git checkout -b localBranchName commit_id</code></pre><h2 id="标签操作"><a href="#标签操作" class="headerlink" title="标签操作"></a>标签操作</h2><h3 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h3><pre><code class="shell"># 轻量级标签# 在当前分支的当前commit 上打标签git tag v1.0# 查看所有标签git tag# 给指定commit 打标签git tag v1.1 commitId# 注释标签# -a 标签名  -m 注释git tag -a v1.2 -m &quot;comment&quot; commit# 推tagsgit push origin tagname# 推所有tagsgit push origin --tags# 删除本地的taggit tag -d tagname# 删除远程的taggit push origin :refs/tags/tagname# 查看tag 内容git show tagname# 切换到指定tag 对应的代码git checkout -b localbranchname tagname</code></pre><h2 id="提交处理"><a href="#提交处理" class="headerlink" title="提交处理"></a>提交处理</h2><h3 id="cherry-pick"><a href="#cherry-pick" class="headerlink" title="cherry-pick"></a>cherry-pick</h3><pre><code class="shell"># 这样会生成一个新的commit-id，如果有冲突的话，还需要解决冲突 git cherry-pick commit-id # 中间是两个点.. # 提交一个范围内的commit-id 左开右闭 git cherry_pick &lt;start-commit-id&gt;..&lt;end-commit-id&gt; # 提交一个范围内的commit-id 左闭右闭 git cherry_pick &lt;start-commit-id&gt;^..&lt;end-commit-id&gt; </code></pre><h2 id="子模块"><a href="#子模块" class="headerlink" title="子模块"></a>子模块</h2><h3 id="修改某个子模块的url"><a href="#修改某个子模块的url" class="headerlink" title="修改某个子模块的url"></a>修改某个子模块的url</h3><pre><code class="shell"># 修改.gitmodules 文件中，对应模块url 信息# 使用git submodule sync 将url 更新到.git/config 中# 如果第二步骤没有成功的话，手动更新.git/config 文件</code></pre><h2 id="密钥生成"><a href="#密钥生成" class="headerlink" title="密钥生成"></a>密钥生成</h2><pre><code class="shell">ssh-keygen -t rsa -b 4096 -C &quot;handsom@guy.com&quot; </code></pre><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Webrtc</title>
     <link href="/2020/09/10/Webrtc/"/>
     <url>/2020/09/10/Webrtc/</url>
@@ -180,19 +232,6 @@
   
   
   <entry>
-    <title>Gtest</title>
-    <link href="/2020/09/02/Gtest/"/>
-    <url>/2020/09/02/Gtest/</url>
-    
-    <content type="html"><![CDATA[<p>Google Gtest 单元测试框架相关整理</p><a id="more"></a><h1 id="Gtest-amp-Gmock"><a href="#Gtest-amp-Gmock" class="headerlink" title="Gtest&amp;Gmock"></a>Gtest&amp;Gmock</h1><h2 id="command"><a href="#command" class="headerlink" title="command"></a>command</h2><pre><code class="shell"># --gtest_list_tests 不会执行测试案例，而是输出一个案例的列表# --gtest_filter 对执行的测试案例进行过滤，只执行匹配的案例</code></pre><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>LinuxMem</title>
     <link href="/2020/08/31/LinuxMem/"/>
     <url>/2020/08/31/LinuxMem/</url>
@@ -211,32 +250,6 @@
     <url>/2020/08/28/Computer/</url>
     
     <content type="html"><![CDATA[<h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><h2 id="计算机组成原理"><a href="#计算机组成原理" class="headerlink" title="计算机组成原理"></a>计算机组成原理</h2><h3 id="周期"><a href="#周期" class="headerlink" title="周期"></a>周期</h3><p>三个周期：时钟周期、机器周期、指令周期<br>CPU 最小生命单位就是时钟周期，一个机器周期包含若干个时钟周期，至于指令周期则包含若干机器周期。按照粒度排序：<br>指令周期 &gt; 机器周期 &gt; 时钟周期<br>时钟周期：在一个时钟周期内，cpu 仅完成一个最基本的动作<br>机器周期：<br>指令周期：执行一条指令所需要的时间，一般由若干个机器周期组成。</p>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Perf</title>
-    <link href="/2020/08/28/perf/"/>
-    <url>/2020/08/28/perf/</url>
-    
-    <content type="html"><![CDATA[<p>perf 基本原理是在cpu PMU(performance Monitor Unit) 寄存器和软件特性中获取相关信息来进行系统性能输出。<br>可以监控的事件分为三类:</p><ul><li>Hardware Event 这块主要是由PMU 寄存机硬件产生的，如如cache miss 等，如果需要了解程序对硬件特性使用情况，需要使用这类事件</li><li>Software Event 内核软件产生的时间，比如进程切换  tick 数</li><li>Tracepoint Event 内核中的静态tracepoint 触发的时间，这些tracepoint 用来判断程序运行期间内核的行为细节，比如slab 分配器的分配次数等<pre><code class="shell"># 可以使用/ 进行某些关键字查询$ perf top# 单独的监控某一个应用程序# 事件这么多，不知道监控哪一些，无从下手，最好先从整体到细节。先大致了解有哪一些统计事件，在到具体细节中去# 使用perf stat 可以通过精简的方式提供程序运行的整体情况和数据汇总$ perf stats xxx.exe# task-clock 指的是占用了多少任务时钟周期，越高说明多数时间话费在CPU 计算上</code></pre></li></ul><p>$ perf record -g -e kmem:* -F 99 -p 12413 – sleep 20<br>$ perf record -g -e kmem:* -F 99 command<br>$ perf kmem -i perf.data –caller stat</p><h1 id="perf-生成火焰图"><a href="#perf-生成火焰图" class="headerlink" title="perf 生成火焰图"></a>perf 生成火焰图</h1><p>FlameGraph/stackcollapse-perf.pl result.perf &gt; result.folded<br>FlameGraph/flamegraph.pl result.folded &gt; cpu.svg</p><p>diff 火焰图</p><p>除了通常的几种火焰图，我们其实还可以将两个火焰图进行 diff，生成一个 diff 火焰图，</p><p>./FlameGraph/difffolded.pl perf.folded perf.folded1 | ./flamegraph.pl &gt; ../diff.svg</p><p>```<br><a href="https://juejin.im/post/6844903950315945992" target="_blank" rel="noopener">https://juejin.im/post/6844903950315945992</a><br><a href="http://linux.51yip.com/search/perf" target="_blank" rel="noopener">http://linux.51yip.com/search/perf</a><br><a href="https://blog.csdn.net/qq_15437667/article/details/50724330" target="_blank" rel="noopener">https://blog.csdn.net/qq_15437667/article/details/50724330</a><br><a href="https://www.cnblogs.com/sunsky303/p/8328836.html" target="_blank" rel="noopener">https://www.cnblogs.com/sunsky303/p/8328836.html</a><br><a href="http://www.brendangregg.com/perf.html" target="_blank" rel="noopener">http://www.brendangregg.com/perf.html</a></p><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Keyword</title>
-    <link href="/2020/08/20/keyword/"/>
-    <url>/2020/08/20/keyword/</url>
-    
-    <content type="html"><![CDATA[<p>快捷键</p><a id="more"></a><h1 id="KeyWord"><a href="#KeyWord" class="headerlink" title="KeyWord"></a>KeyWord</h1><h2 id="Vscode"><a href="#Vscode" class="headerlink" title="Vscode"></a>Vscode</h2><h3 id="mac"><a href="#mac" class="headerlink" title="mac"></a>mac</h3><h4 id="多列选择"><a href="#多列选择" class="headerlink" title="多列选择"></a>多列选择</h4><pre><code class="txt">shift+option 鼠标左键</code></pre><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
     
     
     
@@ -375,25 +388,6 @@
     <content type="html"><![CDATA[<p>2020Plan</p><a id="more"></a><h1 id="2020-Plan"><a href="#2020-Plan" class="headerlink" title="2020 Plan"></a>2020 Plan</h1><h2 id="基础内容"><a href="#基础内容" class="headerlink" title="基础内容"></a>基础内容</h2><h3 id="TCP-IP"><a href="#TCP-IP" class="headerlink" title="TCP/IP"></a>TCP/IP</h3><p>要求:</p><ul><li>tcp<ul><li>tcp 握手与挥手</li><li>tcp  option</li><li>tcp 拥塞控制</li></ul></li><li>udp<ul><li>udp 编程范式</li></ul></li><li>抓包分析<ul><li>wireshark</li><li>fiddler</li><li>tcpdump</li></ul></li></ul><h2 id="流媒体"><a href="#流媒体" class="headerlink" title="流媒体"></a>流媒体</h2><h3 id="getStats"><a href="#getStats" class="headerlink" title="getStats"></a>getStats</h3><p>要求：</p><ul><li>熟悉getStats 调用链路(2020-08-30)</li><li>熟悉getStats 内部相关数据获取原理(2020-09-30)</li></ul><h3 id="封装与解封装"><a href="#封装与解封装" class="headerlink" title="封装与解封装"></a>封装与解封装</h3><p>要求：</p><ul><li>h264 封装与解封装</li><li>h264 主要数据帧格式</li></ul><h3 id="视频抖动缓存"><a href="#视频抖动缓存" class="headerlink" title="视频抖动缓存"></a>视频抖动缓存</h3><p>要求：</p><ul><li>熟悉接收端抖动缓存的原理</li><li>代码逻辑可修改</li></ul><h3 id="带宽探测"><a href="#带宽探测" class="headerlink" title="带宽探测"></a>带宽探测</h3><p>要求：</p><ul><li>对transport-cc 主要是webrtc 的带宽探测有所了解，了解基本的算法</li></ul><h3 id="抗丢包"><a href="#抗丢包" class="headerlink" title="抗丢包"></a>抗丢包</h3><p>要求：</p><ul><li>了解fec 算法的原理，如何接入</li><li>可自适应的抗丢包策略</li><li>nack 原理以及对应rtcp 包生成细节</li></ul><h3 id="延时"><a href="#延时" class="headerlink" title="延时"></a>延时</h3><p>要求：</p><ul><li>熟悉延时计算方式</li><li>知道延时准确性计算的方法</li></ul><h3 id="licode"><a href="#licode" class="headerlink" title="licode"></a>licode</h3><p>要求：</p><ul><li>搭建一个可用环境</li><li>能进行二次开发</li></ul><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
     
     
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Git 常用指令</title>
-    <link href="/2020/03/28/Git/"/>
-    <url>/2020/03/28/Git/</url>
-    
-    <content type="html"><![CDATA[<p>Git 个人常用命令相关整理</p><a id="more"></a><h1 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h1><h2 id="仓库操作"><a href="#仓库操作" class="headerlink" title="仓库操作"></a>仓库操作</h2><h3 id="克隆远端仓库"><a href="#克隆远端仓库" class="headerlink" title="克隆远端仓库"></a>克隆远端仓库</h3><pre><code class="shell"># 在本地生成一个目录git clone gitxxxxURL.git# 在本地生成一个指定目录git clone gitxxxxURL.git myGitDir# clone 远端仓库的指定分支git clone -b branchName gitxxxxURL.git## clone 远端仓库失败情况处理   for the fxxk wargit config --global http.proxy http://127.0.0.1:9666</code></pre><h3 id="分支推送"><a href="#分支推送" class="headerlink" title="分支推送"></a>分支推送</h3><pre><code class="shell"># 将本地当前分支推送到远端指定分支，远端分支不需要加origin 因为前面的origin 已经代表了绑定的远端仓库git push origin HEAD:specificBranch# 本地的分支强制更新远端的指定分支，远端分支的内容有可能被覆盖git push origin HEAD:specificBranch --force# 将远端指定分支删除git push origin :specificBranch</code></pre><h2 id="分支操作"><a href="#分支操作" class="headerlink" title="分支操作"></a>分支操作</h2><h3 id="跟踪远程指定分支"><a href="#跟踪远程指定分支" class="headerlink" title="跟踪远程指定分支"></a>跟踪远程指定分支</h3><p>跟踪后可以直接pull 和push，不需要指定对应的分支名</p><pre><code class="shell"># 生成一个和远端分支名一样的本地分支git checkout --track origin/branchName# 生成一个本地指定分支与远端分支关联git checkout -b localBranchName origin/branchName# 从指定的提交号中生成一个本地分支git checkout -b localBranchName commit_id</code></pre><h2 id="标签操作"><a href="#标签操作" class="headerlink" title="标签操作"></a>标签操作</h2><h3 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h3><pre><code class="shell"># 轻量级标签# 在当前分支的当前commit 上打标签git tag v1.0# 查看所有标签git tag# 给指定commit 打标签git tag v1.1 commitId# 注释标签# -a 标签名  -m 注释git tag -a v1.2 -m &quot;comment&quot; commit# 推tagsgit push origin tagname# 推所有tagsgit push origin --tags# 删除本地的taggit tag -d tagname# 删除远程的taggit push origin :refs/tags/tagname# 查看tag 内容git show tagname# 切换到指定tag 对应的代码git checkout -b localbranchname tagname</code></pre><h2 id="提交处理"><a href="#提交处理" class="headerlink" title="提交处理"></a>提交处理</h2><h3 id="cherry-pick"><a href="#cherry-pick" class="headerlink" title="cherry-pick"></a>cherry-pick</h3><pre><code class="shell"># 这样会生成一个新的commit-id，如果有冲突的话，还需要解决冲突 git cherry-pick commit-id # 中间是两个点.. # 提交一个范围内的commit-id 左开右闭 git cherry_pick &lt;start-commit-id&gt;..&lt;end-commit-id&gt; # 提交一个范围内的commit-id 左闭右闭 git cherry_pick &lt;start-commit-id&gt;^..&lt;end-commit-id&gt; </code></pre><h2 id="子模块"><a href="#子模块" class="headerlink" title="子模块"></a>子模块</h2><h3 id="修改某个子模块的url"><a href="#修改某个子模块的url" class="headerlink" title="修改某个子模块的url"></a>修改某个子模块的url</h3><pre><code class="shell"># 修改.gitmodules 文件中，对应模块url 信息# 使用git submodule sync 将url 更新到.git/config 中# 如果第二步骤没有成功的话，手动更新.git/config 文件</code></pre><h2 id="密钥生成"><a href="#密钥生成" class="headerlink" title="密钥生成"></a>密钥生成</h2><pre><code class="shell">ssh-keygen -t rsa -b 4096 -C &quot;handsom@guy.com&quot; </code></pre><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
-    
-    
-    
-    <tags>
-      
-      <tag>git</tag>
-      
-    </tags>
     
   </entry>
   
