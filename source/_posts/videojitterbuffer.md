@@ -72,30 +72,57 @@ package "webrtc"
         void OnRttUpdate();
     }
 
-    class PacketBuffer {
-
+    abstract class OnAssembledFrameCallback {
+        void OnAssembledFrame();
     }
 
-    class FrameReferenceFinder {
+    package "jitterbuffer" {
+        class VCMTiming {
 
+        }
+
+        class FrameBuffer {
+            VCMTiming* vcmtiming_;
+        }
+
+        class PacketBuffer {
+            OnAssembledFrameCallback* cb; actually RtpVideoStreamReceiver
+            void InsertPacket();
+            void FindFrames();
+        }
+
+        OnAssembledFrameCallback --o PacketBuffer
+
+        class FrameReferenceFinder {
+
+        }
+
+        class RtpVideoStreamReceiver {
+            PacketBuffer packetBuffer_;
+            FrameReferenceFinder finder_;
+            VCMTiming* vcmtiming_;
+            void OnRtpPacket(); 从demux 接收数据
+            void OnReceivedPayloadData(); 从rtp包层面解开数据包
+        }
     }
 
-    class VCMTiming {
-
+    abstract class RtpPacketSinkInterface {
+        void OnRtpPacket();
     }
 
-    class RtpVideoStreamReceiver {
-        PacketBuffer packetBuffer_;
-        FrameReferenceFinder finder_;
-        VCMTiming* vcmtiming_;
+    class RtxReceiveStream {
+        RtpPacketSinkInterface* media_sink; 实际上就是RtpVideoStreamReceiver
+        void OnRtpPacket(); 从demux 接收数据
     }
+
+    RtpVideoStreamReceiver --|> OnAssembledFrameCallback
+    RtxReceiveStream --|> RtpPacketSinkInterface
+    RtpVideoStreamReceiver --|> RtpPacketSinkInterface
 
     PacketBuffer --o RtpVideoStreamReceiver
     FrameReferenceFinder --o RtpVideoStreamReceiver 
 
-    class FrameBuffer {
-        VCMTiming* vcmtiming_;
-    }
+    
 
     class VCMGenericDecoder {
         void Decode();
@@ -221,7 +248,7 @@ void FindFrames(uint16_t seq) {
             }
             if(is_264) {
                 // 如果不是关键帧，当前帧前面有丢失的数据包
-                // 充值data_buffer 相关数据包的状态
+                // 重置data_buffer 相关数据包的状态
                 if(!iskeyframe && gap()){
                     reset_databuffer_status();
                 }
@@ -256,16 +283,17 @@ void ManageFramePidOrSeqNum() {
     // 1.插入关键帧 last_seq_num_gop(关键帧最后一个包序列号，作为下一帧的依赖)
     // 2.关键帧为空，直接缓存
     // 3.删除较老的关键帧信息，至少保存一个关键帧序列号
-    // 4.如果是P帧的话，判断序列号是否和上一个连续帧的最后一个序列号相等，否则返回缓存
-    // 5.更新关键帧序列的最后一个连续帧序列号，作为下一帧的依赖，和1 相互呼应
-    // 6.更新最后一个序列号考虑padding 场景
+    // 4.如果是P帧的话，判断序列号是否和上一个连续帧的最后一个序列号(会随着帧连续不断修改)相等，否则返回缓存
+    // 5.更新关键帧序列的最后一个连续帧序列号，作为下一帧的依赖，和1 相互呼应(在此已经保证是连续的了，4已说明)
+    // 6.UpdateLastPictureIdWithPadding()
+    // 7.更新最后一个序列号考虑padding 场景
 }
 
 void UpdateLastPictureIdWithPadding(seq) {
     // 1.如果当前序列号比关键帧序列号还老，返回
     // 2.获取当前seq 所依赖的关键帧信息
     // 3.如果有因padding 包存在可以使得序列号连续的，更新包的序列号
-    // 4.极端情况下，清楚关键帧信息和状态
+    // 4.极端情况下，清除关键帧信息和状态
 }
 
 void RetryStashedFrames() {
