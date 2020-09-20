@@ -2,6 +2,7 @@
 title: C++Tips
 date: 2020-08-05 14:45:42
 tags:
+hide: true
 ---
 
 # Tips

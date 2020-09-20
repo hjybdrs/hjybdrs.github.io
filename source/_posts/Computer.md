@@ -2,6 +2,7 @@
 title: Computer
 date: 2020-08-28 20:07:18
 tags:
+hide: true
 ---
 
 # 基础知识

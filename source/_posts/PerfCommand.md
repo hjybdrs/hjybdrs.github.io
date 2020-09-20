@@ -2,6 +2,7 @@
 title: PerfCommand
 date: 2020-08-16 22:50:53
 tags:
+hide: true
 ---
 
 
