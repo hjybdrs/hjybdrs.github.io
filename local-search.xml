@@ -4,58 +4,6 @@
   
   
   <entry>
-    <title>KeyWordCode</title>
-    <link href="/2020/09/16/KeyWordCode/"/>
-    <url>/2020/09/16/KeyWordCode/</url>
-    
-    <content type="html"><![CDATA[<p>快捷键</p><a id="more"></a><h1 id="KeyWord"><a href="#KeyWord" class="headerlink" title="KeyWord"></a>KeyWord</h1><h2 id="Vscode"><a href="#Vscode" class="headerlink" title="Vscode"></a>Vscode</h2><h3 id="mac"><a href="#mac" class="headerlink" title="mac"></a>mac</h3><h4 id="多列选择"><a href="#多列选择" class="headerlink" title="多列选择"></a>多列选择</h4><pre><code class="txt">shift+option 鼠标左键</code></pre><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>PerfCommand</title>
-    <link href="/2020/09/16/PerfCommand/"/>
-    <url>/2020/09/16/PerfCommand/</url>
-    
-    <content type="html"><![CDATA[<p>perf 基本原理是在cpu PMU(performance Monitor Unit) 寄存器和软件特性中获取相关信息来进行系统性能输出。<br>可以监控的事件分为三类:</p><ul><li>Hardware Event 这块主要是由PMU 寄存机硬件产生的，如如cache miss 等，如果需要了解程序对硬件特性使用情况，需要使用这类事件</li><li>Software Event 内核软件产生的时间，比如进程切换  tick 数</li><li>Tracepoint Event 内核中的静态tracepoint 触发的时间，这些tracepoint 用来判断程序运行期间内核的行为细节，比如slab 分配器的分配次数等<pre><code class="shell"># 可以使用/ 进行某些关键字查询$ perf top# 单独的监控某一个应用程序# 事件这么多，不知道监控哪一些，无从下手，最好先从整体到细节。先大致了解有哪一些统计事件，在到具体细节中去# 使用perf stat 可以通过精简的方式提供程序运行的整体情况和数据汇总$ perf stats xxx.exe# task-clock 指的是占用了多少任务时钟周期，越高说明多数时间话费在CPU 计算上</code></pre></li></ul><p>$ perf record -g -e kmem:* -F 99 -p 12413 – sleep 20<br>$ perf record -g -e kmem:* -F 99 command<br>$ perf kmem -i perf.data –caller stat</p><h1 id="perf-生成火焰图"><a href="#perf-生成火焰图" class="headerlink" title="perf 生成火焰图"></a>perf 生成火焰图</h1><p>FlameGraph/stackcollapse-perf.pl result.perf &gt; result.folded<br>FlameGraph/flamegraph.pl result.folded &gt; cpu.svg</p><p>diff 火焰图</p><p>除了通常的几种火焰图，我们其实还可以将两个火焰图进行 diff，生成一个 diff 火焰图，</p><p>./FlameGraph/difffolded.pl perf.folded perf.folded1 | ./flamegraph.pl &gt; ../diff.svg</p><p>```<br><a href="https://juejin.im/post/6844903950315945992" target="_blank" rel="noopener">https://juejin.im/post/6844903950315945992</a><br><a href="http://linux.51yip.com/search/perf" target="_blank" rel="noopener">http://linux.51yip.com/search/perf</a><br><a href="https://blog.csdn.net/qq_15437667/article/details/50724330" target="_blank" rel="noopener">https://blog.csdn.net/qq_15437667/article/details/50724330</a><br><a href="https://www.cnblogs.com/sunsky303/p/8328836.html" target="_blank" rel="noopener">https://www.cnblogs.com/sunsky303/p/8328836.html</a><br><a href="http://www.brendangregg.com/perf.html" target="_blank" rel="noopener">http://www.brendangregg.com/perf.html</a></p><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>GtestGmock</title>
-    <link href="/2020/09/16/GtestGmock/"/>
-    <url>/2020/09/16/GtestGmock/</url>
-    
-    <content type="html"><![CDATA[<p>Google Gtest 单元测试框架相关整理</p><a id="more"></a><h1 id="Gtest-amp-Gmock"><a href="#Gtest-amp-Gmock" class="headerlink" title="Gtest&amp;Gmock"></a>Gtest&amp;Gmock</h1><h2 id="command"><a href="#command" class="headerlink" title="command"></a>command</h2><pre><code class="shell"># --gtest_list_tests 不会执行测试案例，而是输出一个案例的列表# --gtest_filter 对执行的测试案例进行过滤，只执行匹配的案例</code></pre><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>GitCommand</title>
-    <link href="/2020/09/16/GitCommand/"/>
-    <url>/2020/09/16/GitCommand/</url>
-    
-    <content type="html"><![CDATA[<p>Git 个人常用命令相关整理</p><a id="more"></a><h1 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h1><h2 id="仓库操作"><a href="#仓库操作" class="headerlink" title="仓库操作"></a>仓库操作</h2><h3 id="克隆远端仓库"><a href="#克隆远端仓库" class="headerlink" title="克隆远端仓库"></a>克隆远端仓库</h3><pre><code class="shell"># 在本地生成一个目录git clone gitxxxxURL.git# 在本地生成一个指定目录git clone gitxxxxURL.git myGitDir# clone 远端仓库的指定分支git clone -b branchName gitxxxxURL.git## clone 远端仓库失败情况处理   for the fxxk wargit config --global http.proxy http://127.0.0.1:9666</code></pre><h3 id="分支推送"><a href="#分支推送" class="headerlink" title="分支推送"></a>分支推送</h3><pre><code class="shell"># 将本地当前分支推送到远端指定分支，远端分支不需要加origin 因为前面的origin 已经代表了绑定的远端仓库git push origin HEAD:specificBranch# 本地的分支强制更新远端的指定分支，远端分支的内容有可能被覆盖git push origin HEAD:specificBranch --force# 将远端指定分支删除git push origin :specificBranch</code></pre><h2 id="分支操作"><a href="#分支操作" class="headerlink" title="分支操作"></a>分支操作</h2><h3 id="跟踪远程指定分支"><a href="#跟踪远程指定分支" class="headerlink" title="跟踪远程指定分支"></a>跟踪远程指定分支</h3><p>跟踪后可以直接pull 和push，不需要指定对应的分支名</p><pre><code class="shell"># 生成一个和远端分支名一样的本地分支git checkout --track origin/branchName# 生成一个本地指定分支与远端分支关联git checkout -b localBranchName origin/branchName# 从指定的提交号中生成一个本地分支git checkout -b localBranchName commit_id</code></pre><h2 id="标签操作"><a href="#标签操作" class="headerlink" title="标签操作"></a>标签操作</h2><h3 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h3><pre><code class="shell"># 轻量级标签# 在当前分支的当前commit 上打标签git tag v1.0# 查看所有标签git tag# 给指定commit 打标签git tag v1.1 commitId# 注释标签# -a 标签名  -m 注释git tag -a v1.2 -m &quot;comment&quot; commit# 推tagsgit push origin tagname# 推所有tagsgit push origin --tags# 删除本地的taggit tag -d tagname# 删除远程的taggit push origin :refs/tags/tagname# 查看tag 内容git show tagname# 切换到指定tag 对应的代码git checkout -b localbranchname tagname</code></pre><h2 id="提交处理"><a href="#提交处理" class="headerlink" title="提交处理"></a>提交处理</h2><h3 id="cherry-pick"><a href="#cherry-pick" class="headerlink" title="cherry-pick"></a>cherry-pick</h3><pre><code class="shell"># 这样会生成一个新的commit-id，如果有冲突的话，还需要解决冲突 git cherry-pick commit-id # 中间是两个点.. # 提交一个范围内的commit-id 左开右闭 git cherry_pick &lt;start-commit-id&gt;..&lt;end-commit-id&gt; # 提交一个范围内的commit-id 左闭右闭 git cherry_pick &lt;start-commit-id&gt;^..&lt;end-commit-id&gt; </code></pre><h2 id="子模块"><a href="#子模块" class="headerlink" title="子模块"></a>子模块</h2><h3 id="修改某个子模块的url"><a href="#修改某个子模块的url" class="headerlink" title="修改某个子模块的url"></a>修改某个子模块的url</h3><pre><code class="shell"># 修改.gitmodules 文件中，对应模块url 信息# 使用git submodule sync 将url 更新到.git/config 中# 如果第二步骤没有成功的话，手动更新.git/config 文件</code></pre><h2 id="密钥生成"><a href="#密钥生成" class="headerlink" title="密钥生成"></a>密钥生成</h2><pre><code class="shell">ssh-keygen -t rsa -b 4096 -C &quot;handsom@guy.com&quot; </code></pre><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>Webrtc</title>
     <link href="/2020/09/10/Webrtc/"/>
     <url>/2020/09/10/Webrtc/</url>
@@ -179,10 +127,10 @@
   
   <entry>
     <title>Videojitterbuffer</title>
-    <link href="/2020/09/08/Videojitterbuffer/"/>
-    <url>/2020/09/08/Videojitterbuffer/</url>
+    <link href="/2020/09/08/videojitterbuffer/"/>
+    <url>/2020/09/08/videojitterbuffer/</url>
     
-    <content type="html"><![CDATA[<h1 id="JitterBuffer"><a href="#JitterBuffer" class="headerlink" title="JitterBuffer"></a>JitterBuffer</h1><p>based on:m74(commit cc1b32545db7823b85f5a83a92ed5f85970492c9)</p><h2 id="RtpVideoStreamReceiver"><a href="#RtpVideoStreamReceiver" class="headerlink" title="RtpVideoStreamReceiver"></a>RtpVideoStreamReceiver</h2><img  src=http://www.plantuml.com/plantuml/svg/hLTDRzCm6BxdLrWxRHMz8CIbQ1BhFgWG5BLZrof9tH6jTKlY5QQn0sAW0WNjW11ZOW8nQRjGnWNn_Mj8Mqxy1Hp7IUpOJWiYXpQnd_Tzd_V3hssZOzeRvZe4CxUWvM9xnjWs07bCoyEkQMDWDqtF0ulGRjTXlTGYqABPR5f42eJ8uEcsdJh3pCuLmFZuxUZrNN_G7_Rs_BsdevUx_i7X-FGUnUyOAWDhJXssGmskLh4uN87hZeUX6quNswrE4-AOtQoASWxO5bF3Q8JMBvqzVqvZlEX24yV6TL8bOZmj-L_uAGEVpxVJnaCqxqS-VsTU26iQGJbJ53UeJqxLGHibHFnfc3QyG8UMNRC5vzD-bn4TJuKifN89JIweCk9HsVgk4lagH8e41gF1RBRyPRX5MLVWpKteORKgDXbXipMMKPHo2jOxAS2oTLQta6rQJKYKPA02KrLiOgziUT3jodwKKGNZwvswhh2l4PuGBsms6bHM1h1GaMc8RBZii639mBNYbLMdvQ1rvMm5TyBImcIHjIhGXex8LY3IuJvgIIzGScdGFmuL4yc1hjt2zBKck2xO2bQOcfsXjQcN0LBiujXEpoyEw0f4q7NigPkbq5hhuR-eMa04RaXMKXHOLyeix6Gxk47Q2ziIza_2dS3ldGxV7Vb7kx-_zVq7JyWd5xQ8oV3XyVXDdyKQHHqiugnXGHkQgciQAH-A164lcjXSC3sOa9TSpu4LYDdxBBLrHcUSQz_fJM3fDlb1PZDIbC0K1iCzvoAgbv234mc_T-1__U9__kZtNld7Z_t-ypYgMcMWWzsQEkaIb6LU2Co4MF-BG93eU3K9IU5dfbiRR5hCPM3O3ju4Z98G2qquQbi5eDx26QbuxoRgKaDXwead5l1FFmnVl5VKCwdxqREJyU37wFiWRVclJZpfOkBNRovQudCJbhYG1cKSjJ3MqYSqIH78jJt5RAeeL6SGAUJfXaCjhBR3Lg687HMkip98chTYr-LFFK86jyMc6jTgb_-g5QRa9H-hSi0X9nvQtrHbpQFcQmNW3mv_xT__-UaHLrtCO4YHvrzYIZWFaYWB7d758NeQdXwbc7FusFaipM4aLNp4yu2QSNI05MAaxHYnOcMEmba-_F8Y8uSc5_C3_5xTIDwv36isV5SvN2jewWTeAqYHcguqf3hda5OfTKfLb1rvJ74ua9CjnbLVHXbmVGVWK7mAid2QHEX434s1QAik4w-wpMHB9FULR9poNf8jehbuP0j5Dujib7IpC7QCFm00><h2 id="VideoReceiver"><a href="#VideoReceiver" class="headerlink" title="VideoReceiver"></a>VideoReceiver</h2><h2 id="VideoStreamDecoder"><a href="#VideoStreamDecoder" class="headerlink" title="VideoStreamDecoder"></a>VideoStreamDecoder</h2><h2 id="VCTiming"><a href="#VCTiming" class="headerlink" title="VCTiming"></a>VCTiming</h2><h2 id="PacketBuffer"><a href="#PacketBuffer" class="headerlink" title="PacketBuffer"></a>PacketBuffer</h2><p>作用： 包缓存，返回数据帧(如何定义帧？)到RtpVideoStreamReceiver</p><blockquote class="pullquote mindmap mindmap-md"><ul><li>[PacketBuffer]<ul><li>size(512-2048个pkt)</li><li>buffer<ul><li>sequence_buffer 保存pkt信息</li><li>data_buffer 保存真实pkt</li></ul></li><li>InsertPacket() 插入数据包</li><li>UpdateMissingPackets() 更新丢失pkt，用于检测P帧前的gap</li><li>FindFrames() 查找可用帧，并回调</li><li>PotentialNewFrame() 查找潜在连续帧</li><li>PaddingReceived() 更新padding</li></ul></li></ul></blockquote><pre><code class="c++">void FindFrames(uint16_t seq) {    for(最多找一圈，并且序列号是连续) {        if(currentPacket == frame_end) {            while(1) {            }            if(is_264) {                // 如果不是关键帧，当前帧前面有丢失的数据包                // 充值data_buffer 相关数据包的状态                if(!iskeyframe &amp;&amp; gap()){                    reset_databuffer_status();                }            }            missing.erase();            found_frames.insert();        }    }}</code></pre><p>可以考虑的两个点：</p><ul><li>nackCount</li><li>max(min)recvtime</li></ul><h2 id="RtpFrameReferenceFinder"><a href="#RtpFrameReferenceFinder" class="headerlink" title="RtpFrameReferenceFinder"></a>RtpFrameReferenceFinder</h2><p>作用：找到每一个帧的参考帧，关键帧是自参考，后续的GOP内的每一帧都参考上一帧，GOP 内有序。</p><blockquote class="pullquote mindmap mindmap-md"><ul><li>[RtpFrameReferenceFinder]<ul><li>ManageFrame()<ul><li>ManageFrameInternal()</li><li>ManageFramePidOrSeqNum()</li></ul></li><li>PaddingReceived()</li><li>UpdateLastPictureIdWithPadding()</li><li>RetryStashedFrames()</li><li>ClearTo()</li></ul></li></ul></blockquote><pre><code class="c++">void ManageFramePidOrSeqNum() {    // 1.插入关键帧 last_seq_num_gop(关键帧最后一个包序列号，作为下一帧的依赖)    // 2.关键帧为空，直接缓存    // 3.删除较老的关键帧信息，至少保存一个关键帧序列号    // 4.如果是P帧的话，判断序列号是否和上一个连续帧的最后一个序列号相等，否则返回缓存    // 5.更新关键帧序列的最后一个连续帧序列号，作为下一帧的依赖，和1 相互呼应    // 6.更新最后一个序列号考虑padding 场景}void UpdateLastPictureIdWithPadding(seq) {    // 1.如果当前序列号比关键帧序列号还老，返回    // 2.获取当前seq 所依赖的关键帧信息    // 3.如果有因padding 包存在可以使得序列号连续的，更新包的序列号    // 4.极端情况下，清楚关键帧信息和状态}void RetryStashedFrames() {    // 有两种情况可以尝试从stashed 中查找    // a. 缓存帧遍历查找    // b. 因padding 包的存在，可以使得序列号连续    // 1. 从缓存帧处遍历，查看是否能找到连续的帧}</code></pre><h2 id="FrameBuffer"><a href="#FrameBuffer" class="headerlink" title="FrameBuffer"></a>FrameBuffer</h2><p>作用：GOP间 内有序。</p><blockquote class="pullquote mindmap mindmap-md"><ul><li>[FrameBuffer]<ul><li>ValidReferences() 判断帧之间的参考是否正确<ul><li>判断pic_id pic_id 就是当前帧最后一个包的seq</li><li>判断pid 和依赖的序列号是否乱序</li><li>判断所依赖的序列号是否有重复</li><li>应该是判断时域分层内容</li></ul></li><li>UpdateFrameInfoWithIncomingFrame() 更新frameinfo 和其他frame的info<ul><li>遍历当前帧的依赖帧<ul><li>如果上一次解码的帧比依赖帧更新，依赖帧永远不会被解码 rt=&gt;false</li><li>在frames 中查找依赖帧，并判断依赖帧是否连续</li></ul></li><li>inter_layer_predicted only vp9 support</li><li>未连续参考帧和未解码参考帧计数器</li><li>判断依赖帧是否连续，并且更新依赖帧被哪些帧所依赖(反向依赖关系)</li></ul></li><li>PropagateContinuity()<ul><li>通过BFS来进行连续性的传播，还有个依赖的就是上一层建立的反向依赖关系</li></ul></li><li>Public<ul><li>Start() 随着videoreceivestream start</li><li>Stop() 随着stop</li><li>SetProtectionMode()</li><li>Clear()</li><li>InsertFrame() 插入数据帧<ul><li>0.stats 回调</li><li>1.最近连续pic_id(实际上就是seq)</li><li>2.ValidReferences()</li><li>3.缓存帧数量控制</li><li>4.获取最近解码帧的pic_id 和 时间戳(rtp tmp)</li><li>5.针对跳帧情况特殊处理，id_small&amp;&amp;time_new&amp;&amp;keyframe</li><li>6.还是针对跳帧，插入会导致混乱情况，返回</li><li>7.尝试插入，如果已经存在，返回</li><li>8.UpdateFrameInfoWithIncomingFrame()</li><li>9.判断当前帧是否因为重传导致延时(一定范围内？整个一帧)</li><li>10.如果当前真的参考都到期了，计算准备返回可解码帧id</li><li>11.call PropagateContinuity()</li><li>12.最后唤醒解码线程并返回可以连续的帧pic_id</li></ul></li><li>UpdateRtt() 根据rtt 调整jitterEsmitor 策略</li><li>NextFrame() 弹出数据帧<ul><li>keyframe-&gt;200ms deltaframe-&gt;3000ms</li><li>遍历缓存帧<ul><li>没有连续或者还有依赖的未解码帧</li><li>当前帧并不为目前所需要的关键帧</li><li>获取上一次解码帧的rtp tmp 比较筛选出跳帧的情况</li></ul></li></ul></li></ul></li></ul></li></ul></blockquote><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
+    <content type="html"><![CDATA[<h1 id="JitterBuffer"><a href="#JitterBuffer" class="headerlink" title="JitterBuffer"></a>JitterBuffer</h1><p>based on:m74(commit cc1b32545db7823b85f5a83a92ed5f85970492c9)</p><h2 id="RtpVideoStreamReceiver"><a href="#RtpVideoStreamReceiver" class="headerlink" title="RtpVideoStreamReceiver"></a>RtpVideoStreamReceiver</h2><img  src=http://www.plantuml.com/plantuml/svg/hLXBZzj47B_xKupsj8tOIuMu15LgqmSHWbJPbgiriIUBQUmOUpRigbG2sg85qbKFfQ9KhNWKRI-4xQK2MlWqTNPxuYimdXaxy_YFtI9oI9oPt__zcF_OIt5m1MyHjFO96MKqMFEkUeXzy2Yd6Gue2YOupz5P4an34lPZ1ktXoMJ4g910bf_PD0ebPlr45nqV_7pqm-V5OhxSkrtStZ_w_aPn_-7nuNMEl-P10Zw8GZ8L738dOtrvIBQYd99CRFUcSJeXjDPk7LAvWuAHP2FL4DBVEVdMcmxXlOnWMWjtKVMPS9FoVz4FTFp6njGKBj2g7HiRdvxIt6eYkCuSfIowWxCP9LVw2RDdZ0FoDbywd-6Od3Bj7YHytN2PmV9SqfvGWqH5DVDxdz5laWG8OBbQxZRJlqjskTP3yl4soIdCIcvMs6QEWwGAEGUxZTHWpJmtTvC0ZoQ4CMb0bQ8sAQRvO9IJR6RRCKY6b5vEGpknBHjEvpc9cSImnGWTPt2jUyn74MK9DDeUZqcsfZ2HQTPxxr8KHybMPPx2OeNY0ivm5Wg7ybFJTz0iY2b_zBjkJXUPMeI2h5o6bmNQHSn1ssnX5mrfAcg3iYuH3qb0efaiDCq__OG5WWfvQX-h0UUZH0ZArMr5OsSaobwW6WAwQqZO3aa2KihXnhgz0jja-4TpNQhyyNNZGEbZ_cCWMuAdvMvQUnAzUBOVadXx1ottVrdUURhyzd1vQm5I2KF2YtXtCiNXMKonfCzeMinl5a--UFdW9tPo5Sy_4rpOek8bTv7K-cWT4ggvLCy0xJ0PqXsfed2yGWyBwA2OX17sSxROHSNYuSjxDr_y_dLn-6JvtMyjYVbwdfHwEXA3do2kz9I4XccS1BQgLPA3pBEoiYoC1ZU0cUccGKA26Z6MiHT8Gh8eUEMvHPjoGl7hQycW8KfrB2c62d90Q6pFgydiGtRIo-ditcCnb1LxXyjV7nMFRlppV5vyUOlzLSolD5b-TN3yurpwBAc6YKfdXnOyNj00unasz1WYA2lo3CwLmh5Cxw0BXChdTIxh3PTmPP8ovx5pE-mhmPEAqGe621JZt-aax2SHNL4KU_UBPtyMVpmjzXuK1zyKyxkrLvtCK4ep7mww1PMHrnpJukl_Gb06kguABIZgZf9EBLtQYcKfE2YVD0oea7IDM2rFMNYQbahLOpHZPoo9q3DBHaWqGo2VMTuVtNbylFZxwA-5AVcrBXzcCgdrswbA_4HBYMjX0FteXCc1gQNPwK1bWW9sZQI0hWEMoys6moLScefM0VXE7CKo3LPD61WTrGk85i6hUbEjStMc_lExhwYNVSFfe8XTFdX-SvP-piNxrb6hYXSgglht9HF5WfMNDOkKvD0j5HSvo-SANZaXtPo59o5zzCi4h75rbmHENQ1ZM2CCiAkwtouoTd_9j55P7Vl7gsSbmew3EmEN_QuZVv0pWu3GpAmblHdAife5LgU4l1pPQy1mO0TRzwixZHhWxWwWeDGGDE6SunjCuZaIn9brZNZenK8pnUhLGJCEV4NGJE9u1z1CL5tocr7M9T-xvlqB><h2 id="VideoReceiver"><a href="#VideoReceiver" class="headerlink" title="VideoReceiver"></a>VideoReceiver</h2><h2 id="VideoStreamDecoder"><a href="#VideoStreamDecoder" class="headerlink" title="VideoStreamDecoder"></a>VideoStreamDecoder</h2><h2 id="VCTiming"><a href="#VCTiming" class="headerlink" title="VCTiming"></a>VCTiming</h2><h2 id="PacketBuffer"><a href="#PacketBuffer" class="headerlink" title="PacketBuffer"></a>PacketBuffer</h2><p>作用： 包缓存，返回数据帧(如何定义帧？)到RtpVideoStreamReceiver</p><blockquote class="pullquote mindmap mindmap-md"><ul><li>[PacketBuffer]<ul><li>size(512-2048个pkt)</li><li>buffer<ul><li>sequence_buffer 保存pkt信息</li><li>data_buffer 保存真实pkt</li></ul></li><li>InsertPacket() 插入数据包</li><li>UpdateMissingPackets() 更新丢失pkt，用于检测P帧前的gap</li><li>FindFrames() 查找可用帧，并回调</li><li>PotentialNewFrame() 查找潜在连续帧</li><li>PaddingReceived() 更新padding</li></ul></li></ul></blockquote><pre><code class="c++">void FindFrames(uint16_t seq) {    for(最多找一圈，并且序列号是连续) {        if(currentPacket == frame_end) {            while(1) {            }            if(is_264) {                // 如果不是关键帧，当前帧前面有丢失的数据包                // 重置data_buffer 相关数据包的状态                if(!iskeyframe &amp;&amp; gap()){                    reset_databuffer_status();                }            }            missing.erase();            found_frames.insert();        }    }}</code></pre><p>可以考虑的两个点：</p><ul><li>nackCount</li><li>max(min)recvtime</li></ul><h2 id="RtpFrameReferenceFinder"><a href="#RtpFrameReferenceFinder" class="headerlink" title="RtpFrameReferenceFinder"></a>RtpFrameReferenceFinder</h2><p>作用：找到每一个帧的参考帧，关键帧是自参考，后续的GOP内的每一帧都参考上一帧，GOP 内有序。</p><blockquote class="pullquote mindmap mindmap-md"><ul><li>[RtpFrameReferenceFinder]<ul><li>ManageFrame()<ul><li>ManageFrameInternal()</li><li>ManageFramePidOrSeqNum()</li></ul></li><li>PaddingReceived()</li><li>UpdateLastPictureIdWithPadding()</li><li>RetryStashedFrames()</li><li>ClearTo()</li></ul></li></ul></blockquote><pre><code class="c++">void ManageFramePidOrSeqNum() {    // 1.插入关键帧 last_seq_num_gop(关键帧最后一个包序列号，作为下一帧的依赖)    // 2.关键帧为空，直接缓存    // 3.删除较老的关键帧信息，至少保存一个关键帧序列号    // 4.如果是P帧的话，判断序列号是否和上一个连续帧的最后一个序列号(会随着帧连续不断修改)相等，否则返回缓存    // 5.更新关键帧序列的最后一个连续帧序列号，作为下一帧的依赖，和1 相互呼应(在此已经保证是连续的了，4已说明)    // 6.UpdateLastPictureIdWithPadding()    // 7.更新最后一个序列号考虑padding 场景}void UpdateLastPictureIdWithPadding(seq) {    // 1.如果当前序列号比关键帧序列号还老，返回    // 2.获取当前seq 所依赖的关键帧信息    // 3.如果有因padding 包存在可以使得序列号连续的，更新包的序列号    // 4.极端情况下，清除关键帧信息和状态}void RetryStashedFrames() {    // 有两种情况可以尝试从stashed 中查找    // a. 缓存帧遍历查找    // b. 因padding 包的存在，可以使得序列号连续    // 1. 从缓存帧处遍历，查看是否能找到连续的帧}</code></pre><h2 id="FrameBuffer"><a href="#FrameBuffer" class="headerlink" title="FrameBuffer"></a>FrameBuffer</h2><p>作用：GOP间 内有序。</p><blockquote class="pullquote mindmap mindmap-md"><ul><li>[FrameBuffer]<ul><li>ValidReferences() 判断帧之间的参考是否正确<ul><li>判断pic_id pic_id 就是当前帧最后一个包的seq</li><li>判断pid 和依赖的序列号是否乱序</li><li>判断所依赖的序列号是否有重复</li><li>应该是判断时域分层内容</li></ul></li><li>UpdateFrameInfoWithIncomingFrame() 更新frameinfo 和其他frame的info<ul><li>遍历当前帧的依赖帧<ul><li>如果上一次解码的帧比依赖帧更新，依赖帧永远不会被解码 rt=&gt;false</li><li>在frames 中查找依赖帧，并判断依赖帧是否连续</li></ul></li><li>inter_layer_predicted only vp9 support</li><li>未连续参考帧和未解码参考帧计数器</li><li>判断依赖帧是否连续，并且更新依赖帧被哪些帧所依赖(反向依赖关系)</li></ul></li><li>PropagateContinuity()<ul><li>通过BFS来进行连续性的传播，还有个依赖的就是上一层建立的反向依赖关系</li></ul></li><li>Public<ul><li>Start() 随着videoreceivestream start</li><li>Stop() 随着stop</li><li>SetProtectionMode()</li><li>Clear()</li><li>InsertFrame() 插入数据帧<ul><li>0.stats 回调</li><li>1.最近连续pic_id(实际上就是seq)</li><li>2.ValidReferences()</li><li>3.缓存帧数量控制</li><li>4.获取最近解码帧的pic_id 和 时间戳(rtp tmp)</li><li>5.针对跳帧情况特殊处理，id_small&amp;&amp;time_new&amp;&amp;keyframe</li><li>6.还是针对跳帧，插入会导致混乱情况，返回</li><li>7.尝试插入，如果已经存在，返回</li><li>8.UpdateFrameInfoWithIncomingFrame()</li><li>9.判断当前帧是否因为重传导致延时(一定范围内？整个一帧)</li><li>10.如果当前真的参考都到期了，计算准备返回可解码帧id</li><li>11.call PropagateContinuity()</li><li>12.最后唤醒解码线程并返回可以连续的帧pic_id</li></ul></li><li>UpdateRtt() 根据rtt 调整jitterEsmitor 策略</li><li>NextFrame() 弹出数据帧<ul><li>keyframe-&gt;200ms deltaframe-&gt;3000ms</li><li>遍历缓存帧<ul><li>没有连续或者还有依赖的未解码帧</li><li>当前帧并不为目前所需要的关键帧</li><li>获取上一次解码帧的rtp tmp 比较筛选出跳帧的情况</li></ul></li></ul></li></ul></li></ul></li></ul></blockquote><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
     
     
     <categories>
@@ -226,71 +174,6 @@
       <tag>chromuim</tag>
       
     </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>LinuxMem</title>
-    <link href="/2020/08/31/LinuxMem/"/>
-    <url>/2020/08/31/LinuxMem/</url>
-    
-    <content type="html"><![CDATA[<h1 id="Linux-Mem"><a href="#Linux-Mem" class="headerlink" title="Linux-Mem"></a>Linux-Mem</h1><h2 id="什么是buffer-cache"><a href="#什么是buffer-cache" class="headerlink" title="什么是buffer/cache"></a>什么是buffer/cache</h2><p>buffer 指的是buffer cache，中文语境下为：缓冲区缓存，历史上主要是对io 设备写的缓存<br>cache  指的是page cache，中文语境下为：页面缓存，历史上主要是对io 设备读的缓存</p><p>但是目前，他们两个的意义已经不一样了，如果内存是以page 进行分配管理的，都可以使用page cache 作为其缓存来管理使用。当然并不是所有的内存都是以page 来管理的，还有按照block 来进行管理的，一般叫做buffer。</p><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Computer</title>
-    <link href="/2020/08/28/Computer/"/>
-    <url>/2020/08/28/Computer/</url>
-    
-    <content type="html"><![CDATA[<h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><h2 id="计算机组成原理"><a href="#计算机组成原理" class="headerlink" title="计算机组成原理"></a>计算机组成原理</h2><h3 id="周期"><a href="#周期" class="headerlink" title="周期"></a>周期</h3><p>三个周期：时钟周期、机器周期、指令周期<br>CPU 最小生命单位就是时钟周期，一个机器周期包含若干个时钟周期，至于指令周期则包含若干机器周期。按照粒度排序：<br>指令周期 &gt; 机器周期 &gt; 时钟周期<br>时钟周期：在一个时钟周期内，cpu 仅完成一个最基本的动作<br>机器周期：<br>指令周期：执行一条指令所需要的时间，一般由若干个机器周期组成。</p>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>LinuxCpu</title>
-    <link href="/2020/08/13/LinuxCpu/"/>
-    <url>/2020/08/13/LinuxCpu/</url>
-    
-    <content type="html"><![CDATA[<h1 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h1><h2 id="如何查看CPU-数量"><a href="#如何查看CPU-数量" class="headerlink" title="如何查看CPU 数量"></a>如何查看CPU 数量</h2><p>一般来说，一颗物理CPU 上可以分出多个逻辑核心，加上intel 的超线程技术，可以在逻辑核心上再分出一倍数量的核心出来。</p><pre><code># 如果是相同physical id 的cpu，那么是同一个物理核心封装的物理核或者超线程# 如果是相同core id 的cpu，那么是同一个逻辑核的超线程$ cat /proc/cpuinfo# 查看有多少个物理核心$ cat /proc/cpuinfo | grep &quot;physical id&quot; | sort | uniq | wc -l#查看有多少个逻辑核心$ cat /proc/cpuinfo | grep &quot;processor id&quot; | wc -l</code></pre><h2 id="CPU-平均负载"><a href="#CPU-平均负载" class="headerlink" title="CPU 平均负载"></a>CPU 平均负载</h2><p>top 和 uptime 命令都可以查看</p><p>系统负载升高的原因:<br>一般来说，系统平均负载升高意味着CPU 利用率上升，但是没有必然联系。<br>对于CPU 密集型的操作来说平均负载上升，一般意味着CPU 利用率上升。<br>如果是IO 密集型任务较多的话，此事的CPU 利用率不一定高，可能很多任务处于不可中断状态，等待CPU的调度也会升高平均负载。</p><p>所以在遇到系统平均负载很高，但是CPU利用率上不去的时候，就需要考虑系统是否遇到了IO 瓶颈。<br>因此系统是否遇到CPU瓶颈需要结合CPU 利用率，系统平均负载来查看。</p><p><a href="https://community.tenable.com/s/article/What-is-CPU-Load-Average" target="_blank" rel="noopener">https://community.tenable.com/s/article/What-is-CPU-Load-Average</a><br><a href="https://scoutapm.com/blog/understanding-load-averages" target="_blank" rel="noopener">https://scoutapm.com/blog/understanding-load-averages</a><br><a href="https://www.ruanyifeng.com/blog/2011/07/linux_load_average_explained.html" target="_blank" rel="noopener">https://www.ruanyifeng.com/blog/2011/07/linux_load_average_explained.html</a></p><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>C++Tips</title>
-    <link href="/2020/08/05/C-Tips/"/>
-    <url>/2020/08/05/C-Tips/</url>
-    
-    <content type="html"><![CDATA[<h1 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h1><h2 id="移位操作"><a href="#移位操作" class="headerlink" title="移位操作"></a>移位操作</h2><pre><code class="c++">// 需要移位的数字 &lt;&lt; 移位的次数n// 4*2^2 = 164 &lt;&lt; 2 </code></pre><h2 id="STL"><a href="#STL" class="headerlink" title="STL"></a>STL</h2><h3 id="lower-bound-upper-bound"><a href="#lower-bound-upper-bound" class="headerlink" title="lower_bound upper_bound"></a>lower_bound upper_bound</h3><pre><code class="c++">// 返回一个迭代器，指向键值&gt;= key的第一个元素// 如果没有找到合适的返回end()iterator lower_bound(const key_type&amp; key);// 返回一个迭代器，指向键值&gt; key的第一个元素// 如果没有找到合适的返回end()iterator upper_bound(const key_type&amp; key);vector&lt;int&gt; a{1,2,3,4,5,6,7,8};auto lowerIt = lower_bound(a.begin(), a.end() ,12);// lowerIt = end()auto upperIt = upper_bound(a.begin(), a.end() ,12);// upperIt = end()auto lowerIt = lower_bound(a.begin(), a.end() ,2);// *lowerIt == 2auto upperIt = upper_bound(a.begin(), a.end() ,2);// *upperIt == 3</code></pre><h2 id="分支预测"><a href="#分支预测" class="headerlink" title="分支预测"></a>分支预测</h2><p>gcc 引入，作用是允许将最有可能执行的分支告诉编译器，减少指令跳转带来的性能下降。<br>这个指令的写法是<strong>builtin_expect(EXP,P)。<br>一般是将</strong>builtin_expect 封装为likely和unlikely 宏，如下：</p><pre><code class="c++">#define likely(x) __builtin_expect(!!(x), 1) //x很可能为真       #define unlikely(x) __builtin_expect(!!(x), 0) //x很可能为假</code></pre><p>使用likely()，执行if 后的概率大一些，使用unlikely() 执行else 后面语句的概率大一些。</p><pre><code class="c++">// 下面例子编译的指令会预先读取y = 1 这个指令，这是和x  &gt; 0 的概率比较大的时候，如果x &gt; 0 的概率比较小，那么就应该使用 unlikely 这个指令 int x,y;if(likely(x &gt; 0)) {    y = 1;} else {    y = -1;}</code></pre>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>DevelopeKit</title>
-    <link href="/2020/08/04/DevelopeKit/"/>
-    <url>/2020/08/04/DevelopeKit/</url>
-    
-    <content type="html"><![CDATA[<h1 id="DevelopeKits"><a href="#DevelopeKits" class="headerlink" title="DevelopeKits"></a>DevelopeKits</h1><h2 id="Command"><a href="#Command" class="headerlink" title="Command"></a>Command</h2><h3 id="z-sh"><a href="#z-sh" class="headerlink" title="z.sh"></a>z.sh</h3><p><a href="https://github.com/rupa/z.git" target="_blank" rel="noopener">zsh</a></p><h3 id="tldr"><a href="#tldr" class="headerlink" title="tldr"></a>tldr</h3><p><a href="https://github.com/tldr-pages/tldr" target="_blank" rel="noopener">tldr</a></p><h3 id="zip"><a href="#zip" class="headerlink" title="zip"></a>zip</h3><pre><code class="shell"># 压缩打包一个文件夹zip -r dst.zip folder# 压缩打包一个文件zip dst.zip file</code></pre><h3 id="把数据同时输出到文件和屏幕"><a href="#把数据同时输出到文件和屏幕" class="headerlink" title="把数据同时输出到文件和屏幕"></a>把数据同时输出到文件和屏幕</h3><pre><code class="shell">./happy_day | tee log.txt | cat</code></pre><h3 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h3><pre><code class="shell">#表明把标准输出重定向到文件 ./happy_day &gt; file#把标准错误输出重定向到标准输出./happy_day 2&gt;&amp;1 file./happy_day &amp;&gt; file</code></pre><h2 id="grep-和find-配合"><a href="#grep-和find-配合" class="headerlink" title="grep 和find 配合"></a>grep 和find 配合</h2><pre><code class="shell">find ./dir -name &quot;*cpp&quot; | xargs grep &quot;xxxx&quot;# 查找文件 -type ffind ./dir -type f | xargs grep &quot;xxxx&quot;</code></pre><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
-    
-    
     
   </entry>
   
@@ -356,36 +239,37 @@
   
   
   <entry>
-    <title>网络抓包</title>
-    <link href="/2020/03/29/%E7%BD%91%E7%BB%9C%E6%8A%93%E5%8C%85/"/>
-    <url>/2020/03/29/%E7%BD%91%E7%BB%9C%E6%8A%93%E5%8C%85/</url>
+    <title>GtestGmock</title>
+    <link href="/2020/05/16/GtestGmock/"/>
+    <url>/2020/05/16/GtestGmock/</url>
     
-    <content type="html"><![CDATA[<p>网络抓包工具指令备忘</p><a id="more"></a><h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>“源码面前，了无秘密”，同理在抓包工具面前，网络的各种情况也原型毕露。</p><p>本文主要给大家介绍三个主流的抓包工具以及如何对https 协议进行抓包，更多的是介绍工具的使用以及实操。</p><h1 id="主要工具介绍"><a href="#主要工具介绍" class="headerlink" title="主要工具介绍"></a>主要工具介绍</h1><p>工具主要包括：</p><ul><li>tcpdump</li><li>wireshark</li><li>fiddler</li></ul><h1 id="实操"><a href="#实操" class="headerlink" title="实操"></a>实操</h1><h2 id="tcpdump-实例"><a href="#tcpdump-实例" class="headerlink" title="tcpdump 实例"></a>tcpdump 实例</h2><pre><code class="shell"># tcpdump -i 指定对应的网卡 将抓包数据写入指定文件tcpdump -w fxxkWall.pcap # 抓取经过任意网卡 8888 上的任意数据包(包括tcp 和udp)tcpdump -i any &#39;port 8888&#39;# 抓取经过任意网卡 协议是tcp 端口是8888 的数据包tcpdump -i any &#39;tcp port 8888&#39;# 抓取经过任意网卡 从源端口 协议是tcp 端口是8888 的数据包tcpdump -i any &#39;tcp src port 8888&#39;# 抓取经过任意网卡 从源端口 协议是tcp 端口是8888 的数据包 或者 从目的端口 协议是udp 端口是9999 的数据包tcpdump -i any &#39;tcp src port 8888 or udp dst port 9999&#39;</code></pre><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
+    <content type="html"><![CDATA[<p>Google Gtest 单元测试框架相关整理</p><a id="more"></a><h1 id="Gtest-amp-Gmock"><a href="#Gtest-amp-Gmock" class="headerlink" title="Gtest&amp;Gmock"></a>Gtest&amp;Gmock</h1><h2 id="command"><a href="#command" class="headerlink" title="command"></a>command</h2><pre><code class="shell"># --gtest_list_tests 不会执行测试案例，而是输出一个案例的列表# --gtest_filter 对执行的测试案例进行过滤，只执行匹配的案例</code></pre><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
     
     
-    
-    <tags>
-      
-      <tag>tcpdump</tag>
-      
-      <tag>wireshark</tag>
-      
-      <tag>fiddler</tag>
-      
-      <tag>https</tag>
-      
-    </tags>
     
   </entry>
   
   
   
   <entry>
-    <title>2020plan</title>
-    <link href="/2020/03/29/2020plan/"/>
-    <url>/2020/03/29/2020plan/</url>
+    <title>KeyWordCode</title>
+    <link href="/2020/04/16/KeyWordCode/"/>
+    <url>/2020/04/16/KeyWordCode/</url>
     
-    <content type="html"><![CDATA[<p>2020Plan</p><a id="more"></a><h1 id="2020-Plan"><a href="#2020-Plan" class="headerlink" title="2020 Plan"></a>2020 Plan</h1><h2 id="基础内容"><a href="#基础内容" class="headerlink" title="基础内容"></a>基础内容</h2><h3 id="TCP-IP"><a href="#TCP-IP" class="headerlink" title="TCP/IP"></a>TCP/IP</h3><p>要求:</p><ul><li>tcp<ul><li>tcp 握手与挥手</li><li>tcp  option</li><li>tcp 拥塞控制</li></ul></li><li>udp<ul><li>udp 编程范式</li></ul></li><li>抓包分析<ul><li>wireshark</li><li>fiddler</li><li>tcpdump</li></ul></li></ul><h2 id="流媒体"><a href="#流媒体" class="headerlink" title="流媒体"></a>流媒体</h2><h3 id="getStats"><a href="#getStats" class="headerlink" title="getStats"></a>getStats</h3><p>要求：</p><ul><li>熟悉getStats 调用链路(2020-08-30)</li><li>熟悉getStats 内部相关数据获取原理(2020-09-30)</li></ul><h3 id="封装与解封装"><a href="#封装与解封装" class="headerlink" title="封装与解封装"></a>封装与解封装</h3><p>要求：</p><ul><li>h264 封装与解封装</li><li>h264 主要数据帧格式</li></ul><h3 id="视频抖动缓存"><a href="#视频抖动缓存" class="headerlink" title="视频抖动缓存"></a>视频抖动缓存</h3><p>要求：</p><ul><li>熟悉接收端抖动缓存的原理</li><li>代码逻辑可修改</li></ul><h3 id="带宽探测"><a href="#带宽探测" class="headerlink" title="带宽探测"></a>带宽探测</h3><p>要求：</p><ul><li>对transport-cc 主要是webrtc 的带宽探测有所了解，了解基本的算法</li></ul><h3 id="抗丢包"><a href="#抗丢包" class="headerlink" title="抗丢包"></a>抗丢包</h3><p>要求：</p><ul><li>了解fec 算法的原理，如何接入</li><li>可自适应的抗丢包策略</li><li>nack 原理以及对应rtcp 包生成细节</li></ul><h3 id="延时"><a href="#延时" class="headerlink" title="延时"></a>延时</h3><p>要求：</p><ul><li>熟悉延时计算方式</li><li>知道延时准确性计算的方法</li></ul><h3 id="licode"><a href="#licode" class="headerlink" title="licode"></a>licode</h3><p>要求：</p><ul><li>搭建一个可用环境</li><li>能进行二次开发</li></ul><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
+    <content type="html"><![CDATA[<p>快捷键</p><a id="more"></a><h1 id="KeyWord"><a href="#KeyWord" class="headerlink" title="KeyWord"></a>KeyWord</h1><h2 id="Vscode"><a href="#Vscode" class="headerlink" title="Vscode"></a>Vscode</h2><h3 id="mac"><a href="#mac" class="headerlink" title="mac"></a>mac</h3><h4 id="多列选择"><a href="#多列选择" class="headerlink" title="多列选择"></a>多列选择</h4><pre><code class="txt">shift+option 鼠标左键</code></pre><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>GitCommand</title>
+    <link href="/2020/03/16/GitCommand/"/>
+    <url>/2020/03/16/GitCommand/</url>
+    
+    <content type="html"><![CDATA[<p>Git 个人常用命令相关整理</p><a id="more"></a><h1 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h1><h2 id="仓库操作"><a href="#仓库操作" class="headerlink" title="仓库操作"></a>仓库操作</h2><h3 id="克隆远端仓库"><a href="#克隆远端仓库" class="headerlink" title="克隆远端仓库"></a>克隆远端仓库</h3><pre><code class="shell"># 在本地生成一个目录git clone gitxxxxURL.git# 在本地生成一个指定目录git clone gitxxxxURL.git myGitDir# clone 远端仓库的指定分支git clone -b branchName gitxxxxURL.git## clone 远端仓库失败情况处理   for the fxxk wargit config --global http.proxy http://127.0.0.1:9666</code></pre><h3 id="分支推送"><a href="#分支推送" class="headerlink" title="分支推送"></a>分支推送</h3><pre><code class="shell"># 将本地当前分支推送到远端指定分支，远端分支不需要加origin 因为前面的origin 已经代表了绑定的远端仓库git push origin HEAD:specificBranch# 本地的分支强制更新远端的指定分支，远端分支的内容有可能被覆盖git push origin HEAD:specificBranch --force# 将远端指定分支删除git push origin :specificBranch</code></pre><h2 id="分支操作"><a href="#分支操作" class="headerlink" title="分支操作"></a>分支操作</h2><h3 id="跟踪远程指定分支"><a href="#跟踪远程指定分支" class="headerlink" title="跟踪远程指定分支"></a>跟踪远程指定分支</h3><p>跟踪后可以直接pull 和push，不需要指定对应的分支名</p><pre><code class="shell"># 生成一个和远端分支名一样的本地分支git checkout --track origin/branchName# 生成一个本地指定分支与远端分支关联git checkout -b localBranchName origin/branchName# 从指定的提交号中生成一个本地分支git checkout -b localBranchName commit_id</code></pre><h2 id="标签操作"><a href="#标签操作" class="headerlink" title="标签操作"></a>标签操作</h2><h3 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h3><pre><code class="shell"># 轻量级标签# 在当前分支的当前commit 上打标签git tag v1.0# 查看所有标签git tag# 给指定commit 打标签git tag v1.1 commitId# 注释标签# -a 标签名  -m 注释git tag -a v1.2 -m &quot;comment&quot; commit# 推tagsgit push origin tagname# 推所有tagsgit push origin --tags# 删除本地的taggit tag -d tagname# 删除远程的taggit push origin :refs/tags/tagname# 查看tag 内容git show tagname# 切换到指定tag 对应的代码git checkout -b localbranchname tagname</code></pre><h2 id="提交处理"><a href="#提交处理" class="headerlink" title="提交处理"></a>提交处理</h2><h3 id="cherry-pick"><a href="#cherry-pick" class="headerlink" title="cherry-pick"></a>cherry-pick</h3><pre><code class="shell"># 这样会生成一个新的commit-id，如果有冲突的话，还需要解决冲突 git cherry-pick commit-id # 中间是两个点.. # 提交一个范围内的commit-id 左开右闭 git cherry_pick &lt;start-commit-id&gt;..&lt;end-commit-id&gt; # 提交一个范围内的commit-id 左闭右闭 git cherry_pick &lt;start-commit-id&gt;^..&lt;end-commit-id&gt; </code></pre><h2 id="子模块"><a href="#子模块" class="headerlink" title="子模块"></a>子模块</h2><h3 id="修改某个子模块的url"><a href="#修改某个子模块的url" class="headerlink" title="修改某个子模块的url"></a>修改某个子模块的url</h3><pre><code class="shell"># 修改.gitmodules 文件中，对应模块url 信息# 使用git submodule sync 将url 更新到.git/config 中# 如果第二步骤没有成功的话，手动更新.git/config 文件</code></pre><h2 id="密钥生成"><a href="#密钥生成" class="headerlink" title="密钥生成"></a>密钥生成</h2><pre><code class="shell">ssh-keygen -t rsa -b 4096 -C &quot;handsom@guy.com&quot; </code></pre><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
     
     
     

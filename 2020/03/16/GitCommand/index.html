@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="hjybdrs">
   <meta name="keywords" content="">
-  <title>PerfCommand - 豆三呈祥</title>
+  <title>GitCommand - 豆三呈祥</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
@@ -169,8 +169,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2020-09-16 22:50" pubdate>
-        September 16, 2020 pm
+      <time datetime="2020-03-16 22:48" pubdate>
+        March 16, 2020 pm
       </time>
     </span>
   
@@ -181,7 +181,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      424 字
+      590 字
     </span>
   
 
@@ -191,7 +191,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      5
+      7
        分钟
     </span>
   
@@ -221,29 +221,72 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto" id="post">
             <!-- SEO header -->
-            <h1 style="display: none">PerfCommand</h1>
+            <h1 style="display: none">GitCommand</h1>
             
             <div class="markdown-body" id="post-body">
-              <p>perf 基本原理是在cpu PMU(performance Monitor Unit) 寄存器和软件特性中获取相关信息来进行系统性能输出。<br>可以监控的事件分为三类:</p>
-<ul>
-<li>Hardware Event 这块主要是由PMU 寄存机硬件产生的，如如cache miss 等，如果需要了解程序对硬件特性使用情况，需要使用这类事件</li>
-<li>Software Event 内核软件产生的时间，比如进程切换  tick 数</li>
-<li>Tracepoint Event 内核中的静态tracepoint 触发的时间，这些tracepoint 用来判断程序运行期间内核的行为细节，比如slab 分配器的分配次数等<pre><code class="shell"># 可以使用/ 进行某些关键字查询
-$ perf top
-# 单独的监控某一个应用程序
-# 事件这么多，不知道监控哪一些，无从下手，最好先从整体到细节。先大致了解有哪一些统计事件，在到具体细节中去
-# 使用perf stat 可以通过精简的方式提供程序运行的整体情况和数据汇总
-$ perf stats xxx.exe
-# task-clock 指的是占用了多少任务时钟周期，越高说明多数时间话费在CPU 计算上
+              <p>Git 个人常用命令相关整理</p>
+<a id="more"></a>
+
+<h1 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h1><h2 id="仓库操作"><a href="#仓库操作" class="headerlink" title="仓库操作"></a>仓库操作</h2><h3 id="克隆远端仓库"><a href="#克隆远端仓库" class="headerlink" title="克隆远端仓库"></a>克隆远端仓库</h3><pre><code class="shell"># 在本地生成一个目录
+git clone gitxxxxURL.git
+
+# 在本地生成一个指定目录
+git clone gitxxxxURL.git myGitDir
+
+# clone 远端仓库的指定分支
+git clone -b branchName gitxxxxURL.git
+
+## clone 远端仓库失败情况处理   for the fxxk war
+git config --global http.proxy http://127.0.0.1:9666
 </code></pre>
-</li>
-</ul>
-<p>$ perf record -g -e kmem:* -F 99 -p 12413 – sleep 20<br>$ perf record -g -e kmem:* -F 99 command<br>$ perf kmem -i perf.data –caller stat</p>
-<h1 id="perf-生成火焰图"><a href="#perf-生成火焰图" class="headerlink" title="perf 生成火焰图"></a>perf 生成火焰图</h1><p>FlameGraph/stackcollapse-perf.pl result.perf &gt; result.folded<br>FlameGraph/flamegraph.pl result.folded &gt; cpu.svg</p>
-<p>diff 火焰图</p>
-<p>除了通常的几种火焰图，我们其实还可以将两个火焰图进行 diff，生成一个 diff 火焰图，</p>
-<p>./FlameGraph/difffolded.pl perf.folded perf.folded1 | ./flamegraph.pl &gt; ../diff.svg</p>
-<p>```<br><a href="https://juejin.im/post/6844903950315945992" target="_blank" rel="noopener">https://juejin.im/post/6844903950315945992</a><br><a href="http://linux.51yip.com/search/perf" target="_blank" rel="noopener">http://linux.51yip.com/search/perf</a><br><a href="https://blog.csdn.net/qq_15437667/article/details/50724330" target="_blank" rel="noopener">https://blog.csdn.net/qq_15437667/article/details/50724330</a><br><a href="https://www.cnblogs.com/sunsky303/p/8328836.html" target="_blank" rel="noopener">https://www.cnblogs.com/sunsky303/p/8328836.html</a><br><a href="http://www.brendangregg.com/perf.html" target="_blank" rel="noopener">http://www.brendangregg.com/perf.html</a></p>
+<h3 id="分支推送"><a href="#分支推送" class="headerlink" title="分支推送"></a>分支推送</h3><pre><code class="shell"># 将本地当前分支推送到远端指定分支，远端分支不需要加origin 因为前面的origin 已经代表了绑定的远端仓库
+git push origin HEAD:specificBranch
+# 本地的分支强制更新远端的指定分支，远端分支的内容有可能被覆盖
+git push origin HEAD:specificBranch --force
+# 将远端指定分支删除
+git push origin :specificBranch</code></pre>
+<h2 id="分支操作"><a href="#分支操作" class="headerlink" title="分支操作"></a>分支操作</h2><h3 id="跟踪远程指定分支"><a href="#跟踪远程指定分支" class="headerlink" title="跟踪远程指定分支"></a>跟踪远程指定分支</h3><p>跟踪后可以直接pull 和push，不需要指定对应的分支名</p>
+<pre><code class="shell"># 生成一个和远端分支名一样的本地分支
+git checkout --track origin/branchName
+# 生成一个本地指定分支与远端分支关联
+git checkout -b localBranchName origin/branchName
+# 从指定的提交号中生成一个本地分支
+git checkout -b localBranchName commit_id</code></pre>
+<h2 id="标签操作"><a href="#标签操作" class="headerlink" title="标签操作"></a>标签操作</h2><h3 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h3><pre><code class="shell"># 轻量级标签
+# 在当前分支的当前commit 上打标签
+git tag v1.0
+# 查看所有标签
+git tag
+# 给指定commit 打标签
+git tag v1.1 commitId
+
+# 注释标签
+# -a 标签名  -m 注释
+git tag -a v1.2 -m &quot;comment&quot; commit
+
+# 推tags
+git push origin tagname
+# 推所有tags
+git push origin --tags
+# 删除本地的tag
+git tag -d tagname
+# 删除远程的tag
+git push origin :refs/tags/tagname
+# 查看tag 内容
+git show tagname
+# 切换到指定tag 对应的代码
+git checkout -b localbranchname tagname</code></pre>
+<h2 id="提交处理"><a href="#提交处理" class="headerlink" title="提交处理"></a>提交处理</h2><h3 id="cherry-pick"><a href="#cherry-pick" class="headerlink" title="cherry-pick"></a>cherry-pick</h3><pre><code class="shell"># 这样会生成一个新的commit-id，如果有冲突的话，还需要解决冲突 
+git cherry-pick commit-id 
+# 中间是两个点.. 
+# 提交一个范围内的commit-id 左开右闭 
+git cherry_pick &lt;start-commit-id&gt;..&lt;end-commit-id&gt; 
+# 提交一个范围内的commit-id 左闭右闭 
+git cherry_pick &lt;start-commit-id&gt;^..&lt;end-commit-id&gt; </code></pre>
+<h2 id="子模块"><a href="#子模块" class="headerlink" title="子模块"></a>子模块</h2><h3 id="修改某个子模块的url"><a href="#修改某个子模块的url" class="headerlink" title="修改某个子模块的url"></a>修改某个子模块的url</h3><pre><code class="shell"># 修改.gitmodules 文件中，对应模块url 信息
+# 使用git submodule sync 将url 更新到.git/config 中
+# 如果第二步骤没有成功的话，手动更新.git/config 文件</code></pre>
+<h2 id="密钥生成"><a href="#密钥生成" class="headerlink" title="密钥生成"></a>密钥生成</h2><pre><code class="shell">ssh-keygen -t rsa -b 4096 -C &quot;handsom@guy.com&quot; </code></pre>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">
             </div>
             <hr>
@@ -260,7 +303,7 @@ $ perf stats xxx.exe
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2020/09/16/KeyWordCode/">
+                      <a href="/2020/04/16/KeyWordCode/">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">KeyWordCode</span>
                         <span class="visible-mobile">Previous</span>
@@ -269,12 +312,6 @@ $ perf stats xxx.exe
                   </article>
                   <article class="post-next col-6">
                     
-                    
-                      <a href="/2020/09/16/GtestGmock/">
-                        <span class="hidden-mobile">GtestGmock</span>
-                        <span class="visible-mobile">Next</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
                     
                   </article>
                 </div>
@@ -290,8 +327,8 @@ $ perf stats xxx.exe
     <div id="disqus_thread"></div>
     <script type="text/javascript">
       var disqus_config = function () {
-        this.page.url = 'http://yoursite.com/2020/09/16/PerfCommand/';
-        this.page.identifier = '/2020/09/16/PerfCommand/';
+        this.page.url = 'http://yoursite.com/2020/03/16/GitCommand/';
+        this.page.identifier = '/2020/03/16/GitCommand/';
       };
       function loadDisqus() {
         (function () {
@@ -450,7 +487,7 @@ $ perf stats xxx.exe
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "PerfCommand&nbsp;",
+        "GitCommand&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
