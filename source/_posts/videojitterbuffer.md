@@ -310,10 +310,6 @@ void RetryStashedFrames() {
 {% pullquote mindmap mindmap-md %}
 - [FrameBuffer]
   - ValidReferences() 判断帧之间的参考是否正确
-    - 判断pic_id pic_id 就是当前帧最后一个包的seq
-    - 判断pid 和依赖的序列号是否乱序
-    - 判断所依赖的序列号是否有重复
-    - 应该是判断时域分层内容
   - UpdateFrameInfoWithIncomingFrame() 更新frameinfo 和其他frame的info
     - 遍历当前帧的依赖帧
       - 如果上一次解码的帧比依赖帧更新，依赖帧永远不会被解码 rt=>false
@@ -329,19 +325,6 @@ void RetryStashedFrames() {
     - SetProtectionMode()
     - Clear()
     - InsertFrame() 插入数据帧
-        - 0.stats 回调
-        - 1.最近连续pic_id(实际上就是seq)
-        - 2.ValidReferences()
-        - 3.缓存帧数量控制
-        - 4.获取最近解码帧的pic_id 和 时间戳(rtp tmp)
-        - 5.针对跳帧情况特殊处理，id_small&&time_new&&keyframe
-        - 6.还是针对跳帧，插入会导致混乱情况，返回
-        - 7.尝试插入，如果已经存在，返回
-        - 8.UpdateFrameInfoWithIncomingFrame()
-        - 9.判断当前帧是否因为重传导致延时(一定范围内？整个一帧)
-        - 10.如果当前真的参考都到期了，计算准备返回可解码帧id
-        - 11.call PropagateContinuity()
-        - 12.最后唤醒解码线程并返回可以连续的帧pic_id
     - UpdateRtt() 根据rtt 调整jitterEsmitor 策略
     - NextFrame() 弹出数据帧
       - keyframe->200ms deltaframe->3000ms
@@ -350,3 +333,34 @@ void RetryStashedFrames() {
         - 当前帧并不为目前所需要的关键帧
         - 获取上一次解码帧的rtp tmp 比较筛选出跳帧的情况
 {% endpullquote %}
+
+```c++
+bool ValidReferences() {
+    // 1. 判断pic_id，pic_id 就是当前帧最后一个包的seq
+    // 2. 判断pic_id 和依赖的seq是否符合规定
+      // a. 如果依赖的seq 比当前帧的seq 还大，不符合
+      // b. 如果连续依赖的seq 之间相等，不符合
+    // 3. 应该是判断时域分层内容
+}
+
+int InsertFrame() {
+    // 1. 统计回调
+    // 2. 最近连续帧seq(当前帧的最后一个seq)
+    // 3. ValidReferences()帧有效性判断
+    // 4. 如果当前帧数超过最大容量
+       // a. 如果当前关键帧，清空队列，继续
+       // b. 非关键帧，直接返回最近连续帧seq 直接丢弃会不会有问题？
+    // 5. 获取最近解码帧seq 和解码时间戳,如果当前帧seq 比最近解码帧seq 小
+       // a. 如果是关键帧，并且当前帧的时间更新，清空队列，继续
+       // b. 其他情况，直接返回最近连续帧seq 直接丢弃会不会有问题？
+    // 6. 出现跳帧情况，比第一个小，比最后一个大的情况出现，清空，继续
+    // 7. 尝试插入，如果之前存在，直接返回最近解码帧的seq
+    // 8. UpdateFrameInfoWithIncomingFrame()
+    // 9. 判断当前帧是否因为重传导致了延时，nack_count > 0 更新timing
+    // 10.如果当前帧的参考帧都到齐了
+       // a. PropagateContinuity()
+       // b. 计算最大限度可解码帧seq 
+    // 11. 唤醒解码线程，并返回最大限度可解码帧seq
+
+}
+```
