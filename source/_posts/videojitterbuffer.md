@@ -279,14 +279,18 @@ void FindFrames(uint16_t seq) {
 {% endpullquote %}
 
 ```c++
+// 在调用这个前插入了一个picture_id 针对h264 是否存在？
 void ManageFramePidOrSeqNum() {
-    // 1.插入关键帧 last_seq_num_gop(关键帧最后一个包序列号，作为下一帧的依赖)
-    // 2.关键帧为空，直接缓存
-    // 3.删除较老的关键帧信息，至少保存一个关键帧序列号
-    // 4.如果是P帧的话，判断序列号是否和上一个连续帧的最后一个序列号(会随着帧连续不断修改)相等，否则返回缓存
-    // 5.更新关键帧序列的最后一个连续帧序列号，作为下一帧的依赖，和1 相互呼应(在此已经保证是连续的了，4已说明)
-    // 6.UpdateLastPictureIdWithPadding()
-    // 7.更新最后一个序列号考虑padding 场景
+    // map<last_seq, pair<seq, seq>> last_seq_num_gop_
+    // 1. 如果是关键帧，则插入关键帧 到last_seq_num_gop_
+    // 2. 如果last_seq_num_gop_ 为空，则缓存这个帧，表明当前并没有关键帧存在
+    // 3. 删除较老的关键帧信息(当前seq-100)，至少保存一个关键帧序列号
+    // 4. 如果当前帧所依赖的关键帧已经不存在了，直接丢弃。并找到当前帧所依赖的关键帧的序列号
+    // 5. 如果是P帧的话，判断帧第一个包序列号是否和对应关键帧的最后一个序列号(会随着帧连续不断修改)相等，否则返回缓存。不相等说明中间有gap
+    // 6. 更新当前插入帧的VideoFrameLayer中的pic_id 为最后一个包seq，更新是否需要依赖，并且依赖的帧的信息
+    // 7. 更新当前帧所依赖关键帧序列号，作为下一帧的依赖，和1 相互呼应(在此已经保证是连续的了，5已说明)
+    // 8. UpdateLastPictureIdWithPadding()
+    // 9. 更新最后一个序列号考虑padding 场景
 }
 
 void UpdateLastPictureIdWithPadding(seq) {
