@@ -43,3 +43,14 @@ $ ulimit -c unlimited
 # /proc/sys/kernal/core_pattern 可以格式化core 文件路径和文件名
 
 ```
+
+## strace
+跟着系统调用和相关信号
+strace -p pid
+
+## kill
+
+kill、 kill -15 、kill -9
+kill 触发SIGTERM 的信号，大部分程序会先释放资源，然后再停止，但是有可能会被阻塞住
+kill -15 和kill 是一样的
+kill -9 触发SIGKILL 的信号，即exit。该信号不会被阻塞住，所以能顺利杀死进程
